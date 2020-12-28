@@ -1,9 +1,7 @@
-import {
-    TOGGLE_NAVBAR
-  } from '../constants/actionTypes';
+import actionTypes from '../constants/actionTypes';
 
 export const toggleNavbar = () => {
     return {
-      type: TOGGLE_NAVBAR,
+      type: actionTypes.TOGGLE_NAVBAR,
     };
   }

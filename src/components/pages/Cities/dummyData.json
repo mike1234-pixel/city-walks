@@ -1,0 +1,49 @@
+{
+    "cities": [
+        {
+            "city": "London",
+            "description": "Capital of the UK",
+            "img_link": "https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+            "city": "London",
+            "description": "Capital of the UK",
+            "img_link": "https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+            "city": "London",
+            "description": "Capital of the UK",
+            "img_link": "https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+            "city": "London",
+            "description": "Capital of the UK",
+            "img_link": "https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+            "city": "London",
+            "description": "Capital of the UK",
+            "img_link": "https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+            "city": "London",
+            "description": "Capital of the UK",
+            "img_link": "https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+            "city": "London",
+            "description": "Capital of the UK",
+            "img_link": "https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+            "city": "London",
+            "description": "Capital of the UK",
+            "img_link": "https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+            "city": "London",
+            "description": "Capital of the UK",
+            "img_link": "https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        }
+    ]
+}

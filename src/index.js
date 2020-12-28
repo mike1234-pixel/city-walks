@@ -6,7 +6,7 @@ import "mdbreact/dist/css/mdb.css";
 import App from "./container/App";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import reducer from "./reducers";
+import reducer from "./reducers/index";
 import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(reducer);

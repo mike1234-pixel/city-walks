@@ -1,0 +1,31 @@
+import './Cities.css'
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact'
+import data from './dummyData.json'
+
+const Cities = () => {
+
+    const cities = data.cities.map((city) => {
+        return (
+        <MDBCol style={{ maxWidth: "22rem" }}>
+        <MDBCard>
+            <MDBCardImage className="cutter img-fluid" src={city.img_link}
+            waves />
+            <MDBCardBody>
+            <MDBCardTitle>{city.city}</MDBCardTitle>
+            <MDBCardText>{city.description}</MDBCardText>
+            <MDBBtn href="#">Click</MDBBtn>
+            </MDBCardBody>
+        </MDBCard>
+        </MDBCol>
+        )
+    })
+
+    return (
+        <div className="cities-page-container">
+            <p>Cities</p>
+                <div className="card-container">{cities}</div>
+            </div>
+    )
+}
+
+export default Cities

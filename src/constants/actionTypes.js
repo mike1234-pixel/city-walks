@@ -1,1 +1,3 @@
-export const TOGGLE_NAVBAR = 'TOGGLE_NAVBAR';
+const actionTypes = {TOGGLE_NAVBAR: 'TOGGLE_NAVBAR'};
+
+export default actionTypes

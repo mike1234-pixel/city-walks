@@ -1,0 +1,16 @@
+.nav-container {
+  min-width: 100%; /* correct mdbreact max-width */
+  padding: 0; /* correct mdbreact padding-left and padding-right of 15px*/
+}
+
+.nav-bar {
+  background-color: #e3dac9;
+  box-shadow: none; /* remove mdbreact box-shadow*/
+}
+
+@media (min-width: 768px) {
+  .hamburger1 {
+    visibility: hidden;
+    display: none;
+  }
+}
