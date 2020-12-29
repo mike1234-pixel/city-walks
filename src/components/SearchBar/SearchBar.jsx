@@ -1,8 +1,8 @@
-let SearchBar = () => {
+let SearchBar = (props) => {
 
     return (
-      <form>
-          <input type="text" value="search"/>
+      <form onSubmit={props.handleSubmit}>
+          <input type="text" value={props.searchValue} onChange={props.handleChange}/>
           <button type="submit">Submit</button>
       </form>
     )

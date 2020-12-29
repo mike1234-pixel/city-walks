@@ -1,10 +1,17 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import SearchBar from '../SearchBar/SearchBar'
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBHamburgerToggler, MDBCollapse, MDBContainer, MDBInput } from "mdbreact";
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Link, useHistory } from 'react-router-dom'
 import './Nav.css'
 
 const Nav = (props) => {
+
+  let history = useHistory()
+
+  if (props.redirect) {
+    history.push("/walks")
+    props.setRedirect(false)
+  }
 
   return (
       <MDBContainer className="nav-container">
@@ -34,7 +41,11 @@ const Nav = (props) => {
             </MDBNavbarNav>
             <MDBNavbarNav right>
               <MDBNavItem>
-                <SearchBar/>
+                <SearchBar
+                    handleChange={props.handleChange}
+                    handleSubmit={props.handleSubmit}
+                    searchValue={props.searchValue}  
+                />
               </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>

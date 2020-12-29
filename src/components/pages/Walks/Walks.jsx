@@ -3,7 +3,10 @@ import './Walks.css'
 const Walks = (props) => {
 
     return (
-        <p>Walks</p>
+        <div>
+            <p>Walks</p>
+            <p>{props.searchValue}</p>
+        </div>
     )
 }
 
