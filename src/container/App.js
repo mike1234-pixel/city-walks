@@ -10,6 +10,9 @@ import Footer from '../components/Footer/Footer'
 import { connect, useStore } from 'react-redux'
 import { toggleNavbar } from '../actions/actionCreators'
 import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom"
+// cities
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact'
+import data from '../components/pages/Cities/dummyData.json'
 
 
 const App = (props) => {
@@ -31,6 +34,29 @@ const App = (props) => {
     e.preventDefault();
     setRedirect(true);
   }
+
+  const handleClick = (city) => {
+    setSearchValue(city)
+    setRedirect(true);
+  }
+  
+  const cities = data.cities.map((city) => {
+    return (
+    <MDBCol style={{ maxWidth: "22rem" }}>
+    <MDBCard className="city-card">
+        <MDBCardImage className="cutter img-fluid" src={city.img_link}
+        waves />
+        <MDBCardBody>
+        <MDBCardTitle>{city.city}</MDBCardTitle>
+        <MDBCardText>{city.description}</MDBCardText>
+        <MDBBtn className="city-card-btn" onClick={() => handleClick(city.city)}>Click</MDBBtn>
+        </MDBCardBody>
+    </MDBCard>
+    </MDBCol>
+    )
+})
+
+
   return (
     <BrowserRouter>
     <div>
@@ -45,7 +71,7 @@ const App = (props) => {
           />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/cities" component={Cities} />
+        <Route path="/cities" component={() => <Cities cities={cities} />} />
         <Route path="/walks" component={() => <Walks searchValue={searchValue}/>}/>
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
