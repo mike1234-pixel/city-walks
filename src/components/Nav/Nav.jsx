@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState } from "react"
+import SearchBar from '../SearchBar/SearchBar'
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBHamburgerToggler, MDBCollapse, MDBContainer, MDBInput } from "mdbreact";
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import './Nav.css'
@@ -22,15 +23,18 @@ const Nav = (props) => {
                 <MDBNavLink className="black-text" to="/cities">Cities</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink className="black-text" to="#!">Pricing</MDBNavLink>
+                <MDBNavLink className="black-text" to="/walks">Walks</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink className="black-text" to="#!">Pricing</MDBNavLink>
+                <MDBNavLink className="black-text" to="/about">About</MDBNavLink>
+              </MDBNavItem>
+              <MDBNavItem>
+                <MDBNavLink className="black-text" to="/contact">Contact</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
             <MDBNavbarNav right>
               <MDBNavItem>
-                <MDBInput label="Search"/> 
+                <SearchBar/>
               </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>

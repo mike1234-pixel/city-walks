@@ -7,13 +7,13 @@ const Cities = () => {
     const cities = data.cities.map((city) => {
         return (
         <MDBCol style={{ maxWidth: "22rem" }}>
-        <MDBCard>
+        <MDBCard className="city-card">
             <MDBCardImage className="cutter img-fluid" src={city.img_link}
             waves />
             <MDBCardBody>
             <MDBCardTitle>{city.city}</MDBCardTitle>
             <MDBCardText>{city.description}</MDBCardText>
-            <MDBBtn href="#">Click</MDBBtn>
+            <MDBBtn className="city-card-btn" href="#">Click</MDBBtn>
             </MDBCardBody>
         </MDBCard>
         </MDBCol>
@@ -29,3 +29,5 @@ const Cities = () => {
 }
 
 export default Cities
+
+// these cards will conduct a search and filter the walks by city -- each one will link to the walks page

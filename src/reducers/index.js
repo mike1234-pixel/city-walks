@@ -1,6 +1,7 @@
 // set initialState of redux store here
 const initialState = {
-    navbarIsCollapsed: false
+    navbarIsCollapsed: false,
+    search: ''
   };
   
   // reducer

@@ -2,7 +2,7 @@
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
-/* cards: grid-container */
+/* grid layout start */
 .card-container {
   display: grid;
   width: 100%;
@@ -44,3 +44,16 @@
 .grid-item {
   align-self: center;
 }
+
+/* grid layout end*/
+
+/* card styles start*/
+/* --> to default back to mdbreact card shadows/borders comment out below styles */
+.city-card,
+.city-card-btn {
+  box-shadow: none;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+/* card styles end*/
