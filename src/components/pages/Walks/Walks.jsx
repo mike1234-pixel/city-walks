@@ -2,10 +2,15 @@ import './Walks.css'
 
 const Walks = (props) => {
 
+    const dummyData = ['london', 'new york', 'paris']
+    let {searchValue} = props;
+
     return (
         <div>
             <p>Walks</p>
-            <p>{props.searchValue}</p>
+            <p>{searchValue}</p>
+            {/* show all walks if no search query entered, otherwise filter by query */}
+             {searchValue === "" ? dummyData : dummyData.filter(city => city.includes(searchValue)) }
         </div>
     )
 }
