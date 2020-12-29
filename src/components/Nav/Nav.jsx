@@ -1,7 +1,7 @@
 import { useState } from "react"
+import { useHistory } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBHamburgerToggler, MDBCollapse, MDBContainer, MDBInput } from "mdbreact";
-import { BrowserRouter as Router, Link, useHistory } from 'react-router-dom'
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBHamburgerToggler, MDBCollapse, MDBContainer, MDBInput } from "mdbreact"
 import './Nav.css'
 
 const Nav = (props) => {
