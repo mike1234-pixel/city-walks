@@ -1,5 +1,6 @@
 import './Walks.css'
 import data from './dummyData.json'
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact'
 
 const Walks = (props) => {
 
@@ -12,21 +13,41 @@ const Walks = (props) => {
 
         const walksArr = data.walks
 
+        // <MDBCol style={{ maxWidth: "22rem" }}>
+        // <MDBCard className="city-card">
+        //     <MDBCardImage className="cutter img-fluid" src={v.cover_img_link}
+        //     waves />
+        //     <MDBCardBody>
+        //     <MDBCardTitle>{JSON.stringify(v.city)}</MDBCardTitle>
+        //     <MDBCardTitle>{JSON.stringify(v.walk)}</MDBCardTitle>
+        //     <MDBCardText>{JSON.stringify(v.description)}</MDBCardText>
+        //     <MDBBtn className="city-card-btn">Click</MDBBtn>
+        //     </MDBCardBody>
+        // </MDBCard>
+        // </MDBCol>
+
     if (searchValue === "") {
     return (
         <div>
             <p>Walks</p>
             <p>{searchValue}</p>
+            <div  className="card-container">
             {walksArr.map(v => {
                 return (
-                    <div>
-                        <p>{JSON.stringify(v.walk)}</p>
-                        <p>{JSON.stringify(v.city)}</p>
-                        <p>{JSON.stringify(v.description)}</p>
-                        <img src={v.cover_img_link}/>
-                    </div>
+                    <MDBCol style={{ maxWidth: "22rem" }}>
+                    <MDBCard className="city-card">
+                        <MDBCardImage className="cutter img-fluid" src={v.cover_img_link} waves/>
+                        <MDBCardBody>
+                        <MDBCardTitle>{JSON.stringify(v.city)}</MDBCardTitle>
+                        <MDBCardTitle>{JSON.stringify(v.walk)}</MDBCardTitle>
+                        <MDBCardText>{JSON.stringify(v.description)}</MDBCardText>
+                        <MDBBtn className="city-card-btn">Click</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                    </MDBCol>
                     )
             })}
+            </div>
         </div>
     )
     } else if (walksArr.map(v => {v.walk.includes(searchValue) || v.city.includes(searchValue)})) {
@@ -34,20 +55,27 @@ const Walks = (props) => {
         <div>
             <p>Walks</p>
             <p>{searchValue}</p>
+            <div className="card-container">
                 {walksArr.map(v => {
                 if (v.walk.includes(searchValue) || v.city.includes(searchValue)) {
                 console.log(v.walk, v.city)
                 console.log(JSON.stringify(v.walk))
                 return (
-                    <div>
-                        <p>{JSON.stringify(v.walk)}</p>
-                        <p>{JSON.stringify(v.city)}</p>
-                        <p>{JSON.stringify(v.description)}</p>
-                        <img src={v.cover_img_link}/>
-                    </div>
+                    <MDBCol style={{ maxWidth: "22rem" }}>
+                    <MDBCard className="city-card">
+                        <MDBCardImage className="cutter img-fluid" src={v.cover_img_link} waves/>
+                        <MDBCardBody>
+                        <MDBCardTitle>{JSON.stringify(v.city)}</MDBCardTitle>
+                        <MDBCardTitle>{JSON.stringify(v.walk)}</MDBCardTitle>
+                        <MDBCardText>{JSON.stringify(v.description)}</MDBCardText>
+                        <MDBBtn className="city-card-btn">Click</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                    </MDBCol>
                     )
                 }}
                 )}
+            </div>
         </div>
         )
     } else {
