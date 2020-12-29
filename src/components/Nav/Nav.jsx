@@ -6,11 +6,17 @@ import './Nav.css'
 
 const Nav = (props) => {
 
+  const [toggleNav, setToggleNav] = useState(false)
+
   let history = useHistory()
 
   if (props.redirect) {
     history.push("/walks")
     props.setRedirect(false)
+  }
+
+  const handleClick = () => {
+    setToggleNav(!toggleNav)
   }
 
   return (
@@ -19,9 +25,8 @@ const Nav = (props) => {
           <MDBNavbarBrand>
             <b className="black-text"><MDBNavLink className="black-text" to="/">City Walks</MDBNavLink></b>
           </MDBNavbarBrand>
-          {/* <MDBNavbarToggler onClick={props.toggleNavbar} /> */}
-          <MDBHamburgerToggler color="#000" className="hamburger1" id="hamburger1" onClick={props.toggleNavbar} />
-          <MDBCollapse id="navbarCollapse3" isOpen={props.navbarIsCollapsed} navbar>
+          <MDBHamburgerToggler color="#000" className="hamburger1" id="hamburger1" onClick={handleClick} />
+          <MDBCollapse id="navbarCollapse3" isOpen={toggleNav} navbar>
             <MDBNavbarNav left>
               <MDBNavItem>
                 <MDBNavLink className="black-text" to="/">Home</MDBNavLink>
