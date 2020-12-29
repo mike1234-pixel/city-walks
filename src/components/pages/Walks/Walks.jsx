@@ -5,17 +5,35 @@ const Walks = (props) => {
     const dummyData = ['london', 'new york', 'paris']
     let {searchValue} = props;
 
+    // filter walks by query,
+    // if nothing entered, show all walks, 
+    // if value entered but no match, show 'No matches found'
+
+    if (searchValue === "") {
     return (
         <div>
             <p>Walks</p>
             <p>{searchValue}</p>
-            {/* show all walks if no search query entered, otherwise filter by query */}
-             {searchValue === "" ? dummyData : dummyData.filter(city => city.includes(searchValue)) }
+            <p>{dummyData}</p>
         </div>
     )
+    } else if (dummyData.filter(city => city.includes(searchValue)).length !== 0) {
+        return (
+        <div>
+            <p>Walks</p>
+            <p>{searchValue}</p>
+            <p>{dummyData.filter(city => city.includes(searchValue))}</p>
+        </div>
+        )
+    } else {
+        return (
+        <div>
+            <p>Walks</p>
+            <p>{searchValue}</p>
+            <p>No matches found</p>
+        </div>
+        )
+    }
 }
 
 export default Walks
-
-// will need a filter on this page to render the walks -- filter parameter will come either through the search in the navbar or the cities page
-// capture form input and pass down to Walks as props
