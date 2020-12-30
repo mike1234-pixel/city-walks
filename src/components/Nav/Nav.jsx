@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useHistory } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBHamburgerToggler, MDBCollapse, MDBContainer, MDBInput } from "mdbreact"
@@ -10,10 +10,13 @@ const Nav = (props) => {
 
   let history = useHistory()
 
-  if (props.redirect) {
-    history.push("/walks")
-    props.setRedirect(false)
-  }
+  // wrapping this in useEffect prevents error: "cannot update a component while rendering a different component"
+  useEffect(() => {
+    if (props.redirect) {
+      history.push("/walks")
+      props.setRedirect(false)
+    }
+  })
 
   const handleClick = () => {
     setToggleNav(!toggleNav)
