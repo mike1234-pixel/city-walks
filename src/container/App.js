@@ -8,6 +8,7 @@ import Contact from '../components/pages/Contact/Contact'
 import nf404 from '../components/pages/404/nf404'
 import Footer from '../components/Footer/Footer'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
+import './App.css'
 
 const App = () => {
 
@@ -42,7 +43,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/cities" component={() => <Cities handleClick={handleClick}/>} />
-        <Route path="/walks" component={() => <Walks searchValue={searchValue}/>}/>
+        <Route path="/walks" component={() => <Walks searchValue={searchValue} setSearchValue={setSearchValue}/>}/>
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route component={nf404} />
