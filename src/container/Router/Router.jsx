@@ -4,7 +4,7 @@ import Cities from '../../components/pages/Cities/Cities'
 import Walks from '../../components/pages/Walks/Walks'
 import About from '../../components/pages/About/About'
 import Contact from '../../components/pages/Contact/Contact'
-import nf404 from '../../components/pages/404/nf404'
+import NotFound404 from '../../components/pages/404/NotFound404'
 import Footer from '../../components/Footer/Footer'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
@@ -28,7 +28,7 @@ const Router = (props) => {
             <Route path="/walks" component={() => <Walks searchValue={searchValue} setSearchValue={setSearchValue}/>}/>
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
-            <Route component={nf404} />
+            <Route component={NotFound404} />
           </Switch>
           <Footer/>
         </div>

@@ -1,0 +1,858 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cities Page renders correctly 1`] = `
+<div
+  className="cities-page-container"
+>
+  <div
+    className="page-header-container"
+  >
+    <h1
+      className="page-header"
+    >
+      Cities
+    </h1>
+  </div>
+  <div
+    className="card-container"
+  >
+    <div
+      className="col"
+      data-test="col"
+      style={
+        Object {
+          "maxWidth": "22rem",
+        }
+      }
+    >
+      <div
+        className="card city-card"
+        data-test="card"
+      >
+        <div
+          className="view"
+          data-test="view"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="Ripple-parent"
+            onMouseDown={[Function]}
+            style={
+              Object {
+                "touchAction": "unset",
+              }
+            }
+          >
+            <img
+              className="cutter img-fluid"
+              data-test="card-image"
+              src="https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            />
+            <div
+              className="mask rgba-white-slight"
+              data-test="mask"
+            />
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="card-body"
+          data-test="card-body"
+        >
+          <h4
+            className="card-title"
+            data-test="card-title"
+          >
+            london
+          </h4>
+          <p
+            className="card-text"
+            data-test="card-text"
+          >
+            Capital of the UK
+          </p>
+          <button
+            className="btn-default btn Ripple-parent city-card-btn"
+            data-test="button"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+            type="button"
+          >
+            Click
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col"
+      data-test="col"
+      style={
+        Object {
+          "maxWidth": "22rem",
+        }
+      }
+    >
+      <div
+        className="card city-card"
+        data-test="card"
+      >
+        <div
+          className="view"
+          data-test="view"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="Ripple-parent"
+            onMouseDown={[Function]}
+            style={
+              Object {
+                "touchAction": "unset",
+              }
+            }
+          >
+            <img
+              className="cutter img-fluid"
+              data-test="card-image"
+              src="https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            />
+            <div
+              className="mask rgba-white-slight"
+              data-test="mask"
+            />
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="card-body"
+          data-test="card-body"
+        >
+          <h4
+            className="card-title"
+            data-test="card-title"
+          >
+            paris
+          </h4>
+          <p
+            className="card-text"
+            data-test="card-text"
+          >
+            Capital of the UK
+          </p>
+          <button
+            className="btn-default btn Ripple-parent city-card-btn"
+            data-test="button"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+            type="button"
+          >
+            Click
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col"
+      data-test="col"
+      style={
+        Object {
+          "maxWidth": "22rem",
+        }
+      }
+    >
+      <div
+        className="card city-card"
+        data-test="card"
+      >
+        <div
+          className="view"
+          data-test="view"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="Ripple-parent"
+            onMouseDown={[Function]}
+            style={
+              Object {
+                "touchAction": "unset",
+              }
+            }
+          >
+            <img
+              className="cutter img-fluid"
+              data-test="card-image"
+              src="https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            />
+            <div
+              className="mask rgba-white-slight"
+              data-test="mask"
+            />
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="card-body"
+          data-test="card-body"
+        >
+          <h4
+            className="card-title"
+            data-test="card-title"
+          >
+            new york
+          </h4>
+          <p
+            className="card-text"
+            data-test="card-text"
+          >
+            Capital of the UK
+          </p>
+          <button
+            className="btn-default btn Ripple-parent city-card-btn"
+            data-test="button"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+            type="button"
+          >
+            Click
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col"
+      data-test="col"
+      style={
+        Object {
+          "maxWidth": "22rem",
+        }
+      }
+    >
+      <div
+        className="card city-card"
+        data-test="card"
+      >
+        <div
+          className="view"
+          data-test="view"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="Ripple-parent"
+            onMouseDown={[Function]}
+            style={
+              Object {
+                "touchAction": "unset",
+              }
+            }
+          >
+            <img
+              className="cutter img-fluid"
+              data-test="card-image"
+              src="https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            />
+            <div
+              className="mask rgba-white-slight"
+              data-test="mask"
+            />
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="card-body"
+          data-test="card-body"
+        >
+          <h4
+            className="card-title"
+            data-test="card-title"
+          >
+            london
+          </h4>
+          <p
+            className="card-text"
+            data-test="card-text"
+          >
+            Capital of the UK
+          </p>
+          <button
+            className="btn-default btn Ripple-parent city-card-btn"
+            data-test="button"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+            type="button"
+          >
+            Click
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col"
+      data-test="col"
+      style={
+        Object {
+          "maxWidth": "22rem",
+        }
+      }
+    >
+      <div
+        className="card city-card"
+        data-test="card"
+      >
+        <div
+          className="view"
+          data-test="view"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="Ripple-parent"
+            onMouseDown={[Function]}
+            style={
+              Object {
+                "touchAction": "unset",
+              }
+            }
+          >
+            <img
+              className="cutter img-fluid"
+              data-test="card-image"
+              src="https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            />
+            <div
+              className="mask rgba-white-slight"
+              data-test="mask"
+            />
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="card-body"
+          data-test="card-body"
+        >
+          <h4
+            className="card-title"
+            data-test="card-title"
+          >
+            london
+          </h4>
+          <p
+            className="card-text"
+            data-test="card-text"
+          >
+            Capital of the UK
+          </p>
+          <button
+            className="btn-default btn Ripple-parent city-card-btn"
+            data-test="button"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+            type="button"
+          >
+            Click
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col"
+      data-test="col"
+      style={
+        Object {
+          "maxWidth": "22rem",
+        }
+      }
+    >
+      <div
+        className="card city-card"
+        data-test="card"
+      >
+        <div
+          className="view"
+          data-test="view"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="Ripple-parent"
+            onMouseDown={[Function]}
+            style={
+              Object {
+                "touchAction": "unset",
+              }
+            }
+          >
+            <img
+              className="cutter img-fluid"
+              data-test="card-image"
+              src="https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            />
+            <div
+              className="mask rgba-white-slight"
+              data-test="mask"
+            />
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="card-body"
+          data-test="card-body"
+        >
+          <h4
+            className="card-title"
+            data-test="card-title"
+          >
+            london
+          </h4>
+          <p
+            className="card-text"
+            data-test="card-text"
+          >
+            Capital of the UK
+          </p>
+          <button
+            className="btn-default btn Ripple-parent city-card-btn"
+            data-test="button"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+            type="button"
+          >
+            Click
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col"
+      data-test="col"
+      style={
+        Object {
+          "maxWidth": "22rem",
+        }
+      }
+    >
+      <div
+        className="card city-card"
+        data-test="card"
+      >
+        <div
+          className="view"
+          data-test="view"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="Ripple-parent"
+            onMouseDown={[Function]}
+            style={
+              Object {
+                "touchAction": "unset",
+              }
+            }
+          >
+            <img
+              className="cutter img-fluid"
+              data-test="card-image"
+              src="https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            />
+            <div
+              className="mask rgba-white-slight"
+              data-test="mask"
+            />
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="card-body"
+          data-test="card-body"
+        >
+          <h4
+            className="card-title"
+            data-test="card-title"
+          >
+            london
+          </h4>
+          <p
+            className="card-text"
+            data-test="card-text"
+          >
+            Capital of the UK
+          </p>
+          <button
+            className="btn-default btn Ripple-parent city-card-btn"
+            data-test="button"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+            type="button"
+          >
+            Click
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col"
+      data-test="col"
+      style={
+        Object {
+          "maxWidth": "22rem",
+        }
+      }
+    >
+      <div
+        className="card city-card"
+        data-test="card"
+      >
+        <div
+          className="view"
+          data-test="view"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="Ripple-parent"
+            onMouseDown={[Function]}
+            style={
+              Object {
+                "touchAction": "unset",
+              }
+            }
+          >
+            <img
+              className="cutter img-fluid"
+              data-test="card-image"
+              src="https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            />
+            <div
+              className="mask rgba-white-slight"
+              data-test="mask"
+            />
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="card-body"
+          data-test="card-body"
+        >
+          <h4
+            className="card-title"
+            data-test="card-title"
+          >
+            london
+          </h4>
+          <p
+            className="card-text"
+            data-test="card-text"
+          >
+            Capital of the UK
+          </p>
+          <button
+            className="btn-default btn Ripple-parent city-card-btn"
+            data-test="button"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+            type="button"
+          >
+            Click
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col"
+      data-test="col"
+      style={
+        Object {
+          "maxWidth": "22rem",
+        }
+      }
+    >
+      <div
+        className="card city-card"
+        data-test="card"
+      >
+        <div
+          className="view"
+          data-test="view"
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="Ripple-parent"
+            onMouseDown={[Function]}
+            style={
+              Object {
+                "touchAction": "unset",
+              }
+            }
+          >
+            <img
+              className="cutter img-fluid"
+              data-test="card-image"
+              src="https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            />
+            <div
+              className="mask rgba-white-slight"
+              data-test="mask"
+            />
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="card-body"
+          data-test="card-body"
+        >
+          <h4
+            className="card-title"
+            data-test="card-title"
+          >
+            london
+          </h4>
+          <p
+            className="card-text"
+            data-test="card-text"
+          >
+            Capital of the UK
+          </p>
+          <button
+            className="btn-default btn Ripple-parent city-card-btn"
+            data-test="button"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+            type="button"
+          >
+            Click
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

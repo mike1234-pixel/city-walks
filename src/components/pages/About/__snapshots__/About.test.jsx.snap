@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About Page renders correctly 1`] = `
+<div
+  className="page-header-container"
+>
+  <h1
+    className="page-header"
+  >
+    About
+  </h1>
+</div>
+`;

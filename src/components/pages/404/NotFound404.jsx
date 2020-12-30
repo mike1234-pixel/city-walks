@@ -1,4 +1,4 @@
-import './nf404.css'
+import './NotFound404.css'
 
 const nf404 = ({ location }) => {
     const errorMessage = `404 Error: Page not found at ${location.pathname}`

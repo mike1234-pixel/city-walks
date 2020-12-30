@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav renders correctly 1`] = `
+<div
+  className="container nav-container"
+  data-test="container"
+>
+  <nav
+    className="navbar-dark navbar navbar-expand-md nav-bar"
+    data-test="navbar"
+    role="navigation"
+  >
+    <div
+      className="navbar-brand"
+      data-test="navbar-brand"
+    >
+      <b
+        className="black-text"
+      >
+        <a
+          aria-current="page"
+          className="nav-link Ripple-parent black-text active"
+          data-test="nav-link"
+          href="/"
+          onClick={[Function]}
+          onMouseUp={[Function]}
+          onTouchStart={[Function]}
+          style={Object {}}
+        >
+          City Walks
+          <div
+            className="Ripple "
+            data-test="waves"
+            style={
+              Object {
+                "height": "0px",
+                "left": "0px",
+                "top": "0px",
+                "width": "0px",
+              }
+            }
+          />
+        </a>
+      </b>
+    </div>
+    <input
+      className="hamburger-button__checkbox"
+      data-test="hamburger-toggler"
+      defaultChecked={false}
+      id="hamburger1"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className="hamburger-button__button hamburger1"
+      htmlFor="hamburger1"
+      id="nav-icon1"
+    >
+      <span
+        style={
+          Object {
+            "background": "#000",
+          }
+        }
+      />
+      <span
+        style={
+          Object {
+            "background": "#000",
+          }
+        }
+      />
+      <span
+        style={
+          Object {
+            "background": "#000",
+          }
+        }
+      />
+    </label>
+    <div
+      className="collapse navbar-collapse"
+      data-test="collapse"
+      id="navbarCollapse3"
+      style={Object {}}
+    >
+      <ul
+        className="navbar-nav mr-auto"
+        data-test="navbar-nav"
+      >
+        <li
+          className="nav-item"
+          data-test="nav-item"
+        >
+          <a
+            aria-current="page"
+            className="nav-link Ripple-parent black-text active"
+            data-test="nav-link"
+            href="/"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+            style={Object {}}
+          >
+            Home
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </a>
+        </li>
+        <li
+          className="nav-item"
+          data-test="nav-item"
+        >
+          <a
+            aria-current={null}
+            className="nav-link Ripple-parent black-text"
+            data-test="nav-link"
+            href="/cities"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+          >
+            Cities
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </a>
+        </li>
+        <li
+          className="nav-item"
+          data-test="nav-item"
+        >
+          <a
+            aria-current={null}
+            className="nav-link Ripple-parent black-text"
+            data-test="nav-link"
+            href="/walks"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+          >
+            Walks
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </a>
+        </li>
+        <li
+          className="nav-item"
+          data-test="nav-item"
+        >
+          <a
+            aria-current={null}
+            className="nav-link Ripple-parent black-text"
+            data-test="nav-link"
+            href="/about"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+          >
+            About
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </a>
+        </li>
+        <li
+          className="nav-item"
+          data-test="nav-item"
+        >
+          <a
+            aria-current={null}
+            className="nav-link Ripple-parent black-text"
+            data-test="nav-link"
+            href="/contact"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+          >
+            Contact
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </a>
+        </li>
+      </ul>
+      <ul
+        className="navbar-nav ml-auto"
+        data-test="navbar-nav"
+      >
+        <li
+          className="nav-item"
+          data-test="nav-item"
+        >
+          <form>
+            <input
+              id="search-input"
+              name="search-input"
+              placeholder="Search"
+              type="text"
+            />
+            <button
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;

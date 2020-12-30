@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact Page renders correctly 1`] = `
+<div
+  className="page-header-container"
+>
+  <h1
+    className="page-header"
+  >
+    Walks
+  </h1>
+</div>
+`;

@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<footer
+  className="page-footer blue font-small pt-4 mt-4"
+  data-test="footer"
+>
+  <div
+    className="container-fluid text-center text-md-left"
+    data-test="container"
+  >
+    <div
+      className="row"
+      data-test="row"
+    >
+      <div
+        className="col-md-6"
+        data-test="col"
+      >
+        <h5
+          className="title"
+        >
+          Footer Content
+        </h5>
+        <p>
+          Here you can use rows and columns here to organize your footer content.
+        </p>
+      </div>
+      <div
+        className="col-md-6"
+        data-test="col"
+      >
+        <h5
+          className="title"
+        >
+          Links
+        </h5>
+        <ul>
+          <li
+            className="list-unstyled"
+          >
+            <a
+              href="#!"
+            >
+              Link 1
+            </a>
+          </li>
+          <li
+            className="list-unstyled"
+          >
+            <a
+              href="#!"
+            >
+              Link 2
+            </a>
+          </li>
+          <li
+            className="list-unstyled"
+          >
+            <a
+              href="#!"
+            >
+              Link 3
+            </a>
+          </li>
+          <li
+            className="list-unstyled"
+          >
+            <a
+              href="#!"
+            >
+              Link 4
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    className="footer-copyright text-center py-3"
+  >
+    <div
+      className="container-fluid"
+      data-test="container"
+    >
+      © 
+      2020
+       Copyright: 
+      <a
+        href="https://www.mdbootstrap.com"
+      >
+         MDBootstrap.com 
+      </a>
+    </div>
+  </div>
+</footer>
+`;
