@@ -4,14 +4,14 @@ import { render, fireEvent } from "@testing-library/react" // https://testing-li
 describe("App.jsx tests", () => {
 
   it("renders without crashing", () => {
-    const { getByText, getByPlaceholderText, getByTestId } = render(<App/>)
+    const { getByLabelText, getByTestId } = render(<App/>)
     // assert element exists
-    getByText("Search")
+    getByLabelText("Search")
 
     // simulate user events
-    const searchBar = getByPlaceholderText("Search") // grab search bar, input "london", click search button, Walks header should be rendered
+    const searchBar = getByTestId("search-input") 
     fireEvent.change(searchBar, { target: { value: "london" }})
-    fireEvent.click(getByText("Search"))
+    fireEvent.click(getByTestId("search-btn"))
     getByTestId("walks-page-heading")
   })
 

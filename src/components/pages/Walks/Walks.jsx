@@ -1,4 +1,5 @@
 import './Walks.css'
+import { useHistory } from "react-router-dom"
 import data from './dummyData.json'
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact'
 import { FaSearchLocation } from "react-icons/fa"
@@ -7,12 +8,13 @@ const Walks = (props) => {
 
     let {searchValue} = props
 
-    // filter walks by query,
-    // if nothing entered, show all walks, 
-    // if value entered but no match, show 'No matches found'
-    // if the walk value or the city value in each walk matches the searchValue, show walk
-
     const walksArr = data.walks
+
+    let history = useHistory()
+
+    const handleRedirect =(redirectTo) => {
+          history.push(`/${redirectTo}`)
+    }
     
     if (searchValue === "") {
     return (
@@ -32,7 +34,7 @@ const Walks = (props) => {
                         <MDBCardTitle>{v.city}</MDBCardTitle>
                         <MDBCardTitle>{v.walk}</MDBCardTitle>
                         <MDBCardText>{v.description}</MDBCardText>
-                        <MDBBtn className="city-card-btn">Click</MDBBtn>
+                        <MDBBtn className="city-card-btn" onClick={() =>handleRedirect(v.route)}>Click</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                     </MDBCol>
@@ -52,8 +54,6 @@ const Walks = (props) => {
             <div className="card-container">
                 {walksArr.map(v => {
                 if (v.walk.includes(searchValue) || v.city.includes(searchValue)) {
-                console.log(v.walk, v.city)
-                console.log(JSON.stringify(v.walk))
                 return (
                     <MDBCol style={{ maxWidth: "22rem" }} key={v.id}>
                     <MDBCard className="city-card">
@@ -62,7 +62,7 @@ const Walks = (props) => {
                         <MDBCardTitle>{v.city}</MDBCardTitle>
                         <MDBCardTitle>{v.walk}</MDBCardTitle>
                         <MDBCardText>{v.description}</MDBCardText>
-                        <MDBBtn className="city-card-btn">Click</MDBBtn>
+                        <MDBBtn className="city-card-btn" onClick={() =>handleRedirect(v.route)}>Click</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                     </MDBCol>

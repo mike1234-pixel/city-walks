@@ -1,0 +1,23 @@
+.search-container {
+  position: relative;
+}
+
+/* hide the button element */
+.search-btn {
+  background: none;
+  padding: 5px;
+  border: none;
+  font-size: 20px;
+}
+
+#search-btn-icon:hover {
+  color: white;
+}
+
+@media (min-width: 860px) {
+  .search-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+}
