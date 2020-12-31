@@ -10,6 +10,8 @@
   grid-template-rows: 100%;
   grid-gap: 30px;
   padding: 5%;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
 }
 
 @media (max-width: 650px) {
@@ -19,9 +21,14 @@
   }
 }
 @media (max-height: 1400px) and (max-width: 1050px) {
+  .section-b {
+    height: 120vh;
+  }
+
   .grid-container-b {
     grid-template-columns: 100%;
     grid-template-rows: repeat(2, 45%);
+    font-size: 25px;
   }
 }
 
@@ -49,7 +56,7 @@
 .grid-item-b-text-box {
   padding: 20px;
   text-align: center;
-  background: grey;
+  background: var(--blue);
 }
 
 @media (max-width: 1050px) {

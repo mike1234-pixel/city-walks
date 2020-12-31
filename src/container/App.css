@@ -1,5 +1,14 @@
 /*  global css only */
 
+/* font import */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+/* variables */
+:root {
+  --blue: #6495ed;
+  --bone: #e3dac9;
+}
+
 /* header styles start */
 .page-header-container {
   width: 100%;

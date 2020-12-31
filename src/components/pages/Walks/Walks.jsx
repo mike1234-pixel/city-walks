@@ -40,6 +40,7 @@ const Walks = (props) => {
                     </MDBCol>
                     )
             })}
+            
             </div>
         </div>
     )
