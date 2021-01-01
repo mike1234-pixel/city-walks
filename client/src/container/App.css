@@ -1,13 +1,18 @@
 /*  global css only */
 
 /* font import */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
 
 /* variables */
 :root {
   --blue: #6495ed;
   --bone: #e3dac9;
 }
+/* body styles start */
+#root {
+  font-family: "Comfortaa";
+}
+/* body styles end */
 
 /* header styles start */
 .page-header-container {
@@ -66,14 +71,14 @@
 /* grid layout end*/
 
 /* card styles start*/
-/* --> to default back to mdbreact card shadows/borders comment out below styles */
-.city-card,
-.city-card-btn {
+
+/* .city-card, */
+/* .city-card-btn {
   box-shadow: none;
   border-style: solid;
   border-width: 2px;
   border-color: black;
-}
+} */
 .cutter {
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }

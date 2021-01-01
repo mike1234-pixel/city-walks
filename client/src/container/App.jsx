@@ -4,6 +4,8 @@ import Router from './Router/Router'
 
 const App = () => {
 
+  // https://stackoverflow.com/questions/36904185/react-router-scroll-to-top-on-every-transition
+
   // GLOBAL STATE 
   const [searchValue, setSearchValue] = useState("")
   const [redirect, setRedirect] = useState(false)

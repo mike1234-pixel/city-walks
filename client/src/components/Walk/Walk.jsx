@@ -1,9 +1,14 @@
+import { useEffect } from "react"
 import SectionA from '../SectionA/SectionA'
 import SectionB from '../SectionB/SectionB'
 
 const Walk = (props) => {
 
     const {walk, city, description, content1, content2, content3, img1, img2, img3} = props
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      });
 
     return (
     <div>

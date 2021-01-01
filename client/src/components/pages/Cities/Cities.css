@@ -1,0 +1,7 @@
+.city-card {
+  transition: transform 0.2s; /* Animation */
+}
+
+.city-card:hover {
+  transform: scale(1.05);
+}

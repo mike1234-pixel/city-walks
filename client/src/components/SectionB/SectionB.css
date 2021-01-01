@@ -10,8 +10,6 @@
   grid-template-rows: 100%;
   grid-gap: 30px;
   padding: 5%;
-  font-family: "Poppins", sans-serif;
-  font-weight: bold;
 }
 
 @media (max-width: 650px) {

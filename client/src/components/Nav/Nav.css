@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Vollkorn+SC&display=swap");
-
 .nav-container {
   min-width: 100%; /* correct mdbreact max-width */
   padding: 0; /* correct mdbreact padding-left and padding-right of 15px*/
@@ -8,7 +6,7 @@
 .nav-bar {
   background-color: var(--bone);
   box-shadow: none; /* remove mdbreact box-shadow*/
-  font-family: "Vollkorn SC", serif;
+  font-family: "Comfortaa";
 }
 
 @media (min-width: 768px) {

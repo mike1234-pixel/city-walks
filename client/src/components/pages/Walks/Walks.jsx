@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import './Walks.css'
 import { useHistory } from "react-router-dom"
 import data from './dummyData.json'
@@ -15,6 +16,10 @@ const Walks = (props) => {
     const handleRedirect =(redirectTo) => {
           history.push(`/${redirectTo}`)
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      });
     
     if (searchValue === "") {
     return (
@@ -28,7 +33,7 @@ const Walks = (props) => {
             {walksArr.map(v => {
                 return (
                     <MDBCol style={{ maxWidth: "22rem" }} key={v.id}>
-                    <MDBCard className="city-card">
+                    <MDBCard className="walk-card">
                         <MDBCardImage className="cutter img-fluid" src={v.cover_img_link} waves/>
                         <MDBCardBody>
                         <MDBCardTitle>{v.city}</MDBCardTitle>
@@ -57,7 +62,7 @@ const Walks = (props) => {
                 if (v.walk.includes(searchValue) || v.city.includes(searchValue)) {
                 return (
                     <MDBCol style={{ maxWidth: "22rem" }} key={v.id}>
-                    <MDBCard className="city-card">
+                    <MDBCard className="walk-card">
                         <MDBCardImage className="cutter img-fluid" src={v.cover_img_link} waves/>
                         <MDBCardBody>
                         <MDBCardTitle>{v.city}</MDBCardTitle>

@@ -1,0 +1,7 @@
+.walk-card {
+  transition: transform 0.2s; /* Animation */
+}
+
+.walk-card:hover {
+  transform: scale(1.05);
+}
