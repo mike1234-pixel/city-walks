@@ -1,7 +1,6 @@
 import { useEffect } from "react"
 import './Walks.css'
 import { useHistory } from "react-router-dom"
-import data from './dummyData.json'
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact'
 import { FaSearchLocation } from "react-icons/fa"
 
@@ -32,7 +31,7 @@ const Walks = (props) => {
             <div  className="card-container">
             {walksArr.map(v => {
                 return (
-                    <MDBCol style={{ maxWidth: "22rem" }} key={v.id}>
+                    <MDBCol style={{ maxWidth: "22rem" }} key={v._id}>
                     <MDBCard className="walk-card">
                         <MDBCardImage className="cutter img-fluid" src={v.coverImg} waves/>
                         <MDBCardBody>
@@ -61,7 +60,7 @@ const Walks = (props) => {
                 {walksArr.map(v => {
                 if (v.walk.toLowerCase().includes(searchValue.toLowerCase()) || v.city.toLowerCase().includes(searchValue.toLowerCase())) {
                 return (
-                    <MDBCol style={{ maxWidth: "22rem" }} key={v.id}>
+                    <MDBCol style={{ maxWidth: "22rem" }} key={v._id}>
                     <MDBCard className="walk-card">
                         <MDBCardImage className="cutter img-fluid" src={v.coverImg} waves/>
                         <MDBCardBody>
@@ -73,21 +72,9 @@ const Walks = (props) => {
                     </MDBCard>
                     </MDBCol>
                     )
-                }}
+                }} 
                 )}
             </div>
-        </div>
-        )
-    } else {
-        // THIS BLOCK ISN'T BE BROKEN INTO AT ALL, ONLY THE ABOVE IS
-        return (
-        <div>
-            <div className="page-header-container">
-                <h1 className="page-header">Walks</h1>
-                <MDBBtn className="city-card-btn" onClick={() => props.setSearchValue("")}>Show all walks</MDBBtn>
-                <p><FaSearchLocation className="search-location-icon"/>{`  ${searchValue}`}</p>
-            </div>
-            <p>No matches found</p>
         </div>
         )
     }

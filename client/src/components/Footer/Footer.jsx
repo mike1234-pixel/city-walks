@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from 'mdbreact'
 import './Footer.css'
 
@@ -29,6 +30,7 @@ const Footer = () => {
               <li className="list-unstyled">
                 <a href="#!">Link 4</a>
               </li>
+              <Link to="/admin">Admin portal</Link>
             </ul>
           </MDBCol>
         </MDBRow>

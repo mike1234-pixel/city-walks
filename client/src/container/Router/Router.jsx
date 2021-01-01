@@ -13,7 +13,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 const Router = (props) => {
 
-    const {walks, handleChange, handleSubmit, searchValue, redirect, setRedirect, handleClick, setSearchValue} = props
+    const {walks, cities, handleChange, handleSubmit, searchValue, redirect, setRedirect, handleClick, setSearchValue} = props
     
     const [newRoutes, setNewRoutes] = useState("");
 
@@ -44,7 +44,7 @@ const Router = (props) => {
               />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/cities" component={() => <Cities handleClick={handleClick}/>} />
+            <Route path="/cities" component={() => <Cities handleClick={handleClick} cities={cities}/>} />
             <Route path="/walks" component={() => <Walks searchValue={searchValue} setSearchValue={setSearchValue} walks={walks}/>}/>
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />

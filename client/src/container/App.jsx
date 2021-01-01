@@ -6,7 +6,7 @@ import axios from "axios"
 
 const App = (props) => {
 
-  const {walks} = props
+  const {walks, cities} = props
 
   // global state
   const [searchValue, setSearchValue] = useState("")
@@ -26,7 +26,7 @@ const App = (props) => {
     setRedirect(true);
   }
   return (
-    <Router walks={walks} handleChange={handleChange} handleSubmit={handleSubmit} searchValue={searchValue} redirect={redirect} setRedirect={setRedirect} handleClick={handleClick} setSearchValue={setSearchValue}/>
+    <Router walks={walks} cities={cities} handleChange={handleChange} handleSubmit={handleSubmit} searchValue={searchValue} redirect={redirect} setRedirect={setRedirect} handleClick={handleClick} setSearchValue={setSearchValue}/>
   )
 
 }

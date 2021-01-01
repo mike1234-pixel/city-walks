@@ -95,14 +95,14 @@ const AddWalkForm = () => {
     <div>
         <h2>Add Walk</h2>
         <form onSubmit={handleSubmit} className="add-walk-form">
-            <MDBInput type="text" name="route" id="route" value={route} label="url route: lowercase characters and hyphens only, e.g. 'stoke-newington'" onChange={handleChange} maxlength="70" pattern="^[a-z\-]+$" required/>
-            <MDBInput type="text" name="walk" id="walk" value={walk} label="walk" onChange={handleChange} maxlength="70" required/>
-            <MDBInput type="text" name="city" id="city" value={city} label="city" onChange={handleChange}  maxlength="70" required/>
-            <MDBInput type="text" name="description" id="description" value={description} label="description" onChange={handleChange} maxlength="136" required/>
-            <MDBInput type="text" name="starting-point" id="starting-point" value={startingPoint} label="starting point" onChange={handleChange} maxlength="100" required/>
-            <MDBInput type="text" name="content1" id="content1" value={content1} label="paragraph 1 (569 character limit)" onChange={handleChange} maxlength="569" required/>
-            <MDBInput type="text" name="content2" id="content2" value={content2} label="paragraph 2 (569 character limit)" onChange={handleChange} maxlength="569" required/>
-            <MDBInput type="text" name="content3" id="content3" value={content3} label="paragraph 3 (569 character limit)" onChange={handleChange} maxlength="569" required/>
+            <MDBInput type="text" name="route" id="route" value={route} label="url route: lowercase characters and hyphens only, e.g. 'stoke-newington'" onChange={handleChange} maxLength="70" pattern="^[a-z\-]+$" required/>
+            <MDBInput type="text" name="walk" id="walk" value={walk} label="walk" onChange={handleChange} maxLength="70" required/>
+            <MDBInput type="text" name="city" id="city" value={city} label="city" onChange={handleChange}  maxLength="70" required/>
+            <MDBInput type="text" name="description" id="description" value={description} label="description" onChange={handleChange} maxLength="136" required/>
+            <MDBInput type="text" name="starting-point" id="starting-point" value={startingPoint} label="starting point" onChange={handleChange} maxLength="100" required/>
+            <MDBInput type="text" name="content1" id="content1" value={content1} label="paragraph 1 (569 character limit)" onChange={handleChange} maxLength="569" required/>
+            <MDBInput type="text" name="content2" id="content2" value={content2} label="paragraph 2 (569 character limit)" onChange={handleChange} maxLength="569" required/>
+            <MDBInput type="text" name="content3" id="content3" value={content3} label="paragraph 3 (569 character limit)" onChange={handleChange} maxLength="569" required/>
             <MDBInput type="text" name="cover-img" id="cover-img" value={coverImg} label="cover image link" onChange={handleChange} required/>
             <MDBInput type="text" name="img1" id="img1" value={img1} label="image 1 link" onChange={handleChange} required/>
             <MDBInput type="text" name="img2" id="img2" value={img2} label="image 2 link" onChange={handleChange} required/>

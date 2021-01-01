@@ -4,8 +4,10 @@
 
 ### The Walks Data is structured as follows:
 
+All values are strings. \_id is set by MongoDB.
+
         {
-            "id": "UNIQUE_ID",
+            "_id": "UNIQUE_ID",
             "route": "URL_ROUTE", ** used to create routes, e.g. stoke-newington. lowercase, no spaces or non-alphabetic characters**
             "walk": "stoke newington",
             "city": "london",

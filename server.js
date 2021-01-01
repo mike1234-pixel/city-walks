@@ -55,6 +55,14 @@ const walkSchema = new mongoose.Schema({
 const walkModel = mongoose.model(`Walk`, walkSchema);
 // ----------------------------------------------> must be name of collection! <---------------------------------------------
 
+const citySchema = new mongoose.Schema({
+  city: String,
+  description: String,
+  img: String
+})
+
+const cityModel = mongoose.model(`City`, citySchema)
+
 app.get('/walks', (req, res) => {
     walkModel.find({}, (err, docs) => {
         if (!err) { 
@@ -67,14 +75,24 @@ app.get('/walks', (req, res) => {
     });
 });
 
-app.post('/add-walk', (req, res) => {
-    console.log(typeof req.body)
-  console.log(req.body);
-  walkModel.create(req.body)
+app.get('/cities', (req, res) => {
+  cityModel.find({}, (err, docs) => {
+      if (!err) { 
+          console.log(docs);
+          res.send(docs);
+      }
+      else {
+          throw err;
+      }
+  });
+});
 
-  res.send(
-    `I received your POST request. This is what you sent me: ${req.body.post}`,
-  );
+app.post('/add-walk', (req, res) => {
+  walkModel.create(req.body)
+});
+
+app.post('/add-city', (req, res) => {
+  cityModel.create(req.body)
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
