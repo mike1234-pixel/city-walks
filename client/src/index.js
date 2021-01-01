@@ -5,7 +5,10 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import App from "./container/App.jsx";
 import registerServiceWorker from './registerServiceWorker';
+import axios from "axios"
 
-ReactDOM.render(<App />, document.getElementById('root'));
+axios.get("http://localhost:5000/walks").then((walksData) => {
+ReactDOM.render(<App walks={walksData.data}/>, document.getElementById('root'));
+})
 
 registerServiceWorker();

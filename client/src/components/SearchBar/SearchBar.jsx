@@ -1,11 +1,13 @@
-import { MDBInput, MDBBtn } from "mdbreact"
+import { MDBInput } from "mdbreact"
 import { FaSearchLocation } from "react-icons/fa"
 import './SeachBar.css'
 
 let SearchBar = (props) => {
 
+  const { handleSubmit, searchValue, handleChange } = props
+
     return (
-      <form onSubmit={props.handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <span style={{ marginRight: "40px"}} className="search-container">
           <MDBInput  
             data-testid="search-input" 
@@ -13,8 +15,8 @@ let SearchBar = (props) => {
             name="search-input" 
             id="search-input" 
             type="text" placeholder="Search" 
-            value={props.searchValue} 
-            onChange={props.handleChange}
+            value={searchValue} 
+            onChange={handleChange}
             />
          <button type="submit" data-testid="search-btn" className="search-btn"><FaSearchLocation id="search-btn-icon" className="search-location-icon"/></button> 
         </span>

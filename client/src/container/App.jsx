@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import './App.css'
 import Router from './Router/Router'
+import axios from "axios"
 
-const App = () => {
 
-  // https://stackoverflow.com/questions/36904185/react-router-scroll-to-top-on-every-transition
+const App = (props) => {
 
-  // GLOBAL STATE 
+  const {walks} = props
+
+  // global state
   const [searchValue, setSearchValue] = useState("")
   const [redirect, setRedirect] = useState(false)
 
@@ -24,8 +26,9 @@ const App = () => {
     setRedirect(true);
   }
   return (
-    <Router handleChange={handleChange} handleSubmit={handleSubmit} searchValue={searchValue} redirect={redirect} setRedirect={setRedirect} handleClick={handleClick} setSearchValue={setSearchValue}/>
+    <Router walks={walks} handleChange={handleChange} handleSubmit={handleSubmit} searchValue={searchValue} redirect={redirect} setRedirect={setRedirect} handleClick={handleClick} setSearchValue={setSearchValue}/>
   )
+
 }
 
 export default App

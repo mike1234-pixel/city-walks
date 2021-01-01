@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import SectionA from '../SectionA/SectionA'
 import SectionB from '../SectionB/SectionB'
+import './Walk.css'
 
 const Walk = (props) => {
 

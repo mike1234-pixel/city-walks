@@ -9,7 +9,7 @@ const Walks = (props) => {
 
     let {searchValue} = props
 
-    const walksArr = data.walks
+    const walksArr = props.walks
 
     let history = useHistory()
 
@@ -34,7 +34,7 @@ const Walks = (props) => {
                 return (
                     <MDBCol style={{ maxWidth: "22rem" }} key={v.id}>
                     <MDBCard className="walk-card">
-                        <MDBCardImage className="cutter img-fluid" src={v.cover_img_link} waves/>
+                        <MDBCardImage className="cutter img-fluid" src={v.coverImg} waves/>
                         <MDBCardBody>
                         <MDBCardTitle>{v.city}</MDBCardTitle>
                         <MDBCardTitle>{v.walk}</MDBCardTitle>
@@ -49,7 +49,7 @@ const Walks = (props) => {
             </div>
         </div>
     )
-    } else if (walksArr.map(v => { v.walk.includes(searchValue) || v.city.includes(searchValue) } )) {
+    } else if (walksArr.map(v => { v.walk.toLowerCase().includes(searchValue.toLowerCase()) || v.city.toLowerCase().includes(searchValue.toLowerCase()) } )) {
         return (
         <div>
             <div className="page-header-container">
@@ -59,11 +59,11 @@ const Walks = (props) => {
             </div>
             <div className="card-container">
                 {walksArr.map(v => {
-                if (v.walk.includes(searchValue) || v.city.includes(searchValue)) {
+                if (v.walk.toLowerCase().includes(searchValue.toLowerCase()) || v.city.toLowerCase().includes(searchValue.toLowerCase())) {
                 return (
                     <MDBCol style={{ maxWidth: "22rem" }} key={v.id}>
                     <MDBCard className="walk-card">
-                        <MDBCardImage className="cutter img-fluid" src={v.cover_img_link} waves/>
+                        <MDBCardImage className="cutter img-fluid" src={v.coverImg} waves/>
                         <MDBCardBody>
                         <MDBCardTitle>{v.city}</MDBCardTitle>
                         <MDBCardTitle>{v.walk}</MDBCardTitle>
