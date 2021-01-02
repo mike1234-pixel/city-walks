@@ -5,6 +5,7 @@ import Cities from '../../components/pages/Cities/Cities'
 import Walks from '../../components/pages/Walks/Walks'
 import About from '../../components/pages/About/About'
 import Contact from '../../components/pages/Contact/Contact'
+import LoginPage from '../../components/pages/LoginPage/LoginPage'
 import Admin from '../../components/pages/Admin/Admin'
 import NotFound404 from '../../components/pages/404/NotFound404'
 import Footer from '../../components/Footer/Footer'
@@ -48,6 +49,7 @@ const Router = (props) => {
             <Route path="/walks" component={() => <Walks searchValue={searchValue} setSearchValue={setSearchValue} walks={walks}/>}/>
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
+            <Route path="/login" component={LoginPage}/>
             <Route path="/admin" component={Admin} />
             {newRoutes}
             <Route component={NotFound404} />

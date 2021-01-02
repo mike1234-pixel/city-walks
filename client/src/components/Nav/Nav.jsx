@@ -46,6 +46,9 @@ const Nav = (props) => {
               <MDBNavItem>
                 <MDBNavLink className="black-text" to="/contact">Contact</MDBNavLink>
               </MDBNavItem>
+              <MDBNavItem>
+                <MDBNavLink className="black-text" to="/login">Login</MDBNavLink>
+              </MDBNavItem>
             </MDBNavbarNav>
             <MDBNavbarNav right>
               <MDBNavItem>

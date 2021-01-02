@@ -21,3 +21,5 @@ All values are strings. \_id is set by MongoDB.
             "img_2_link": "https://...",
             "img_3_link": "https://..."
         },
+
+        ... add fields: author & additional information about the author & author social links

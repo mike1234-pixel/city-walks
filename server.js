@@ -63,6 +63,17 @@ const citySchema = new mongoose.Schema({
 
 const cityModel = mongoose.model(`City`, citySchema)
 
+// USERMODEL
+
+const userSchema = new mongoose.Schema({
+  fname: String,
+  lname: String,
+  email: String,
+  password: String
+})
+
+const User = mongoose.model(`User`, userSchema)
+
 app.get('/walks', (req, res) => {
     walkModel.find({}, (err, docs) => {
         if (!err) { 
@@ -94,5 +105,24 @@ app.post('/add-walk', (req, res) => {
 app.post('/add-city', (req, res) => {
   cityModel.create(req.body)
 });
+
+app.post('/register-user', (req, res) => {
+  console.log(req.body)
+
+  const newUser = new User({
+    fname: req.body.fname,
+    lname: req.body.lname, 
+    email: req.body.email, 
+    password: req.body.password,
+  })
+
+  newUser.save((err) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send("registration successful")
+    }
+  }) 
+})
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
