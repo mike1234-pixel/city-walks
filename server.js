@@ -2,12 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
+const helmet = require("helmet");
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(helmet());
 
 // cors
 app.use(function (req, res, next) {
@@ -121,6 +123,22 @@ app.post('/register-user', (req, res) => {
       res.send("registration successful")
     }
   }) 
+})
+
+app.post('/login-user', (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+
+  User.findOne({ email: email}, (err, foundUser) => {
+    if (err) {
+      console.log(err)
+    } else {
+      if (foundUser.password === password) {
+        console.log(foundUser)
+        res.send("login successful")
+      }
+    }
+  })
 })
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

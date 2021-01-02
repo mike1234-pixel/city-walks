@@ -14,13 +14,16 @@ const LoginPage = (props) => {
         registrationPassword, 
         handleChangeRegistration, 
         handleSubmitRegistration, 
-        loggedIn
+        loggedIn,
+        loginEmail,
+        loginPassword,
+        handleChangeLogin,
+        handleSubmitLogin
     } = props
 
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    //     console.log(form)
-    //   }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
     return (
         <div className="user-portal" key="login-page">
@@ -31,14 +34,20 @@ const LoginPage = (props) => {
             <br/>
             <br/>
             <br/>
-            {form === "registrationForm" ?     <RegistrationForm 
-        firstName={firstName} 
-        lastName={lastName} 
-        registrationEmail={registrationEmail} 
-        registrationPassword={registrationPassword} 
-        handleChangeRegistration={handleChangeRegistration} 
-        handleSubmitRegistration={handleSubmitRegistration}
-    /> : <LoginForm/>}
+            {form === "registrationForm" ?     
+            <RegistrationForm 
+                firstName={firstName} 
+                lastName={lastName} 
+                registrationEmail={registrationEmail} 
+                registrationPassword={registrationPassword} 
+                handleChangeRegistration={handleChangeRegistration} 
+                handleSubmitRegistration={handleSubmitRegistration}
+            /> : <LoginForm
+                loginEmail={loginEmail}
+                loginPassword={loginPassword}
+                handleChangeLogin={handleChangeLogin}
+                handleSubmitLogin={handleSubmitLogin}
+            />}
         </div>
     
     )

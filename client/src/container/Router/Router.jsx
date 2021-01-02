@@ -23,7 +23,11 @@ const Router = (props) => {
       registrationPassword, 
       handleChangeRegistration, 
       handleSubmitRegistration, 
-      loggedIn
+      loggedIn,
+      loginEmail,
+      loginPassword,
+      handleChangeLogin,
+      handleSubmitLogin
     } = props
 
     const [newRoutes, setNewRoutes] = useState("");
@@ -61,6 +65,7 @@ const Router = (props) => {
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             {/* the render method here ensures the inputs in the forms don't lose focus */}
+            {/* https://www.xspdf.com/resolution/59715158.html */}
             <Route path="/login" render={() => <LoginPage 
                             firstName={firstName} 
                             lastName={lastName} 
@@ -68,7 +73,12 @@ const Router = (props) => {
                             registrationPassword={registrationPassword} 
                             handleChangeRegistration={handleChangeRegistration} 
                             handleSubmitRegistration={handleSubmitRegistration} 
-                            loggedIn={loggedIn}/>} 
+                            loggedIn={loggedIn}
+                            loginEmail={loginEmail}
+                            loginPassword={loginPassword}
+                            handleChangeLogin={handleChangeLogin}
+                            handleSubmitLogin={handleSubmitLogin}
+                            />} 
                         />
             <Route path="/admin" component={Admin} />
             {newRoutes}

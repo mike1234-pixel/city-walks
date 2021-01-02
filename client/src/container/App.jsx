@@ -32,6 +32,9 @@ const App = (props) => {
   const [registrationEmail, setRegistrationEmail] = useState("")
   const [registrationPassword, setRegistrationPassword] = useState("")
 
+  const [loginEmail, setLoginEmail] = useState("")
+  const [loginPassword, setLoginPassword] = useState("")
+
   // REGISTRATION
   const [loggedIn, setLoggedIn] = useState(false)
 
@@ -72,11 +75,55 @@ const App = (props) => {
           console.log(res)
           console.log("USER REGISTERED")
           setLoggedIn(true)
+          setFirstName("")
+          setLastName("")
+          setRegistrationEmail("")
+          setRegistrationPassword("")
+          window.scrollTo(0, 0)
         }
       });
 
       alert("Registration Complete")
   }
+
+  const handleChangeLogin = (event) => {
+    switch(event.target.name) {
+        case "login-email":
+          setLoginEmail(event.target.value)
+          break;
+        case "login-password":
+          setLoginPassword(event.target.value)
+          break;
+      } 
+}
+
+const handleSubmitLogin = (event) => {
+  console.log("handle submit login triggered")
+    event.preventDefault()
+
+    const payload = {
+        email: loginEmail,
+        password: loginPassword
+      };
+
+axios
+    .post("http://localhost:5000/login-user", qs.stringify(payload))
+    .then((res, err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(res)
+        console.log("USER LOGGED IN")
+        setLoggedIn(true)
+        setLoginEmail("")
+        setLoginPassword("")
+        window.scrollTo(0, 0)
+      }
+    });
+
+    alert("Login Complete")
+}
+
 
   return (
     <Router 
@@ -99,6 +146,11 @@ const App = (props) => {
       handleChangeRegistration={handleChangeRegistration}
       handleSubmitRegistration={handleSubmitRegistration}
       loggedIn={loggedIn}
+      // login state and functions
+      loginEmail={loginEmail}
+      loginPassword={loginPassword}
+      handleChangeLogin={handleChangeLogin}
+      handleSubmitLogin={handleSubmitLogin}
       />
   )
 
