@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 const helmet = require("helmet");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -107,22 +109,22 @@ app.post('/add-city', (req, res) => {
 });
 
 app.post('/register-user', (req, res) => {
-  console.log(req.body)
-
-  const newUser = new User({
-    fname: req.body.fname,
-    lname: req.body.lname, 
-    email: req.body.email, 
-    password: req.body.password,
+    
+  bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
+    const newUser =  new User({
+      fname: req.body.fname,
+      lname: req.body.lname,
+      email: req.body.email,
+      password: hash
+    });
+    newUser.save((err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send("registration successful")
+      }
+    })
   })
-
-  newUser.save((err) => {
-    if (err) {
-      console.log(err)
-    } else {
-      res.send("registration successful")
-    }
-  }) 
 })
 
 app.post('/login-user', (req, res) => {
@@ -133,10 +135,11 @@ app.post('/login-user', (req, res) => {
     if (err) {
       console.log(err)
     } else {
-      if (foundUser.password === password) {
-        console.log(foundUser)
-        res.send("login successful")
-      }
+      bcrypt.compare(password, foundUser.password, (err, result) => {
+        if (result === true) {
+          res.send("login successful");
+        }
+      });
     }
   })
 })
