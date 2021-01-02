@@ -77,7 +77,6 @@ const User = mongoose.model(`User`, userSchema)
 app.get('/walks', (req, res) => {
     walkModel.find({}, (err, docs) => {
         if (!err) { 
-            console.log(docs);
             res.send(docs);
         }
         else {
@@ -89,7 +88,6 @@ app.get('/walks', (req, res) => {
 app.get('/cities', (req, res) => {
   cityModel.find({}, (err, docs) => {
       if (!err) { 
-          console.log(docs);
           res.send(docs);
       }
       else {

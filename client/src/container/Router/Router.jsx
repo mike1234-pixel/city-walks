@@ -16,9 +16,20 @@ const Router = (props) => {
 
     const {walks, cities, handleChange, handleSubmit, searchValue, redirect, setRedirect, handleClick, setSearchValue} = props
     
+    const {
+      firstName, 
+      lastName, 
+      registrationEmail, 
+      registrationPassword, 
+      handleChangeRegistration, 
+      handleSubmitRegistration, 
+      loggedIn
+    } = props
+
     const [newRoutes, setNewRoutes] = useState("");
 
   useEffect(() => {
+
     const createRoutes = () => {
       let results = walks.map((walk, index) => (
         <Route
@@ -49,7 +60,16 @@ const Router = (props) => {
             <Route path="/walks" component={() => <Walks searchValue={searchValue} setSearchValue={setSearchValue} walks={walks}/>}/>
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
-            <Route path="/login" component={LoginPage}/>
+            {/* the render method here ensures the inputs in the forms don't lose focus */}
+            <Route path="/login" render={() => <LoginPage 
+                            firstName={firstName} 
+                            lastName={lastName} 
+                            registrationEmail={registrationEmail} 
+                            registrationPassword={registrationPassword} 
+                            handleChangeRegistration={handleChangeRegistration} 
+                            handleSubmitRegistration={handleSubmitRegistration} 
+                            loggedIn={loggedIn}/>} 
+                        />
             <Route path="/admin" component={Admin} />
             {newRoutes}
             <Route component={NotFound404} />
