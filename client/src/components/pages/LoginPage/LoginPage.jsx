@@ -1,28 +1,19 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { MDBBtn } from "mdbreact"
 import LoginForm from './LoginForm/LoginForm'
 import RegistrationForm from './RegistrationForm/RegistrationForm'
+import { LoginContext } from '../../../context/LoginContext'
 import './LoginPage.css'
 
-const LoginPage = (props) => {
+const LoginPage = () => {
 
     const [form, setForm] = useState("")
 
     const {
-        firstName, 
-        lastName, 
-        registrationEmail, 
-        registrationPassword, 
-        handleChangeRegistration, 
-        handleSubmitRegistration, 
         loggedIn,
-        loginEmail,
-        loginPassword,
-        handleChangeLogin,
-        handleSubmitLogin,
         userFirstName,
         logOut
-    } = props
+    } = useContext(LoginContext)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -45,19 +36,7 @@ const LoginPage = (props) => {
             <br/>
             <br/>
             {form === "registrationForm" ?     
-            <RegistrationForm 
-                firstName={firstName} 
-                lastName={lastName} 
-                registrationEmail={registrationEmail} 
-                registrationPassword={registrationPassword} 
-                handleChangeRegistration={handleChangeRegistration} 
-                handleSubmitRegistration={handleSubmitRegistration}
-            /> : <LoginForm
-                loginEmail={loginEmail}
-                loginPassword={loginPassword}
-                handleChangeLogin={handleChangeLogin}
-                handleSubmitLogin={handleSubmitLogin}
-            />}
+            <RegistrationForm /> : <LoginForm />}
         </div>
     
     )

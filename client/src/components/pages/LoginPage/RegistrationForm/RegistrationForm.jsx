@@ -1,16 +1,19 @@
+import { useContext } from 'react'
+import { LoginContext } from '../../../../context/LoginContext'
 import { MDBInput, MDBBtn, MDBIcon } from "mdbreact"
 import './RegistrationForm.css'
 
-const RegistrationForm = (props) => {
+const RegistrationForm = () => {
 
-    const {
+  const {
         firstName, 
         lastName, 
         registrationEmail, 
         registrationPassword, 
         handleChangeRegistration,
         handleSubmitRegistration
-    } = props
+    } = useContext(LoginContext)
+
 
     return (
     <div key="user-registration">

@@ -1,13 +1,15 @@
+import { useContext } from 'react'
+import { LoginContext } from '../../../../context/LoginContext'
 import { MDBInput, MDBBtn, MDBIcon } from "mdbreact"
 import './LoginForm.css'
 
-const LoginForm = (props) => {
+const LoginForm = () => {
 
-    const {
-      loginEmail, 
-      loginPassword, 
-      handleChangeLogin, 
-      handleSubmitLogin} = props
+      const {
+        loginEmail, 
+        loginPassword, 
+        handleChangeLogin, 
+        handleSubmitLogin} = useContext(LoginContext)
 
     return (
     <div key="user-login">

@@ -10,30 +10,12 @@ import Admin from '../../components/pages/Admin/Admin'
 import NotFound404 from '../../components/pages/404/NotFound404'
 import Footer from '../../components/Footer/Footer'
 import Walk from '../../components/Walk/Walk'
-import { SearchContextProvider } from '../../context/SearchContext'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 const Router = (props) => {
 
-    const {walks, cities, handleChange, handleSubmit, searchValue, redirect, setRedirect, handleClick, setSearchValue} = props
+    const {walks, cities} = props
     
-    const {
-      firstName, 
-      lastName, 
-      registrationEmail, 
-      registrationPassword, 
-      handleChangeRegistration, 
-      handleSubmitRegistration, 
-      loggedIn,
-      loginEmail,
-      loginPassword,
-      handleChangeLogin,
-      handleSubmitLogin,
-      userFirstName,
-      userLastName,
-      logOut
-    } = props
-
     const [newRoutes, setNewRoutes] = useState("");
 
   useEffect(() => {
@@ -64,23 +46,7 @@ const Router = (props) => {
             <Route path="/contact" component={Contact} />
             {/* the render method here ensures the inputs in the forms don't lose focus */}
             {/* https://www.xspdf.com/resolution/59715158.html */}
-            <Route path="/login" render={() => <LoginPage 
-                            firstName={firstName} 
-                            lastName={lastName} 
-                            registrationEmail={registrationEmail} 
-                            registrationPassword={registrationPassword} 
-                            handleChangeRegistration={handleChangeRegistration} 
-                            handleSubmitRegistration={handleSubmitRegistration} 
-                            loggedIn={loggedIn}
-                            loginEmail={loginEmail}
-                            loginPassword={loginPassword}
-                            handleChangeLogin={handleChangeLogin}
-                            handleSubmitLogin={handleSubmitLogin}
-                            userFirstName={userFirstName}
-                            userLastName={userLastName}
-                            logOut={logOut}
-                            />} 
-                        />
+            <Route path="/login" render={() => <LoginPage />} />
             <Route path="/admin" component={Admin} />
             {newRoutes}
             <Route component={NotFound404} />

@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react"
+import { createContext, useState } from "react"
 
 export const SearchContext = createContext();
 
@@ -36,5 +36,3 @@ export const SearchContextProvider = (props) => {
         </SearchContext.Provider>
     )
 }
-
-// setRedirect to true, then what??

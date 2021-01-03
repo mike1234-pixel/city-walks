@@ -7,6 +7,7 @@ import App from "./container/App.jsx";
 import registerServiceWorker from './registerServiceWorker';
 import axios from "axios"
 import { SearchContextProvider } from "./context/SearchContext"
+import { LoginContextProvider } from "./context/LoginContext"
 
 const requestOne = axios.get('http://localhost:5000/walks');
 const requestTwo = axios.get('http://localhost:5000/cities');
@@ -20,9 +21,11 @@ axios
       console.log(walksData)
       console.log(citiesData)
       ReactDOM.render(
-      <SearchContextProvider>
-        <App walks={walksData.data} cities={citiesData.data}/>
-      </SearchContextProvider>
+      <LoginContextProvider>
+        <SearchContextProvider>
+          <App walks={walksData.data} cities={citiesData.data}/>
+        </SearchContextProvider>
+      </LoginContextProvider>
       , document.getElementById('root'));
     })
   )
