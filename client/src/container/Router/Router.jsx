@@ -27,7 +27,11 @@ const Router = (props) => {
       loginEmail,
       loginPassword,
       handleChangeLogin,
-      handleSubmitLogin
+      handleSubmitLogin,
+      handleClickGoogleAuth,
+      userFirstName,
+      userLastName,
+      logOut
     } = props
 
     const [newRoutes, setNewRoutes] = useState("");
@@ -78,6 +82,10 @@ const Router = (props) => {
                             loginPassword={loginPassword}
                             handleChangeLogin={handleChangeLogin}
                             handleSubmitLogin={handleSubmitLogin}
+                            handleClickGoogleAuth={handleClickGoogleAuth}
+                            userFirstName={userFirstName}
+                            userLastName={userLastName}
+                            logOut={logOut}
                             />} 
                         />
             <Route path="/admin" component={Admin} />

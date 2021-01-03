@@ -3,8 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 const helmet = require("helmet");
-const bcrypt = require("bcrypt");
-const saltRounds = 10;
+const apiRoutes = require('./routes/api.js');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -39,109 +38,7 @@ const DB = process.env.MONGO_URI.replace("<user>", process.env.MONGO_USER).repla
   })
   .catch((err) => console.log(err)); 
 
-// schema --> defines the structure of the document
-const walkSchema = new mongoose.Schema({
-    route: String,
-    walk: String,
-    city: String,
-    description: String,
-    startingPoint: String,
-    content1: String,
-    content2: String,
-    content3: String,
-    coverImg: String,
-    img1: String,
-    img2: String, 
-    img3: String
-  });
-  
-// model --> wraps schema and allows CRUD ops with db
-const walkModel = mongoose.model(`Walk`, walkSchema);
-// ----------------------------------------------> must be name of collection! <---------------------------------------------
-
-const citySchema = new mongoose.Schema({
-  city: String,
-  description: String,
-  img: String
-})
-
-const cityModel = mongoose.model(`City`, citySchema)
-
-// USERMODEL
-
-const userSchema = new mongoose.Schema({
-  fname: String,
-  lname: String,
-  email: String,
-  password: String
-})
-
-const User = mongoose.model(`User`, userSchema)
-
-app.get('/walks', (req, res) => {
-    walkModel.find({}, (err, docs) => {
-        if (!err) { 
-            res.send(docs);
-        }
-        else {
-            throw err;
-        }
-    });
-});
-
-app.get('/cities', (req, res) => {
-  cityModel.find({}, (err, docs) => {
-      if (!err) { 
-          res.send(docs);
-      }
-      else {
-          throw err;
-      }
-  });
-});
-
-app.post('/add-walk', (req, res) => {
-  walkModel.create(req.body)
-});
-
-app.post('/add-city', (req, res) => {
-  cityModel.create(req.body)
-});
-
-app.post('/register-user', (req, res) => {
-    
-  bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
-    const newUser =  new User({
-      fname: req.body.fname,
-      lname: req.body.lname,
-      email: req.body.email,
-      password: hash
-    });
-    newUser.save((err) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.send("registration successful")
-      }
-    })
-  })
-})
-
-app.post('/login-user', (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
-
-  User.findOne({ email: email}, (err, foundUser) => {
-    if (err) {
-      console.log(err)
-    } else {
-      bcrypt.compare(password, foundUser.password, (err, result) => {
-        if (result === true) {
-          res.send("login successful");
-        }
-      });
-    }
-  })
-})
+//Routing for API 
+apiRoutes(app);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

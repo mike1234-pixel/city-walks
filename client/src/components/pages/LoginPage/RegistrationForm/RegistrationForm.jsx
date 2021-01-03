@@ -14,7 +14,9 @@ const RegistrationForm = (props) => {
 
     return (
     <div key="user-registration">
+      <div className="registration-header-container">
         <h2>Register</h2>
+      </div>
         <form onSubmit={handleSubmitRegistration} className="add-city-form" key="user-registration-form">
             <MDBInput key="input-1" type="text" name="registration-fname" id="registration-fname" value={firstName} label="First Name" onChange={handleChangeRegistration} pattern="^[A-Za-z\-]+$" required/>
             <MDBInput key="input-2" type="text" name="registration-lname" id="registration-lname" value={lastName} label="Last Name" onChange={handleChangeRegistration} pattern="^[A-Za-z\-]+$" required/>

@@ -13,8 +13,10 @@ const Walk = (props) => {
 
     return (
     <div>
+      <div className="walk-header-container">
         <h1>{`${walk} -- ${city}`}</h1>
         <p>{description}</p>
+      </div>
         <SectionA content={content1} img={img1}/>
         <SectionB content={content2} img={img2} />
         <SectionA content={content3} img={img3} />

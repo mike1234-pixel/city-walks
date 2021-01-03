@@ -37,6 +37,8 @@ const App = (props) => {
 
   // REGISTRATION
   const [loggedIn, setLoggedIn] = useState(false)
+  const [userFirstName, setUserFirstName] = useState("")
+  const [userLastName, setUserLastName] = useState("")
 
   const handleChangeRegistration = (event) => {
       switch(event.target.name) {
@@ -72,13 +74,13 @@ const App = (props) => {
         if (err) {
           console.log(err);
         } else {
-          console.log(res)
-          console.log("USER REGISTERED")
           setLoggedIn(true)
           setFirstName("")
           setLastName("")
           setRegistrationEmail("")
           setRegistrationPassword("")
+          setUserFirstName(res.data.fname)
+          setUserLastName(res.data.lname)
           window.scrollTo(0, 0)
         }
       });
@@ -112,11 +114,13 @@ axios
       if (err) {
         console.log(err);
       } else {
-        console.log(res)
+        console.log(res.data.fname)
         console.log("USER LOGGED IN")
         setLoggedIn(true)
         setLoginEmail("")
         setLoginPassword("")
+        setUserFirstName(res.data.fname)
+        setUserLastName(res.data.lname)
         window.scrollTo(0, 0)
       }
     });
@@ -124,6 +128,9 @@ axios
     alert("Login Complete")
 }
 
+const logOut = () => {
+  setLoggedIn(false)
+}
 
   return (
     <Router 
@@ -151,6 +158,11 @@ axios
       loginPassword={loginPassword}
       handleChangeLogin={handleChangeLogin}
       handleSubmitLogin={handleSubmitLogin}
+      // logged in user data
+      userFirstName={userFirstName}
+      userLastName={userLastName}
+      // logout function
+      logOut={logOut}
       />
   )
 
