@@ -1,14 +1,15 @@
-import { useEffect } from "react"
-import './Walks.css'
+import { useEffect, useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact'
 import { FaSearchLocation } from "react-icons/fa"
+import { SearchContext } from '../../../context/SearchContext'
+import './Walks.css'
 
 const Walks = (props) => {
 
-    let {searchValue} = props
-
     const walksArr = props.walks
+
+    let { searchValue, setSearchValue } = useContext(SearchContext)
 
     let history = useHistory()
 
@@ -25,7 +26,7 @@ const Walks = (props) => {
         <div>
             <div className="page-header-container">
                 <h1 className="page-header">Walks</h1>
-                <MDBBtn className="city-card-btn" onClick={() => props.setSearchValue("")}>Show all walks</MDBBtn>
+                <MDBBtn className="city-card-btn" onClick={() => setSearchValue("")}>Show all walks</MDBBtn>
                 <p><FaSearchLocation className="search-location-icon"/>{`  ${searchValue}`}</p>
             </div>
             <div  className="card-container">
@@ -43,8 +44,7 @@ const Walks = (props) => {
                     </MDBCard>
                     </MDBCol>
                     )
-            })}
-            
+                })}
             </div>
         </div>
     )
@@ -53,7 +53,7 @@ const Walks = (props) => {
         <div>
             <div className="page-header-container">
                 <h1 className="page-header" data-testid="walks-page-heading">Walks</h1>
-                <MDBBtn className="city-card-btn" onClick={() => props.setSearchValue("")}>Show all walks</MDBBtn>
+                <MDBBtn className="city-card-btn" onClick={() => setSearchValue("")}>Show all walks</MDBBtn>
                 <p><FaSearchLocation className="search-location-icon"/>{`  ${searchValue}`}</p>
             </div>
             <div className="card-container">

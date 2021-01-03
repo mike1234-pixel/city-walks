@@ -1,31 +1,12 @@
 import React, { useState } from 'react'
-import './App.css'
 import Router from './Router/Router'
 import axios from "axios"
 import qs from "qs"
-
+import './App.css'
 
 const App = (props) => {
 
   const {walks, cities} = props
-
-  // global state
-  const [searchValue, setSearchValue] = useState("")
-  const [redirect, setRedirect] = useState(false)
-
-  const handleChange = (e) => {
-    setSearchValue(e.target.value)
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setRedirect(true);
-  }
-
-  const handleClick = (city) => {
-    setSearchValue(city)
-    setRedirect(true);
-  }
 
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
@@ -137,14 +118,6 @@ const logOut = () => {
       // core app data
       walks={walks} 
       cities={cities} 
-      // core app functions
-      handleChange={handleChange} 
-      handleSubmit={handleSubmit} 
-      searchValue={searchValue} 
-      redirect={redirect} 
-      setRedirect={setRedirect} 
-      handleClick={handleClick} 
-      setSearchValue={setSearchValue}
       // registration state and functions
       firstName={firstName}
       lastName={lastName}

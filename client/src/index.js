@@ -6,6 +6,7 @@ import "mdbreact/dist/css/mdb.css";
 import App from "./container/App.jsx";
 import registerServiceWorker from './registerServiceWorker';
 import axios from "axios"
+import { SearchContextProvider } from "./context/SearchContext"
 
 const requestOne = axios.get('http://localhost:5000/walks');
 const requestTwo = axios.get('http://localhost:5000/cities');
@@ -18,16 +19,15 @@ axios
       const citiesData = responses[1];
       console.log(walksData)
       console.log(citiesData)
-      ReactDOM.render(<App walks={walksData.data} cities={citiesData.data}/>, document.getElementById('root'));
+      ReactDOM.render(
+      <SearchContextProvider>
+        <App walks={walksData.data} cities={citiesData.data}/>
+      </SearchContextProvider>
+      , document.getElementById('root'));
     })
   )
   .catch(errors => {
     console.error(errors);
   });
-
-
-// axios.get("http://localhost:5000/walks").then((walksData) => {
-// ReactDOM.render(<App walks={walksData.data}/>, document.getElementById('root'));
-// })
 
 registerServiceWorker();

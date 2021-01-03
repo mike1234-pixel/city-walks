@@ -10,6 +10,7 @@ import Admin from '../../components/pages/Admin/Admin'
 import NotFound404 from '../../components/pages/404/NotFound404'
 import Footer from '../../components/Footer/Footer'
 import Walk from '../../components/Walk/Walk'
+import { SearchContextProvider } from '../../context/SearchContext'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 const Router = (props) => {
@@ -28,7 +29,6 @@ const Router = (props) => {
       loginPassword,
       handleChangeLogin,
       handleSubmitLogin,
-      handleClickGoogleAuth,
       userFirstName,
       userLastName,
       logOut
@@ -55,17 +55,11 @@ const Router = (props) => {
     return (
         <BrowserRouter>
         <div>
-          <Nav 
-              handleChange={handleChange}
-              handleSubmit={handleSubmit}
-              searchValue={searchValue}
-              redirect={redirect}  
-              setRedirect={setRedirect}
-              />
+          <Nav/>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/cities" component={() => <Cities handleClick={handleClick} cities={cities}/>} />
-            <Route path="/walks" component={() => <Walks searchValue={searchValue} setSearchValue={setSearchValue} walks={walks}/>}/>
+            <Route path="/cities" component={() => <Cities cities={cities}/>} />
+            <Route path="/walks" component={() => <Walks walks={walks}/>}/>
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             {/* the render method here ensures the inputs in the forms don't lose focus */}
@@ -82,7 +76,6 @@ const Router = (props) => {
                             loginPassword={loginPassword}
                             handleChangeLogin={handleChangeLogin}
                             handleSubmitLogin={handleSubmitLogin}
-                            handleClickGoogleAuth={handleClickGoogleAuth}
                             userFirstName={userFirstName}
                             userLastName={userLastName}
                             logOut={logOut}

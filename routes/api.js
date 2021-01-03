@@ -66,7 +66,7 @@ app.post('/login-user', (req, res) => {
       bcrypt.compare(password, foundUser.password, (err, result) => {
         if (result === true) {
           res.send(foundUser);
-        }
+        } 
       });
     }
   })
