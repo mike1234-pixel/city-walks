@@ -44,6 +44,10 @@ const AddCityForm = () => {
         });
 
         alert("City Submitted")
+        setCity("")
+        setDescription("")
+        setImg("")
+        window.scrollTo(0, 0);
     }
 
     return (

@@ -1,6 +1,7 @@
 const User = require('../models/userModel')
 const Walk = require('../models/walkModel')
 const City = require('../models/cityModel')
+const Admin = require('../models/adminModel')
 const bcrypt = require("bcrypt")
 const saltRounds = 10
 
@@ -52,6 +53,24 @@ app.post('/register-user', (req, res) => {
         res.send(newUser)
       }
     })
+  })
+})
+
+app.post('/admin-login', (req, res) => {
+    
+  const username = req.body.username;
+  const password = req.body.password;
+
+  Admin.findOne({ username: username}, (err, foundAdmin) => {
+    if (err) {
+      console.log(err)
+    } else {
+      bcrypt.compare(password, foundAdmin.password, (err, result) => {
+        if (result === true) {
+          res.send(foundAdmin);
+        } 
+      });
+    }
   })
 })
 

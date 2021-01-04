@@ -107,6 +107,8 @@ export const LoginContextProvider = (props) => {
   
   const logOut = () => {
     setLoggedIn(false)
+    setUserFirstName("")
+    setUserLastName("")
   }
 
     return (

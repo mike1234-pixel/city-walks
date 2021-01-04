@@ -24,7 +24,7 @@ const Router = (props) => {
       let results = walks.map((walk, index) => (
         <Route
           exact
-          path={`/${walk.route}`}
+          path={`/${walk.walk.toLowerCase().replace(/ /g, '-')}`}
           key={index}
           render={() => <Walk walk={walk.walk} city={walk.city} description={walk.description} content1={walk.content1} content2={walk.content2} content3={walk.content3} img1={walk.img1} img2={walk.img2} img3={walk.img3}/>} // pass data as props to Walk
         />

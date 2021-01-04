@@ -18,19 +18,27 @@ const Footer = () => {
           <MDBCol md="6">
             <h5 className="title">Links</h5>
             <ul>
-              <li className="list-unstyled">
-                <a href="#!">Link 1</a>
+            <li className="list-unstyled">
+                <Link to="/">Home</Link>
               </li>
               <li className="list-unstyled">
-                <a href="#!">Link 2</a>
+                <Link to="/cities">Cities</Link>
               </li>
               <li className="list-unstyled">
-                <a href="#!">Link 3</a>
+                <Link to="/walks">Walks</Link>
               </li>
               <li className="list-unstyled">
-                <a href="#!">Link 4</a>
+                <Link to="/about">About</Link>
               </li>
-              <Link to="/admin">Admin portal</Link>
+              <li className="list-unstyled">
+                <Link to="/contact">Contact</Link>
+              </li>
+              <li className="list-unstyled">
+                <Link to="/login">User Login</Link>
+              </li>
+              <li className="list-unstyled">
+                <Link to="/admin">Admin portal</Link>
+              </li>
             </ul>
           </MDBCol>
         </MDBRow>

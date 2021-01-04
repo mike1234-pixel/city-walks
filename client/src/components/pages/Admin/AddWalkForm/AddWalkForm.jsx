@@ -6,7 +6,6 @@ import './AddWalkForm.css'
 
 const AddWalkForm = () => {
 
-    const [route, setRoute] = useState("")
     const [walk, setWalk] = useState("")
     const [city, setCity] = useState("")
     const [description, setDescription] = useState("")
@@ -21,9 +20,6 @@ const AddWalkForm = () => {
 
     const handleChange = (event) => {
         switch(event.target.name) {
-            case "route":
-              setRoute(event.target.value)
-              break;
             case "walk":
               setWalk(event.target.value)
               break;
@@ -66,7 +62,6 @@ const AddWalkForm = () => {
         event.preventDefault()
 
         let payload = {
-            route: route,
             walk: walk,
             city: city,
             description: description,
@@ -89,13 +84,24 @@ const AddWalkForm = () => {
         });
 
         alert("Walk Submitted")
+        setWalk("")
+        setCity("")
+        setDescription("")
+        setStartingPoint("")
+        setContent1("")
+        setContent2("")
+        setContent3("")
+        setCoverImg("")
+        setImg1("")
+        setImg2("")
+        setImg3("")
+        window.scrollTo(0, 0);
     }
 
     return (
     <div>
         <h2>Add Walk</h2>
         <form onSubmit={handleSubmit} className="add-walk-form">
-            <MDBInput type="text" name="route" id="route" value={route} label="url route: lowercase characters and hyphens only, e.g. 'stoke-newington'" onChange={handleChange} maxLength="70" pattern="^[a-z\-]+$" required/>
             <MDBInput type="text" name="walk" id="walk" value={walk} label="walk" onChange={handleChange} maxLength="70" required/>
             <MDBInput type="text" name="city" id="city" value={city} label="city" onChange={handleChange}  maxLength="70" required/>
             <MDBInput type="text" name="description" id="description" value={description} label="description" onChange={handleChange} maxLength="136" required/>

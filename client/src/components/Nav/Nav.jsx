@@ -3,13 +3,15 @@ import { useHistory } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBHamburgerToggler, MDBCollapse, MDBContainer, MDBInput } from "mdbreact"
 import { SearchContext } from '../../context/SearchContext';
+import { LoginContext } from '../../context/LoginContext';
 import './Nav.css'
 
-const Nav = (props) => {
+const Nav = () => {
 
   const [toggleNav, setToggleNav] = useState(false)
 
   const { redirect, setRedirect } = useContext(SearchContext)
+  const { loggedIn } = useContext(LoginContext)
 
   let history = useHistory()
 
@@ -50,7 +52,7 @@ const Nav = (props) => {
                 <MDBNavLink className="black-text" to="/contact">Contact</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink className="black-text" to="/login">Login</MDBNavLink>
+                <MDBNavLink className="black-text" to="/login">{loggedIn ? 'Logout' : 'Login'}</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
             <MDBNavbarNav right>
