@@ -24,9 +24,9 @@ const Walks = (props) => {
     if (searchValue === "") {
     return (
         <div>
-            <div className="page-header-container">
-                <h1 className="page-header">Walks</h1>
-                <MDBBtn className="city-card-btn" onClick={() => setSearchValue("")}>Show all walks</MDBBtn>
+            <div className="page-heading-container">
+                <h1 className="page-heading">Walks</h1>
+                <MDBBtn outline color="elegant" className="city-card-btn" onClick={() => setSearchValue("")}>Show all walks</MDBBtn>
                 <p><FaSearchLocation className="search-location-icon"/>{`  ${searchValue}`}</p>
             </div>
             <div  className="card-container">
@@ -37,9 +37,9 @@ const Walks = (props) => {
                         <MDBCardImage className="cutter img-fluid" src={v.coverImg} waves/>
                         <MDBCardBody>
                         <MDBCardTitle>{v.city}</MDBCardTitle>
-                        <MDBCardTitle>{v.walk}</MDBCardTitle>
+                        <MDBCardTitle className="display-font">{v.walk}</MDBCardTitle>
                         <MDBCardText>{v.description}</MDBCardText>
-                        <MDBBtn className="city-card-btn" onClick={() =>handleRedirect(v.walk.toLowerCase().replace(/ /g, '-'))}>Click</MDBBtn>
+                        <MDBBtn outline color="elegant" className="city-card-btn" onClick={() =>handleRedirect(v.walk.toLowerCase().replace(/ /g, '-'))}>Explore</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                     </MDBCol>
@@ -51,9 +51,9 @@ const Walks = (props) => {
     } else if (walksArr.map(v => { v.walk.toLowerCase().includes(searchValue.toLowerCase()) || v.city.toLowerCase().includes(searchValue.toLowerCase()) } )) {
         return (
         <div>
-            <div className="page-header-container">
-                <h1 className="page-header" data-testid="walks-page-heading">Walks</h1>
-                <MDBBtn className="city-card-btn" onClick={() => setSearchValue("")}>Show all walks</MDBBtn>
+            <div className="page-heading-container">
+                <h1 className="page-heading" data-testid="walks-page-heading">Walks</h1>
+                <MDBBtn outline color="elegant" className="city-card-btn" onClick={() => setSearchValue("")}>Show all walks</MDBBtn>
                 <p><FaSearchLocation className="search-location-icon"/>{`  ${searchValue}`}</p>
             </div>
             <div className="card-container">
@@ -65,9 +65,9 @@ const Walks = (props) => {
                         <MDBCardImage className="cutter img-fluid" src={v.coverImg} waves/>
                         <MDBCardBody>
                         <MDBCardTitle>{v.city}</MDBCardTitle>
-                        <MDBCardTitle>{v.walk}</MDBCardTitle>
+                        <MDBCardTitle className="display-font">{v.walk}</MDBCardTitle>
                         <MDBCardText>{v.description}</MDBCardText>
-                        <MDBBtn className="city-card-btn" onClick={() =>handleRedirect(v.walk.toLowerCase().replace(/ /g, '-'))}>Click</MDBBtn>
+                        <MDBBtn outline color="elegant" className="city-card-btn" onClick={() =>handleRedirect(v.walk.toLowerCase().replace(/ /g, '-'))}>Explore</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                     </MDBCol>

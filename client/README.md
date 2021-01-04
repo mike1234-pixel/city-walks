@@ -30,7 +30,7 @@ To start the development server cd into the **client** directory and run:
 
 ## State Management
 
-Global state is managed by the React Context API. The context files can be found in the **context** folder in the **src** directory.
+Global state is managed by the **React Context API**. The context files can be found in the **context** folder in the **src** directory.
 
 The App component is wrapped in context providers in **index.js** in the **src** directory.
 
@@ -44,4 +44,17 @@ All ajax requests are made using the **axios** and **qs** packages.
 
 **react-router** is used for routing the frontend.
 
-Routes are generated dymically from data by the `createRoutes()` function in **./src/container/Router/Router.jsx** which creates a route for each Walk on the initial loading of the website, passing down the relevant data as props to each Walk component generated.
+Routes are generated dymically from data by the `createRoutes()` function in **./src/container/Router/Router.jsx** which creates a route for each `Walk` on the initial loading of the website, passing down the relevant data as props to each `Walk` component generated.
+
+## Testing
+
+Test files are kept in the same folders as the components they test.
+
+The client contains:
+
+- **jest** snapshot tests.
+- **react-testing-library** integration tests.
+
+To run the tests run:
+
+`npm test`

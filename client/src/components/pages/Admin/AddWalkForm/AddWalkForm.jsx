@@ -153,7 +153,7 @@ const AddWalkForm = () => {
             <MDBInput type="text" name="instagram-link" id="instagram-link" value={instagramLink} label="instagram link (optional)" onChange={handleChange} />
             <MDBInput type="text" name="facebook-link" id="facebook-link" value={facebookLink} label="facebook link (optional)" onChange={handleChange} />
             <MDBInput type="text" name="twitter-link" id="twitter-link" value={twitterLink} label="twitter link (optional)" onChange={handleChange} />
-            <MDBBtn className="btn btn-outline-purple" type="submit">
+            <MDBBtn outline color="elegant" type="submit">
                 Send Walk
             <MDBIcon far icon="paper-plane" className="ml-2" />
           </MDBBtn>

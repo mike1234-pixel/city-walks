@@ -31,28 +31,28 @@ const Nav = () => {
       <MDBContainer className="nav-container">
         <MDBNavbar className="nav-bar" dark expand="md">
           <MDBNavbarBrand>
-            <b className="black-text"><MDBNavLink className="black-text" to="/">City Walks</MDBNavLink></b>
+            <b className="white-text"><MDBNavLink className="white-text logo" to="/">City Walks</MDBNavLink></b>
           </MDBNavbarBrand>
           <MDBHamburgerToggler color="#000" className="hamburger1" id="hamburger1" onClick={handleClick} />
           <MDBCollapse id="navbarCollapse3" isOpen={toggleNav} navbar>
             <MDBNavbarNav left>
               <MDBNavItem>
-                <MDBNavLink className="black-text" to="/">Home</MDBNavLink>
+                <MDBNavLink className="white-text" to="/">Home</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink className="black-text" to="/cities">Cities</MDBNavLink>
+                <MDBNavLink className="white-text" to="/cities">Cities</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink className="black-text" to="/walks">Walks</MDBNavLink>
+                <MDBNavLink className="white-text" to="/walks">Walks</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink className="black-text" to="/about">About</MDBNavLink>
+                <MDBNavLink className="white-text" to="/about">About</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink className="black-text" to="/contact">Contact</MDBNavLink>
+                <MDBNavLink className="white-text" to="/contact">Contact</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink className="black-text" to="/login">{loggedIn ? 'Logout' : 'Login'}</MDBNavLink>
+                <MDBNavLink className="white-text" to="/login">{loggedIn ? 'Logout' : 'Login'}</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
             <MDBNavbarNav right>

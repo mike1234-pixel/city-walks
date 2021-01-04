@@ -54,7 +54,8 @@
 .grid-item-b-text-box {
   padding: 20px;
   text-align: center;
-  background: var(--blue);
+  background: var(--elegant-color-dark);
+  color: white;
 }
 
 @media (max-width: 1050px) {

@@ -57,7 +57,7 @@ const AddCityForm = () => {
             <MDBInput type="text" name="city" id="city" value={city} label="city" onChange={handleChange}  maxLength="70" required/>
             <MDBInput type="text" name="description" id="description" value={description} label="description" onChange={handleChange} maxLength="136" required/>
             <MDBInput type="text" name="img" id="img" value={img} label="image link" onChange={handleChange} required/>
-            <MDBBtn className="btn btn-outline-purple" type="submit">
+            <MDBBtn outline color="elegant" type="submit">
                 Send City
             <MDBIcon far icon="paper-plane" className="ml-2" />
           </MDBBtn>

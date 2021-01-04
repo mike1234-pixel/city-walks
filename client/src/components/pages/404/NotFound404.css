@@ -1,3 +1,5 @@
 .nf404-page-container {
-  background: blue;
+  min-height: 55vh;
+  width: 100%;
+  text-align: center;
 }

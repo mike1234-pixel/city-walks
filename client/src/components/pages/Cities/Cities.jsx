@@ -17,7 +17,7 @@ const Cities = (props) => {
             <MDBCardBody>
             <MDBCardTitle>{city.city}</MDBCardTitle>
             <MDBCardText>{city.description}</MDBCardText>
-            <MDBBtn className="city-card-btn" onClick={() => handleClickSearch(city.city)}>Click</MDBBtn>
+            <MDBBtn outline color="white" className="city-card-btn" onClick={() => handleClickSearch(city.city)}>Click</MDBBtn>
             </MDBCardBody>
         </MDBCard>
         </MDBCol>
@@ -26,8 +26,8 @@ const Cities = (props) => {
 
     return (
         <div className="cities-page-container">
-            <div className="page-header-container">
-                <h1 className="page-header">Cities</h1>
+            <div className="page-heading-container">
+                <h1 className="page-heading">Cities</h1>
             </div>
                 <div className="card-container">{cities}</div>
             </div>

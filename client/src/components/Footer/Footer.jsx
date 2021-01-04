@@ -5,7 +5,7 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <MDBFooter color="blue" className="font-small pt-4 mt-4">
+    <MDBFooter className="font-small pt-4 mt-4 footer">
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
           <MDBCol md="6">
@@ -15,8 +15,8 @@ const Footer = () => {
               content.
             </p>
           </MDBCol>
-          <MDBCol md="6">
-            <h5 className="title">Links</h5>
+          <MDBCol md="3">
+            <h5 className="title">Site Links</h5>
             <ul>
             <li className="list-unstyled">
                 <Link to="/">Home</Link>
@@ -34,6 +34,17 @@ const Footer = () => {
                 <Link to="/contact">Contact</Link>
               </li>
               <li className="list-unstyled">
+                <Link to="/login">User Login</Link>
+              </li>
+              <li className="list-unstyled">
+                <Link to="/admin">Admin portal</Link>
+              </li>
+            </ul>
+          </MDBCol>
+          <MDBCol md="3">
+          <h5 className="title">External Links</h5>
+          <ul>
+          <li className="list-unstyled">
                 <Link to="/login">User Login</Link>
               </li>
               <li className="list-unstyled">

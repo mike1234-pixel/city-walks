@@ -18,13 +18,13 @@ const Carousel = () => {
           <MDBView>
             <img
               className="d-block w-100"
-              src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+              src="https://images.pexels.com/photos/1121782/pexels-photo-1121782.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
               alt="First slide"
             />
           <MDBMask overlay="black-light" />
           </MDBView>
           <MDBCarouselCaption>
-            <h3 className="h3-responsive">Light mask</h3>
+            <h3 className="h3-responsive">Explore</h3>
             <p>First text</p>
           </MDBCarouselCaption>
         </MDBCarouselItem>
@@ -32,7 +32,7 @@ const Carousel = () => {
           <MDBView>
             <img
               className="d-block w-100"
-              src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+              src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
               alt="Second slide"
             />
           <MDBMask overlay="black-strong" />
@@ -46,7 +46,7 @@ const Carousel = () => {
           <MDBView>
             <img
               className="d-block w-100"
-              src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
+              src="https://images.unsplash.com/photo-1471093304841-0423d25b23e5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
               alt="Third slide"
             />
           <MDBMask overlay="black-slight" />

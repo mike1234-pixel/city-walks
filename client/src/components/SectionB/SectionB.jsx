@@ -3,13 +3,13 @@ import "./SectionB.css";
 
 const SectionB = (props) => {
 
-    const {content, img} = props
+    const {content, img, alt} = props
 
   return (
     <div className='section-b grid-container-b'>
         <div className='grid-item-b grid-item-b-image-box'>
           <MDBView hover zoom>
-            <img className="grid-item-b-img" src={img} alt="PLACEHOLDER"></img>
+            <img className="grid-item-b-img" src={img} alt={alt}></img>
           </MDBView>
         </div>
         <div className='grid-item-b grid-item-b-text-box'>

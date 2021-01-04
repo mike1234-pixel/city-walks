@@ -19,7 +19,7 @@ const LoginForm = () => {
         <form onSubmit={handleSubmitLogin} className="add-city-form">
             <MDBInput key="input-5" type="email" name="login-email" id="login-email" value={loginEmail} label="email" onChange={handleChangeLogin} required/>
             <MDBInput key="input-6" type="password" name="login-password" id="login-password" value={loginPassword} label="password" onChange={handleChangeLogin} minLength="8" required/>
-            <MDBBtn className="btn btn-outline-purple" type="submit">
+            <MDBBtn outline color="elegant" type="submit">
                 Login <MDBIcon icon="sign-in-alt" />
           </MDBBtn>
         </form>

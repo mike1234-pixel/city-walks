@@ -68,12 +68,14 @@ const Admin = () => {
 
     return (
         <div className="admin-portal">
-            <h1>Admin Portal</h1>
+          <div className="page-heading-container">
+            <h1 className="page-heading">Admin Portal</h1>
+          </div>
             {adminLoggedIn ? 
             <div>
-            <MDBBtn outline color="info" onClick={() => adminLogOut()}>Administrator Logout</MDBBtn>
-            <MDBBtn outline color="info" onClick={() => setForm("addWalk")}>Add Walk</MDBBtn>
-            <MDBBtn outline color="info" onClick={() => setForm("addCity")}>Add City</MDBBtn>
+            <MDBBtn outline color="elegant" onClick={() => adminLogOut()}>Administrator Logout</MDBBtn>
+            <MDBBtn outline color="elegant" onClick={() => setForm("addWalk")}>Add Walk</MDBBtn>
+            <MDBBtn outline color="elegant" onClick={() => setForm("addCity")}>Add City</MDBBtn>
             <br/>
             <br/>
             <br/>
@@ -82,7 +84,7 @@ const Admin = () => {
             <form className="admin-login-form" onSubmit={handleSubmitAdminLogin}>
             <MDBInput type="text" name="admin-username" id="admin-username" value={adminUserName} label="admin username" onChange={handleChangeAdminLogin} maxLength="70" required/>
             <MDBInput type="password" name="admin-password" id="admin-password" value={adminPassword} label="admin password" onChange={handleChangeAdminLogin} maxLength="70" required/>
-            <MDBBtn outline color="info" type="submit">Administrator Login <MDBIcon icon="sign-in-alt" /></MDBBtn>
+            <MDBBtn outline color="elegant" type="submit">Administrator Login <MDBIcon icon="sign-in-alt" /></MDBBtn>
             </form>
             }
 

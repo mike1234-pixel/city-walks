@@ -1,5 +1,12 @@
 .city-card {
   transition: transform 0.2s; /* Animation */
+  background: var(--elegant-color-dark);
+  /* background: blue; */
+  color: white;
+}
+
+.view {
+  background-color: var(--blue);
 }
 
 .city-card:hover {

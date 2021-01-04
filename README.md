@@ -4,6 +4,10 @@ This is an **express** server designed to interact with a React client contained
 
 ## Getting Started
 
+Clone the repo:
+
+`gh repo clone mike1234-pixel/city-walks`
+
 To install dependencies, cd into the root directory and run:
 
 `yarn add`

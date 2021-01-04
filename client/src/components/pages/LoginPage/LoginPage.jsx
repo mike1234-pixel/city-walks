@@ -22,13 +22,15 @@ const LoginPage = () => {
     return (
         <div className="user-portal" key="login-page">
         <div className="user-portal-header-btns-container">
-            <h1>User Portal</h1>
-            {loggedIn ? <h1>Welcome back {userFirstName}</h1> : <h1>Login or Register</h1>}
+          <div className="page-heading-container">
+            <h1 className="page-heading">User Portal</h1>
+          </div>
+            {loggedIn ? <h2 className="login-heading">Welcome back {userFirstName}</h2> : <h2 className="login-heading">Login or Register</h2>}
             {loggedIn ? 
-            <MDBBtn outline color="info" onClick={logOut}>Log Out <MDBIcon icon="sign-out-alt" /></MDBBtn> : 
+            <MDBBtn outline color="elegant" onClick={logOut}>Log Out <MDBIcon icon="sign-out-alt" /></MDBBtn> : 
             <div>
-                <MDBBtn outline color="info" onClick={() => setForm("loginForm")}>Login</MDBBtn>
-                <MDBBtn outline color="info" onClick={() => setForm("registrationForm")}>Register</MDBBtn>
+                <MDBBtn outline color="elegant" onClick={() => setForm("loginForm")}>Login</MDBBtn>
+                <MDBBtn outline color="elegant" onClick={() => setForm("registrationForm")}>Register</MDBBtn>
             </div>
             }
         </div>

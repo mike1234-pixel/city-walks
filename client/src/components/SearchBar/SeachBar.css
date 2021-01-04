@@ -10,8 +10,12 @@
   font-size: 20px;
 }
 
-#search-btn-icon:hover {
+#search-btn-icon {
   color: white;
+}
+
+#search-btn-icon:hover {
+  color: grey;
 }
 
 @media (min-width: 860px) {

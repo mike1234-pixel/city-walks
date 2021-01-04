@@ -54,7 +54,8 @@
 .grid-item-a-text-box {
   padding: 20px;
   text-align: center;
-  background: grey;
+  background: var(--elegant-color-dark);
+  color: white;
 }
 
 @media (max-width: 1050px) {
