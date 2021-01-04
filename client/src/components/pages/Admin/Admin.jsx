@@ -38,15 +38,17 @@ const Admin = () => {
         .then((res, err) => {
           if (err) {
             console.log(err);
+          } else if (res.data === "unsuccessful login attempt") {
+            alert("Unsuccessful Login Attempt. Please Try Again.")
           } else {
+            alert("Successfully Logged In")
             setAdminLoggedIn(true)
             setAdminUserName("")
             setAdminPassword("")
             window.scrollTo(0, 0)
           }
         });
-  
-        alert("Admin Login Complete")
+
     }
 
     const handleChangeAdminLogin = (event) => {

@@ -90,9 +90,10 @@ export const LoginContextProvider = (props) => {
       .then((res, err) => {
         if (err) {
           console.log(err);
+        } else if (res.data === "unsuccessful login attempt") {
+          alert("Unsuccessful Login Attempt. Please Try Again.")
         } else {
-          console.log(res.data.fname)
-          console.log("USER LOGGED IN")
+          alert("Login Complete")
           setLoggedIn(true)
           setLoginEmail("")
           setLoginPassword("")
@@ -101,8 +102,6 @@ export const LoginContextProvider = (props) => {
           window.scrollTo(0, 0)
         }
       });
-  
-      alert("Login Complete")
   }
   
   const logOut = () => {
