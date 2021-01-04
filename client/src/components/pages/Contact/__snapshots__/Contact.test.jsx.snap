@@ -7,7 +7,7 @@ exports[`Contact Page renders correctly 1`] = `
   <h1
     className="page-header"
   >
-    Walks
+    Contact
   </h1>
 </div>
 `;

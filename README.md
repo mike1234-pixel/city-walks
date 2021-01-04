@@ -1,25 +1,33 @@
-## Data
+# City Walks API
 
-### Admin
+This is an **express** server designed to interact with a React client contained in the **client** directory.
 
-### The Walks Data is structured as follows:
+## Getting Started
 
-All values are strings. \_id is set by MongoDB.
+To install dependencies, cd into the root directory and run:
 
-        {
-            "_id": "UNIQUE_ID",
-            "route": "URL_ROUTE", ** used to create routes, e.g. stoke-newington. lowercase, no spaces or non-alphabetic characters**
-            "walk": "stoke newington",
-            "city": "london",
-            "description": "MAX 136 CHARS",
-            "starting_point": "old street",
-            "content_1": "MAX 569 CHARS",
-            "content_2": "MAX 569 CHARS",
-            "content_3": "MAX 569 CHARS",
-            "cover_img_link": "https://...",
-            "img_1_link": "https://...",
-            "img_2_link": "https://...",
-            "img_3_link": "https://..."
-        },
+`yarn add`
 
-        ... add fields: author & additional information about the author & author social links
+To start the API run:
+
+`yarn server`
+
+## Database
+
+This API uses a **MongoDB** database which is interacted with via **mongoose**.
+
+Models and schemas are contained within the **models** directory.
+
+## Authentication and Encryption
+
+The API supports user registration and authentication using the **bcrypt** package to salt and hash the passwords, with **_10 salt rounds_** being applied.
+
+Only encrypted passwords are stored in the database.
+
+## Security
+
+The **helmet** package is used to add an extra layer of security.
+
+## Cross-Origin Resource Sharing
+
+**cors** is enabled on this application to serve requests from the client.
