@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { MDBBtn, MDBInput } from "mdbreact"
+import { MDBBtn, MDBInput, MDBIcon } from "mdbreact"
 import axios from "axios"
 import qs from "qs"
 import AddWalkForm from './AddWalkForm/AddWalkForm'
@@ -79,10 +79,10 @@ const Admin = () => {
             <br/>
             {displayForm} 
             </div> : 
-            <form onSubmit={handleSubmitAdminLogin}>
+            <form className="admin-login-form" onSubmit={handleSubmitAdminLogin}>
             <MDBInput type="text" name="admin-username" id="admin-username" value={adminUserName} label="admin username" onChange={handleChangeAdminLogin} maxLength="70" required/>
             <MDBInput type="password" name="admin-password" id="admin-password" value={adminPassword} label="admin password" onChange={handleChangeAdminLogin} maxLength="70" required/>
-            <MDBBtn outline color="info" type="submit">Administrator Login</MDBBtn>
+            <MDBBtn outline color="info" type="submit">Administrator Login <MDBIcon icon="sign-in-alt" /></MDBBtn>
             </form>
             }
 

@@ -1,3 +1,4 @@
+import { MDBView } from "mdbreact"
 import "./SectionA.css"
 
 const SectionA = (props) => {
@@ -10,7 +11,9 @@ const SectionA = (props) => {
             <p>{content}</p> 
         </div>
         <div className='grid-item-a grid-item-a-image-box'>
+          <MDBView hover zoom>
             <img className="grid-item-a-img" src={img} alt="PLACEHOLDER"></img>
+          </MDBView>
         </div>
     </div>
   );

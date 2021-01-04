@@ -26,7 +26,24 @@ const Router = (props) => {
           exact
           path={`/${walk.walk.toLowerCase().replace(/ /g, '-')}`}
           key={index}
-          render={() => <Walk walk={walk.walk} city={walk.city} description={walk.description} content1={walk.content1} content2={walk.content2} content3={walk.content3} img1={walk.img1} img2={walk.img2} img3={walk.img3}/>} // pass data as props to Walk
+          render={() => 
+          <Walk 
+            walk={walk.walk} 
+            city={walk.city} 
+            description={walk.description} 
+            content1={walk.content1} 
+            content2={walk.content2} 
+            content3={walk.content3} 
+            img1={walk.img1} 
+            img2={walk.img2} 
+            img3={walk.img3}
+            author={walk.author}
+            aboutTheAuthor={walk.aboutTheAuthor}
+            websiteLink={walk.websiteLink}
+            instagramLink={walk.instagramLink}
+            facebookLink={walk.facebookLink}
+            twitterLink={walk.twitterLink}
+            />} // pass data as props to Walk
         />
       ));
       setNewRoutes(results);

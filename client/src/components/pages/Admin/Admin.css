@@ -1,3 +1,7 @@
 .admin-portal {
   text-align: center;
 }
+
+.admin-login-form {
+  padding: 20px;
+}

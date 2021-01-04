@@ -17,6 +17,12 @@ const AddWalkForm = () => {
     const [img1, setImg1] = useState("")
     const [img2, setImg2] = useState("")
     const [img3, setImg3] = useState("")
+    const [author, setAuthor] = useState("")
+    const [aboutTheAuthor, setAboutTheAuthor] = useState("")
+    const [websiteLink, setWebsiteLink] = useState("")
+    const [instagramLink, setInstagramLink] = useState("")
+    const [facebookLink, setFacebookLink] = useState("")
+    const [twitterLink, setTwitterLink] = useState("")
 
     const handleChange = (event) => {
         switch(event.target.name) {
@@ -53,8 +59,24 @@ const AddWalkForm = () => {
             case "img3":
               setImg3(event.target.value)
               break;
-            default:
-              console.log("other")
+            case "author":
+              setAuthor(event.target.value)
+              break;
+            case "about-the-author":
+              setAboutTheAuthor(event.target.value)
+              break;
+            case "website-link":
+              setWebsiteLink(event.target.value)
+              break;
+            case "instagram-link":
+              setInstagramLink(event.target.value)
+              break;
+            case "facebook-link":
+              setFacebookLink(event.target.value)
+              break;
+            case "twitter-link":
+              setTwitterLink(event.target.value)
+              break;
           } 
     }
 
@@ -72,7 +94,13 @@ const AddWalkForm = () => {
             coverImg: coverImg,
             img1: img1,
             img2: img2, 
-            img3: img3
+            img3: img3, 
+            author: author,
+            aboutTheAuthor: aboutTheAuthor,
+            websiteLink: websiteLink,
+            instagramLink: instagramLink,
+            facebookLink: facebookLink,
+            twitterLink: twitterLink
           };
 
         axios
@@ -95,6 +123,12 @@ const AddWalkForm = () => {
         setImg1("")
         setImg2("")
         setImg3("")
+        setAuthor("")
+        setAboutTheAuthor("")
+        setWebsiteLink("")
+        setInstagramLink("")
+        setFacebookLink("")
+        setTwitterLink("")
         window.scrollTo(0, 0);
     }
 
@@ -106,13 +140,19 @@ const AddWalkForm = () => {
             <MDBInput type="text" name="city" id="city" value={city} label="city" onChange={handleChange}  maxLength="70" required/>
             <MDBInput type="text" name="description" id="description" value={description} label="description" onChange={handleChange} maxLength="136" required/>
             <MDBInput type="text" name="starting-point" id="starting-point" value={startingPoint} label="starting point" onChange={handleChange} maxLength="100" required/>
-            <MDBInput type="text" name="content1" id="content1" value={content1} label="paragraph 1 (569 character limit)" onChange={handleChange} maxLength="569" required/>
-            <MDBInput type="text" name="content2" id="content2" value={content2} label="paragraph 2 (569 character limit)" onChange={handleChange} maxLength="569" required/>
-            <MDBInput type="text" name="content3" id="content3" value={content3} label="paragraph 3 (569 character limit)" onChange={handleChange} maxLength="569" required/>
+            <MDBInput type="textarea" rows="4" name="content1" id="content1" value={content1} label="paragraph 1 (569 character limit)" onChange={handleChange} maxLength="569" required/>
+            <MDBInput type="textarea" rows="4" name="content2" id="content2" value={content2} label="paragraph 2 (569 character limit)" onChange={handleChange} maxLength="569" required/>
+            <MDBInput type="textarea" rows="4" name="content3" id="content3" value={content3} label="paragraph 3 (569 character limit)" onChange={handleChange} maxLength="569" required/>
             <MDBInput type="text" name="cover-img" id="cover-img" value={coverImg} label="cover image link" onChange={handleChange} required/>
             <MDBInput type="text" name="img1" id="img1" value={img1} label="image 1 link" onChange={handleChange} required/>
             <MDBInput type="text" name="img2" id="img2" value={img2} label="image 2 link" onChange={handleChange} required/>
             <MDBInput type="text" name="img3" id="img3" value={img3} label="image 3 link" onChange={handleChange} required/>
+            <MDBInput type="text" name="author" id="author" value={author} label="author" onChange={handleChange} required/>
+            <MDBInput type="text" name="about-the-author" id="about-the-author" value={aboutTheAuthor} label="about the author" onChange={handleChange} required/>
+            <MDBInput type="text" name="website-link" id="website-link" value={websiteLink} label="website link (optional)" onChange={handleChange} />
+            <MDBInput type="text" name="instagram-link" id="instagram-link" value={instagramLink} label="instagram link (optional)" onChange={handleChange} />
+            <MDBInput type="text" name="facebook-link" id="facebook-link" value={facebookLink} label="facebook link (optional)" onChange={handleChange} />
+            <MDBInput type="text" name="twitter-link" id="twitter-link" value={twitterLink} label="twitter link (optional)" onChange={handleChange} />
             <MDBBtn className="btn btn-outline-purple" type="submit">
                 Send Walk
             <MDBIcon far icon="paper-plane" className="ml-2" />

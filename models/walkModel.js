@@ -11,7 +11,13 @@ const mongoose = require('mongoose');
         coverImg: String,
         img1: String,
         img2: String, 
-        img3: String
+        img3: String,
+        author: String,
+        aboutTheAuthor: String,
+        websiteLink: String,
+        instagramLink: String,
+        facebookLink: String,
+        twitterLink: String
       });
 
 module.exports = mongoose.model(`Walk`, walkSchema);

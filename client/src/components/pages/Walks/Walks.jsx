@@ -67,7 +67,7 @@ const Walks = (props) => {
                         <MDBCardTitle>{v.city}</MDBCardTitle>
                         <MDBCardTitle>{v.walk}</MDBCardTitle>
                         <MDBCardText>{v.description}</MDBCardText>
-                        <MDBBtn className="city-card-btn" onClick={() =>handleRedirect(v.route)}>Click</MDBBtn>
+                        <MDBBtn className="city-card-btn" onClick={() =>handleRedirect(v.walk.toLowerCase().replace(/ /g, '-'))}>Click</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                     </MDBCol>

@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react"
-import { MDBBtn } from "mdbreact"
+import { MDBBtn, MDBIcon } from "mdbreact"
 import LoginForm from './LoginForm/LoginForm'
 import RegistrationForm from './RegistrationForm/RegistrationForm'
 import { LoginContext } from '../../../context/LoginContext'
@@ -25,7 +25,7 @@ const LoginPage = () => {
             <h1>User Portal</h1>
             {loggedIn ? <h1>Welcome back {userFirstName}</h1> : <h1>Login or Register</h1>}
             {loggedIn ? 
-            <MDBBtn outline color="info" onClick={logOut}>Log Out</MDBBtn> : 
+            <MDBBtn outline color="info" onClick={logOut}>Log Out <MDBIcon icon="sign-out-alt" /></MDBBtn> : 
             <div>
                 <MDBBtn outline color="info" onClick={() => setForm("loginForm")}>Login</MDBBtn>
                 <MDBBtn outline color="info" onClick={() => setForm("registrationForm")}>Register</MDBBtn>

@@ -69,7 +69,9 @@ app.post('/login-user', (req, res) => {
       bcrypt.compare(password, foundUser.password, (err, result) => {
         if (result === true) {
           res.send(foundUser);
-        } 
+        } else {
+          res.send("unsuccessful login attempt")
+        }
       });
     }
   })
@@ -90,7 +92,9 @@ app.post('/admin-login', (req, res) => {
       bcrypt.compare(password, foundAdmin.password, (err, result) => {
         if (result === true) {
           res.send(foundAdmin);
-        } 
+        }  else {
+          res.send("unsuccessful login attempt")
+        }
       });
     }
   })
