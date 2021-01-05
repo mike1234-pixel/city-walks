@@ -70,6 +70,20 @@ app.delete('/delete-walk', (req, res) => {
   })
 })
 
+app.delete('/delete-city', (req, res) => {
+  const city = req.body.city;
+  console.log("hit")
+  console.log(city)
+
+  City.findOneAndDelete({city: city }, (err, doc) => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log("city deleted")
+    }
+  })
+})
+
 app.post('/register-user', (req, res) => {
     
   bcrypt.hash(req.body.password, saltRounds, (err, hash) => {

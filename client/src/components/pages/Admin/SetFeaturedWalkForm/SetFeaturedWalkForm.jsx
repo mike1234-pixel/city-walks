@@ -55,7 +55,7 @@ const SetFeaturedWalkForm = () => {
             <MDBInput type="text" name="featured-walk-3" id="featured-walk-3" value={featuredWalk3} label="featured walk 3 (walk name, e.g 'Old Street')" onChange={handleChange} required/>
             <MDBBtn outline color="elegant" type="submit">
                 Set Featured Walks
-            <MDBIcon far icon="paper-plane" className="ml-2" />
+            <MDBIcon far icon="star" className="ml-2" />
           </MDBBtn>
         </form>
     </div>

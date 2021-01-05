@@ -33,7 +33,7 @@ const Nav = () => {
           <MDBNavbarBrand>
             <b className="white-text"><MDBNavLink className="white-text logo" to="/">City Walks</MDBNavLink></b>
           </MDBNavbarBrand>
-          <MDBHamburgerToggler color="#000" className="hamburger1" id="hamburger1" onClick={handleClick} />
+          <MDBHamburgerToggler color="#fff" className="hamburger1" id="hamburger1" onClick={handleClick} />
           <MDBCollapse id="navbarCollapse3" isOpen={toggleNav} navbar>
             <MDBNavbarNav left>
               <MDBNavItem>

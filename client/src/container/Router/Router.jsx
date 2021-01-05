@@ -10,6 +10,7 @@ import Admin from '../../components/pages/Admin/Admin'
 import NotFound404 from '../../components/pages/404/NotFound404'
 import Footer from '../../components/Footer/Footer'
 import Walk from '../../components/Walk/Walk'
+import urlify from '../../functions/urlify'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 const Router = (props) => {
@@ -24,7 +25,7 @@ const Router = (props) => {
       let results = walks.map((walk, index) => (
         <Route
           exact
-          path={`/${walk.walk.toLowerCase().replace(/ /g, '-')}`}
+          path={`/${urlify(walk.walk)}`}
           key={index}
           render={() => 
           <Walk 

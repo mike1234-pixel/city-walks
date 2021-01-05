@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom"
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact'
 import { FaSearchLocation } from "react-icons/fa"
 import { SearchContext } from '../../../context/SearchContext'
+import urlify from '../../../functions/urlify'
 import './Walks.css'
 
 const Walks = (props) => {
@@ -39,7 +40,7 @@ const Walks = (props) => {
                         <MDBCardTitle>{v.city}</MDBCardTitle>
                         <MDBCardTitle className="display-font">{v.walk}</MDBCardTitle>
                         <MDBCardText>{v.description}</MDBCardText>
-                        <MDBBtn outline color="elegant" className="city-card-btn" onClick={() =>handleRedirect(v.walk.toLowerCase().replace(/ /g, '-'))}>Explore</MDBBtn>
+                        <MDBBtn outline color="elegant" className="city-card-btn" onClick={() =>handleRedirect(urlify(v.walk))}>Explore</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                     </MDBCol>
@@ -67,7 +68,7 @@ const Walks = (props) => {
                         <MDBCardTitle>{v.city}</MDBCardTitle>
                         <MDBCardTitle className="display-font">{v.walk}</MDBCardTitle>
                         <MDBCardText>{v.description}</MDBCardText>
-                        <MDBBtn outline color="elegant" className="city-card-btn" onClick={() =>handleRedirect(v.walk.toLowerCase().replace(/ /g, '-'))}>Explore</MDBBtn>
+                        <MDBBtn outline color="elegant" className="city-card-btn" onClick={() =>handleRedirect(urlify(v.walk))}>Explore</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                     </MDBCol>

@@ -1,7 +1,12 @@
 .admin-portal {
   text-align: center;
+  min-height: 50vh;
 }
 
 .admin-login-form {
   padding: 20px;
+}
+
+.admin-panel {
+  background: var(--blue);
 }

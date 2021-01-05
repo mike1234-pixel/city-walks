@@ -136,7 +136,7 @@ const AddWalkForm = () => {
     <div>
         <h2>Add Walk</h2>
         <form onSubmit={handleSubmit} className="add-walk-form">
-            <MDBInput type="text" name="walk" id="walk" value={walk} label="walk" onChange={handleChange} maxLength="70" required/>
+            <MDBInput type="text" name="walk" id="walk" value={walk} label="walk, title-case only e.g. 'Baker Street To Bond Street'" onChange={handleChange} maxLength="70" required/>
             <MDBInput type="text" name="city" id="city" value={city} label="city" onChange={handleChange}  maxLength="70" required/>
             <MDBInput type="text" name="description" id="description" value={description} label="description" onChange={handleChange} maxLength="136" required/>
             <MDBInput type="text" name="starting-point" id="starting-point" value={startingPoint} label="starting point" onChange={handleChange} maxLength="100" required/>

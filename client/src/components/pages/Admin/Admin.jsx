@@ -1,16 +1,22 @@
 import { useState, useEffect } from "react"
-import { MDBBtn, MDBInput, MDBIcon } from "mdbreact"
+import { MDBBtn, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBHamburgerToggler, MDBCollapse, MDBIcon, MDBInput } from "mdbreact";
 import axios from "axios"
 import qs from "qs"
 import AddWalkForm from './AddWalkForm/AddWalkForm'
 import AddCityForm from './AddCityForm/AddCityForm'
 import SetFeaturedWalkForm from './SetFeaturedWalkForm/SetFeaturedWalkForm'
 import DeleteWalkForm from './DeleteWalkForm/DeleteWalkForm'
+import DeleteCityForm from './DeleteCityForm/DeleteCityForm'
 import './Admin.css'
 
 const Admin = () => {
 
     const [form, setForm] = useState("")
+    const [toggleAdminPanel, setToggleAdminPanel] = useState(false)
+
+    const handleToggleAdminPanel = () => {
+      setToggleAdminPanel(!toggleAdminPanel)
+    }
 
     let displayForm
     if (form === "addWalk") {      
@@ -21,6 +27,8 @@ const Admin = () => {
         displayForm = <SetFeaturedWalkForm/>
     } else if (form === "deleteWalk") {
         displayForm = <DeleteWalkForm/>
+    } else if (form === "deleteCity") {
+      displayForm = <DeleteCityForm/>
     }
 
     useEffect(() => {
@@ -74,16 +82,38 @@ const Admin = () => {
 
     return (
         <div className="admin-portal">
-          <div className="page-heading-container">
-            <h1 className="page-heading">Admin Portal</h1>
-          </div>
             {adminLoggedIn ? 
             <div>
-            <MDBBtn outline color="elegant" onClick={() => adminLogOut()}>Administrator Logout</MDBBtn>
-            <MDBBtn outline color="elegant" onClick={() => setForm("addWalk")}>Add Walk</MDBBtn>
-            <MDBBtn outline color="elegant" onClick={() => setForm("addCity")}>Add City</MDBBtn>
-            <MDBBtn outline color="elegant" onClick={() => setForm("setFeaturedWalk")}>Set Featured Walk</MDBBtn>
-            <MDBBtn outline color="elegant" onClick={() => setForm("deleteWalk")}>Delete Walk</MDBBtn>
+              <MDBNavbar className="admin-panel" dark expand="md">
+                <MDBNavbarBrand>
+                  <strong className="white-text">Admin Portal</strong>
+                </MDBNavbarBrand>
+                <MDBHamburgerToggler color="#fff" className="hamburger2" id="hamburger2" onClick={handleToggleAdminPanel} />
+                  <MDBCollapse id="navbarCollapse4" isOpen={toggleAdminPanel} navbar>
+                  <MDBNavbarNav left>
+                    <MDBNavItem>
+                      <MDBNavLink to="#!" onClick={() => setForm("addWalk")}>Add Walk</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                      <MDBNavLink to="#!" onClick={() => setForm("addCity")}>Add City</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                      <MDBNavLink to="#!" onClick={() => setForm("setFeaturedWalk")}>Set Featured Walk</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                      <MDBNavLink to="#!" onClick={() => setForm("deleteWalk")}>Delete Walk</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                      <MDBNavLink to="#!" onClick={() => setForm("deleteCity")}>Delete City</MDBNavLink>
+                    </MDBNavItem>
+                    </MDBNavbarNav>
+                    <MDBNavbarNav right>
+                    <MDBNavItem>
+                      <MDBNavLink to="#!" onClick={() => adminLogOut()}>Admin Logout</MDBNavLink>
+                    </MDBNavItem>
+                    </MDBNavbarNav>
+                  </MDBCollapse>
+              </MDBNavbar>
             <br/>
             <br/>
             <br/>
@@ -95,7 +125,6 @@ const Admin = () => {
             <MDBBtn outline color="elegant" type="submit">Administrator Login <MDBIcon icon="sign-in-alt" /></MDBBtn>
             </form>
             }
-
         </div>
     )
 }

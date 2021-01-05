@@ -2,16 +2,16 @@ import { useState } from "react"
 import { MDBInput, MDBBtn, MDBIcon } from "mdbreact"
 import axios from "axios"
 import toTitleCase from '../../../../functions/toTitleCase'
-import './DeleteWalkForm.css'
+import './DeleteCityForm.css'
 
-const DeleteWalkForm = () => {
+const DeleteCityForm = () => {
 
-    const [walk, setWalk] = useState("")
+    const [city, setCity] = useState("")
 
     const handleChange = (event) => {
         switch(event.target.name) {
-            case "walk":
-              setWalk(event.target.value)
+            case "city":
+              setCity(event.target.value)
               break;
           } 
     }
@@ -20,33 +20,33 @@ const DeleteWalkForm = () => {
         event.preventDefault()
 
         let payload = {
-            walk: toTitleCase(walk)
+            city: toTitleCase(city)
           };
 
         axios
-        .delete("http://localhost:5000/delete-walk",{ data: payload } )
+        .delete("http://localhost:5000/delete-city",{ data: payload } )
         .then((err) => {
           if (err) {
             console.log(err);
           }
         });
 
-        alert("Walk Deleted")
-        setWalk("")
+        alert("City Deleted")
+        setCity("")
         window.scrollTo(0, 0);
     }
 
     return (
     <div>
-        <h2>Delete Walk</h2>
-        <form onSubmit={handleSubmit} className="delete-walk-form">
-            <MDBInput type="text" name="walk" id="walk" value={walk} label="walk name" onChange={handleChange} required/>
+        <h2>Delete City</h2>
+        <form onSubmit={handleSubmit} className="delete-city-form">
+            <MDBInput type="text" name="city" id="city" value={city} label="city name" onChange={handleChange} required/>
             <MDBBtn outline color="elegant" type="submit">
-                Delete Walk <MDBIcon icon="trash"/>
+                Delete City <MDBIcon icon="trash"/>
           </MDBBtn>
         </form>
     </div>
     )
 }
 
-export default DeleteWalkForm
+export default DeleteCityForm
