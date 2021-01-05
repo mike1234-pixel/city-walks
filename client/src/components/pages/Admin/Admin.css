@@ -1,6 +1,10 @@
 .admin-portal {
   text-align: center;
   min-height: 50vh;
+  background-image: url("../../../site-images//laptop-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .admin-login-form {

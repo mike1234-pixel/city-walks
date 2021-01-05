@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 const helmet = require("helmet");
-const apiRoutes = require('./routes/api.js');
+const adminApiRoutes = require('./routes/adminApi');
+const userApiRoutes = require('./routes/userApi');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -34,6 +35,7 @@ const DB = process.env.MONGO_URI.replace("<user>", process.env.MONGO_USER).repla
   .catch((err) => console.log(err)); 
 
 //Routing for API 
-apiRoutes(app);
+userApiRoutes(app)
+adminApiRoutes(app)
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

@@ -88,8 +88,8 @@ const Admin = () => {
                 <MDBNavbarBrand>
                   <strong className="white-text">Admin Portal</strong>
                 </MDBNavbarBrand>
-                <MDBHamburgerToggler color="#fff" className="hamburger2" id="hamburger2" onClick={handleToggleAdminPanel} />
-                  <MDBCollapse id="navbarCollapse4" isOpen={toggleAdminPanel} navbar>
+                <MDBHamburgerToggler color="#fff" className="hamburger1" id="hamburger2" onClick={handleToggleAdminPanel} />
+                  <MDBCollapse id="navbarCollapse3" isOpen={toggleAdminPanel} navbar>
                   <MDBNavbarNav left>
                     <MDBNavItem>
                       <MDBNavLink to="#!" onClick={() => setForm("addWalk")}>Add Walk</MDBNavLink>
