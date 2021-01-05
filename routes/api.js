@@ -37,7 +37,7 @@ app.post('/add-city', (req, res) => {
   City.create(req.body)
 });
 
-app.post('/set-featured-walk', (req, res) => {
+app.patch('/set-featured-walk', (req, res) => {
   const featuredWalk1 = req.body.featuredWalk1;
   const featuredWalk2 = req.body.featuredWalk2;
   const featuredWalk3 = req.body.featuredWalk3;
@@ -53,6 +53,21 @@ app.post('/set-featured-walk', (req, res) => {
       })
     } 
   });
+})
+
+app.delete('/delete-walk', (req, res) => {
+  const walk = req.body.walk;
+  console.log("hit")
+  console.log(walk)
+
+  // delete where walk === walk
+  Walk.findOneAndDelete({walk: walk }, (err, doc) => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log("walk deleted")
+    }
+  })
 })
 
 app.post('/register-user', (req, res) => {

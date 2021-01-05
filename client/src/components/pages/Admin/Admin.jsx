@@ -5,6 +5,7 @@ import qs from "qs"
 import AddWalkForm from './AddWalkForm/AddWalkForm'
 import AddCityForm from './AddCityForm/AddCityForm'
 import SetFeaturedWalkForm from './SetFeaturedWalkForm/SetFeaturedWalkForm'
+import DeleteWalkForm from './DeleteWalkForm/DeleteWalkForm'
 import './Admin.css'
 
 const Admin = () => {
@@ -18,6 +19,8 @@ const Admin = () => {
         displayForm = <AddCityForm/>;
     } else if (form === "setFeaturedWalk") {
         displayForm = <SetFeaturedWalkForm/>
+    } else if (form === "deleteWalk") {
+        displayForm = <DeleteWalkForm/>
     }
 
     useEffect(() => {
@@ -80,6 +83,7 @@ const Admin = () => {
             <MDBBtn outline color="elegant" onClick={() => setForm("addWalk")}>Add Walk</MDBBtn>
             <MDBBtn outline color="elegant" onClick={() => setForm("addCity")}>Add City</MDBBtn>
             <MDBBtn outline color="elegant" onClick={() => setForm("setFeaturedWalk")}>Set Featured Walk</MDBBtn>
+            <MDBBtn outline color="elegant" onClick={() => setForm("deleteWalk")}>Delete Walk</MDBBtn>
             <br/>
             <br/>
             <br/>

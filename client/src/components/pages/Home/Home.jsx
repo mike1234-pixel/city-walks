@@ -17,8 +17,8 @@ const Home = (props) => {
 
     let featuredWalks = walks.filter(walk => walk.featuredWalk === true);
 
-    // if there are no featured walks set in the db just use the first 3 entries in walks
-    if (featuredWalks === []) {
+    // if there are less than 3 featured walks set in the db just use the first 3 entries in walks
+    if (featuredWalks.length < 3) {
         featuredWalks = walks;
     }
 

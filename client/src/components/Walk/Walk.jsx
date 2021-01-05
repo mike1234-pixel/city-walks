@@ -9,7 +9,8 @@ const Walk = (props) => {
     const {
       walk, 
       city, 
-      description, 
+      description,
+      startingPoint, 
       content1, 
       content2, 
       content3, 
@@ -33,6 +34,7 @@ const Walk = (props) => {
       <div className="walk-heading-container">
         <h1 className="walk-heading display-font">{`${walk} -- ${city}`}</h1>
         <p>{description}</p>
+        <p>Starting Point: {startingPoint}</p>
       </div>
         <SectionA content={content1} img={img1} alt={walk}/>
         <SectionB content={content2} img={img2} alt={walk}/>

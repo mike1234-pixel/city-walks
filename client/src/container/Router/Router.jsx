@@ -30,7 +30,8 @@ const Router = (props) => {
           <Walk 
             walk={walk.walk} 
             city={walk.city} 
-            description={walk.description} 
+            description={walk.description}
+            startingPoint={walk.startingPoint} 
             content1={walk.content1} 
             content2={walk.content2} 
             content3={walk.content3} 

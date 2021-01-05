@@ -33,7 +33,7 @@ const SetFeaturedWalkForm = () => {
           };
 
         axios
-        .post("http://localhost:5000/set-featured-walk", qs.stringify(payload))
+        .patch("http://localhost:5000/set-featured-walk", qs.stringify(payload))
         .then((err) => {
           if (err) {
             console.log(err);
