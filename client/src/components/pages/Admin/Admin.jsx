@@ -4,6 +4,7 @@ import axios from "axios"
 import qs from "qs"
 import AddWalkForm from './AddWalkForm/AddWalkForm'
 import AddCityForm from './AddCityForm/AddCityForm'
+import SetFeaturedWalkForm from './SetFeaturedWalkForm/SetFeaturedWalkForm'
 import './Admin.css'
 
 const Admin = () => {
@@ -15,6 +16,8 @@ const Admin = () => {
         displayForm = <AddWalkForm/>;    
     } else if (form === "addCity") {      
         displayForm = <AddCityForm/>;
+    } else if (form === "setFeaturedWalk") {
+        displayForm = <SetFeaturedWalkForm/>
     }
 
     useEffect(() => {
@@ -76,6 +79,7 @@ const Admin = () => {
             <MDBBtn outline color="elegant" onClick={() => adminLogOut()}>Administrator Logout</MDBBtn>
             <MDBBtn outline color="elegant" onClick={() => setForm("addWalk")}>Add Walk</MDBBtn>
             <MDBBtn outline color="elegant" onClick={() => setForm("addCity")}>Add City</MDBBtn>
+            <MDBBtn outline color="elegant" onClick={() => setForm("setFeaturedWalk")}>Set Featured Walk</MDBBtn>
             <br/>
             <br/>
             <br/>

@@ -34,7 +34,7 @@ const Walks = (props) => {
                 return (
                     <MDBCol style={{ maxWidth: "22rem" }} key={v._id}>
                     <MDBCard className="walk-card">
-                        <MDBCardImage className="cutter img-fluid" src={v.coverImg} waves/>
+                        <MDBCardImage className="cutter img-fluid" src={v.coverImg} alt={v.walk} waves/>
                         <MDBCardBody>
                         <MDBCardTitle>{v.city}</MDBCardTitle>
                         <MDBCardTitle className="display-font">{v.walk}</MDBCardTitle>
@@ -62,7 +62,7 @@ const Walks = (props) => {
                 return (
                     <MDBCol style={{ maxWidth: "22rem" }} key={v._id}>
                     <MDBCard className="walk-card">
-                        <MDBCardImage className="cutter img-fluid" src={v.coverImg} waves/>
+                        <MDBCardImage className="cutter img-fluid" src={v.coverImg} alt={v.walk} waves/>
                         <MDBCardBody>
                         <MDBCardTitle>{v.city}</MDBCardTitle>
                         <MDBCardTitle className="display-font">{v.walk}</MDBCardTitle>

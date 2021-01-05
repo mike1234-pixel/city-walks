@@ -17,6 +17,11 @@
   font-family: var(--display-font);
 }
 
+.center {
+  width: 100%;
+  text-align: center;
+}
+
 /* body styles start */
 #root {
   font-family: "Comfortaa";

@@ -37,6 +37,24 @@ app.post('/add-city', (req, res) => {
   City.create(req.body)
 });
 
+app.post('/set-featured-walk', (req, res) => {
+  const featuredWalk1 = req.body.featuredWalk1;
+  const featuredWalk2 = req.body.featuredWalk2;
+  const featuredWalk3 = req.body.featuredWalk3;
+
+  Walk.updateMany({featuredWalk: true},{$set:{featuredWalk: false}}, (err, doc) => {
+    if (err) {
+      console.log(err) // all entries now have featuredWalk set to false
+    } else {
+      Walk.updateMany({$or: [{walk: featuredWalk1}, {walk: featuredWalk2}, {walk: featuredWalk3}]},{$set:{featuredWalk: true}}, (err, doc) => {
+        if (err) { // update three docs 
+          console.log(err)
+        } 
+      })
+    } 
+  });
+})
+
 app.post('/register-user', (req, res) => {
     
   bcrypt.hash(req.body.password, saltRounds, (err, hash) => {

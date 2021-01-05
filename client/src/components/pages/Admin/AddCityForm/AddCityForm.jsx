@@ -21,8 +21,6 @@ const AddCityForm = () => {
             case "img":
               setImg(event.target.value)
               break;
-            default:
-              console.log("other")
           } 
     }
 

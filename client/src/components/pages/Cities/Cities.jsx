@@ -13,7 +13,7 @@ const Cities = (props) => {
         return (
         <MDBCol style={{ maxWidth: "22rem" }} key={city._id}>
         <MDBCard className="city-card">
-            <MDBCardImage className="cutter img-fluid" src={city.img} waves/>
+            <MDBCardImage className="cutter img-fluid" src={city.img} alt={city.city} waves/>
             <MDBCardBody>
             <MDBCardTitle>{city.city}</MDBCardTitle>
             <MDBCardText>{city.description}</MDBCardText>

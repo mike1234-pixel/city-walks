@@ -17,7 +17,8 @@ const mongoose = require('mongoose');
         websiteLink: String,
         instagramLink: String,
         facebookLink: String,
-        twitterLink: String
+        twitterLink: String,
+        featuredWalk: { type: Boolean, default: false },
       });
 
 module.exports = mongoose.model(`Walk`, walkSchema);

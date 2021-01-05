@@ -9,10 +9,9 @@ const Footer = () => {
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
           <MDBCol md="6">
-            <h5 className="title">Footer Content</h5>
+            <h5 className="title">City Walks is...</h5>
             <p>
-              Here you can use rows and columns here to organize your footer
-              content.
+              (City Walks description)
             </p>
           </MDBCol>
           <MDBCol md="3">

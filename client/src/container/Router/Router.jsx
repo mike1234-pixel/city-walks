@@ -56,7 +56,7 @@ const Router = (props) => {
         <div>
           <Nav/>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={() => <Home walks={walks}/>} />
             <Route path="/cities" component={() => <Cities cities={cities}/>} />
             <Route path="/walks" component={() => <Walks walks={walks}/>}/>
             <Route path="/about" component={About} />
