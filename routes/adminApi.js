@@ -36,9 +36,11 @@ app.post('/add-city', (req, res) => {
 });
 
 app.patch('/set-featured-walk', (req, res) => {
+  console.log("set featured walk request")
   const featuredWalk1 = req.body.featuredWalk1;
   const featuredWalk2 = req.body.featuredWalk2;
   const featuredWalk3 = req.body.featuredWalk3;
+  console.log(req.body)
 
   Walk.updateMany({featuredWalk: true},{$set:{featuredWalk: false}}, (err, doc) => {
     if (err) {

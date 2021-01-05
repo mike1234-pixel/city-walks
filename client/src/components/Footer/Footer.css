@@ -6,3 +6,8 @@
 .mt-4 {
   margin-top: 0 !important;
 }
+
+.footer-ul {
+  list-style: none;
+  padding-left: 0;
+}

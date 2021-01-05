@@ -2,6 +2,7 @@ import { useState } from "react"
 import { MDBInput, MDBBtn, MDBIcon } from "mdbreact"
 import axios from "axios";
 import qs from "qs";
+import toTitleCase from '../../../../functions/toTitleCase'
 import './AddCityForm.css'
 
 const AddCityForm = () => {
@@ -28,7 +29,7 @@ const AddCityForm = () => {
         event.preventDefault()
 
         let payload = {
-            city: city,
+            city: toTitleCase(city),
             description: description,
             img: img
           };

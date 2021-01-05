@@ -9,4 +9,12 @@
   box-shadow: none !important;
 }
 
+.carousel-inner {
+  max-height: 400px;
+}
+
+.carousel-img {
+  max-height: 400px;
+}
+
 /* end mdbreact corrections */

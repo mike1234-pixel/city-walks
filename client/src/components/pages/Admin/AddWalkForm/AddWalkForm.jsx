@@ -2,6 +2,7 @@ import { useState } from "react"
 import { MDBInput, MDBBtn, MDBIcon } from "mdbreact"
 import axios from "axios";
 import qs from "qs";
+import toTitleCase from '../../../../functions/toTitleCase'
 import './AddWalkForm.css'
 
 const AddWalkForm = () => {
@@ -84,10 +85,10 @@ const AddWalkForm = () => {
         event.preventDefault()
 
         let payload = {
-            walk: walk,
-            city: city,
+            walk: toTitleCase(walk),
+            city: toTitleCase(city),
             description: description,
-            startingPoint: startingPoint,
+            startingPoint: toTitleCase(startingPoint),
             content1: content1,
             content2: content2,
             content3: content3,
@@ -95,7 +96,7 @@ const AddWalkForm = () => {
             img1: img1,
             img2: img2, 
             img3: img3, 
-            author: author,
+            author: toTitleCase(author),
             aboutTheAuthor: aboutTheAuthor,
             websiteLink: websiteLink,
             instagramLink: instagramLink,

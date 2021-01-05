@@ -1,6 +1,6 @@
 # City Walks API
 
-This is an **express** server designed to interact with a React client contained in the **client** directory.
+This is a REST **express** server designed to interact with a React client contained in the **client** directory.
 
 ## Getting Started
 

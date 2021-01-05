@@ -2,6 +2,7 @@ import { useState } from "react"
 import { MDBInput, MDBBtn, MDBIcon } from "mdbreact"
 import axios from "axios";
 import qs from "qs";
+import toTitleCase from "../../../../functions/toTitleCase"
 import './SetFeaturedWalkForm.css'
 
 const SetFeaturedWalkForm = () => {
@@ -27,9 +28,9 @@ const SetFeaturedWalkForm = () => {
         event.preventDefault()
 
         let payload = {
-            featuredWalk1: featuredWalk1,
-            featuredWalk2: featuredWalk2,
-            featuredWalk3: featuredWalk3,
+            featuredWalk1: toTitleCase(featuredWalk1),
+            featuredWalk2: toTitleCase(featuredWalk2),
+            featuredWalk3: toTitleCase(featuredWalk3),
           };
 
         axios
@@ -49,6 +50,9 @@ const SetFeaturedWalkForm = () => {
     return (
         <div>
         <h2>Set Featured Walks</h2>
+        <p>Administrator note: a prerequisite of this working is that at least one record has the featuredWalk field set to true.</p>
+        <p>Only records where walk is fully in Title Case can be set as a featured walk. For example, 'Bond Street to Baker Street' will not pass.</p>
+        <p>The form will convert your input to Title Case.</p>
         <form onSubmit={handleSubmit} className="set-featured-walk-form">
             <MDBInput type="text" name="featured-walk-1" id="featured-walk-1" value={featuredWalk1} label="featured walk 1 (walk name, e.g 'Stoke Newington')" onChange={handleChange} required/>
             <MDBInput type="text" name="featured-walk-2" id="featured-walk-2" value={featuredWalk2} label="featured walk 2 (walk name, e.g 'Buckingham Palace')" onChange={handleChange} required/>

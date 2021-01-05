@@ -1,6 +1,5 @@
 import React from "react"
-import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
-"mdbreact"
+import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from "mdbreact"
 import './Carousel.css'
 
 const Carousel = () => {
@@ -17,7 +16,7 @@ const Carousel = () => {
         <MDBCarouselItem itemId="1">
           <MDBView>
             <img
-              className="d-block w-100"
+              className="d-block w-100 carousel-img"
               src="https://images.pexels.com/photos/1121782/pexels-photo-1121782.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
               alt="First slide"
             />
@@ -31,7 +30,7 @@ const Carousel = () => {
         <MDBCarouselItem itemId="2">
           <MDBView>
             <img
-              className="d-block w-100"
+              className="d-block w-100 carousel-img"
               src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
               alt="Second slide"
             />
@@ -45,7 +44,7 @@ const Carousel = () => {
         <MDBCarouselItem itemId="3">
           <MDBView>
             <img
-              className="d-block w-100"
+              className="d-block w-100 carousel-img"
               src="https://images.unsplash.com/photo-1471093304841-0423d25b23e5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
               alt="Third slide"
             />
