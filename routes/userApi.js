@@ -206,4 +206,85 @@ app.post('/login-user', (req, res) => {
 
 })
 
+app.post('/reverify-user', (req, res) => {
+  console.log("reverify user")
+  let secretCode;
+
+  // create secret code to verify email address
+  const newSecretCode = new SecretCode({
+    email: req.body.email,
+    code: uuid(),
+  })
+  newSecretCode.save((err, secretCodeEntry) => {
+    if (err) {
+    console.log(err)
+    } else {
+      console.log("secret code created")
+      secretCode = secretCodeEntry.code;
+
+      User.findOne({email: req.body.email }, (err, foundUser) => {
+        if (err) {
+          console.log(err)
+        } else {
+          if (foundUser !== null) {
+          // send email 
+          console.log("sending email")
+
+          oauth2Client.setCredentials({
+          refresh_token: MAILING_SERVICE_REFRESH_TOKEN,
+          });  
+
+          const accessToken = oauth2Client.getAccessToken(); 
+
+          const transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+            type: 'OAuth2',
+            user: SENDER_EMAIL_ADDRESS,
+            clientId: MAILING_SERVICE_CLIENT_ID,
+            clientSecret: MAILING_SERVICE_CLIENT_SECRET,
+            refreshToken: MAILING_SERVICE_REFRESH_TOKEN,
+            accessToken,
+          },
+          });
+
+          console.log(transporter)
+
+          const mailOptions = {
+          from: SENDER_EMAIL_ADDRESS,
+          to: req.body.email,
+          subject: "Email Verification for City Walks",
+          html: "<p>Hi, thanks for signing up. Please verify your account by clicking <a href='http://localhost:5000/verify-user/" + foundUser.id +"/" + secretCode + "'>this link</a></p>",
+          };
+
+          console.log(mailOptions)
+
+          transporter.sendMail(mailOptions, (err, info) => {
+          if (err) {
+          console.log(err)
+          } else {
+          console.log("email sent.") 
+          }
+        });
+        // send email end
+
+
+        }
+      }
+      })
+
+
+
+
+
+
+
+    }
+  })
+
+ 
+res.send("verification email has been sent")
+
+})
+
 }

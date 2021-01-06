@@ -17,6 +17,8 @@ export const LoginContextProvider = (props) => {
     const [userFirstName, setUserFirstName] = useState("")
     const [userLastName, setUserLastName] = useState("")
   
+    const [verificationEmail, setVerificationEmail] = useState("")
+
     const handleChangeRegistration = (event) => {
         switch(event.target.name) {
             case "registration-fname":
@@ -108,6 +110,37 @@ export const LoginContextProvider = (props) => {
         }
       });
   }
+
+  // resend verification email
+
+  const handleChangeVerification = (event) => {
+    switch(event.target.name) {
+        case "verification-email":
+          setVerificationEmail(event.target.value)
+          break;
+      }   
+  }
+
+const handleSubmitVerification = (event) => {
+    console.log("handle submit verification")
+    event.preventDefault()
+
+    const payload = {
+        email: verificationEmail,
+      };
+
+axios
+    .post("http://localhost:5000/reverify-user", qs.stringify(payload))
+    .then((res, err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        alert("Verification email sent. Check your inbox.")
+        setVerificationEmail("")
+        window.scrollTo(0, 0)
+      }
+    })
+}
   
   const logOut = () => {
     setLoggedIn(false)
@@ -133,6 +166,10 @@ export const LoginContextProvider = (props) => {
                 // logged in user data
                 userFirstName: userFirstName,
                 userLastName: userLastName,
+                // resend verification email
+                verificationEmail: verificationEmail,
+                handleChangeVerification: handleChangeVerification,
+                handleSubmitVerification: handleSubmitVerification,
                 // logout function
                 logOut: logOut
             }}

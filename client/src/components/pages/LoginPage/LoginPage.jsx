@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react"
 import { MDBBtn, MDBIcon } from "mdbreact"
 import LoginForm from './LoginForm/LoginForm'
 import RegistrationForm from './RegistrationForm/RegistrationForm'
+import VerificationForm from './VerificationForm/VerificationForm'
 import { LoginContext } from '../../../context/LoginContext'
 import './LoginPage.css'
 
@@ -19,6 +20,15 @@ const LoginPage = () => {
         window.scrollTo(0, 0);
       }, []);
 
+    let displayForm
+    if (form === "loginForm") {      
+        displayForm = <LoginForm/>;    
+    } else if (form === "registrationForm") {      
+        displayForm = <RegistrationForm/>;
+    } else if (form === "verificationForm") {
+        displayForm = <VerificationForm/>
+    } 
+
     return (
         <div className="user-portal" key="login-page">
         <div className="user-portal-header-btns-container">
@@ -31,14 +41,14 @@ const LoginPage = () => {
             <div>
                 <MDBBtn outline color="elegant" onClick={() => setForm("loginForm")}>Login</MDBBtn>
                 <MDBBtn outline color="elegant" onClick={() => setForm("registrationForm")}>Register</MDBBtn>
+                <MDBBtn outline color="elegant" onClick={() => setForm("verificationForm")}>Activate Account</MDBBtn>
             </div>
             }
         </div>
             <br/>
             <br/>
             <br/>
-            {form === "registrationForm" ?     
-            <RegistrationForm /> : <LoginForm />}
+            {displayForm}
         </div>
     
     )
