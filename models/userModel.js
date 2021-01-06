@@ -5,11 +5,10 @@ const userSchema = new mongoose.Schema({
     lname: String,
     email: String,
     password: String,
-  //   status: {
-  //     type: String,
-  //     default: "pending",
-  // },
-
+    status: {
+      type: String,
+      default: "pending",
+     },
   })
 
 

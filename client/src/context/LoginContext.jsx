@@ -52,7 +52,9 @@ export const LoginContextProvider = (props) => {
             console.log(err);
           } else if (res.data === "An account with this email already exists.") {
             alert("An account with this email already exists.")
-          } else {
+          } else if (res.data === "We have sent you an email. Please verify your account by clicking the link in the mail.") {
+            alert("We have sent you an email. Please verify your account by clicking the link in the mail.")
+           } else {
             alert("Registration Complete")
             setLoggedIn(true)
             setFirstName("")

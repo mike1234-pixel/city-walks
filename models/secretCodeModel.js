@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const secretCode = new Schema({
+const secretCodeSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
@@ -15,4 +15,6 @@ const secretCode = new Schema({
         expires: 600,
     },
 });
+
+module.exports = mongoose.model(`SecretCode`, secretCodeSchema)
 
