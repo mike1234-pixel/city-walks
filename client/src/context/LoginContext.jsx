@@ -50,7 +50,10 @@ export const LoginContextProvider = (props) => {
         .then((res, err) => {
           if (err) {
             console.log(err);
+          } else if (res.data === "An account with this email already exists.") {
+            alert("An account with this email already exists.")
           } else {
+            alert("Registration Complete")
             setLoggedIn(true)
             setFirstName("")
             setLastName("")
@@ -61,8 +64,6 @@ export const LoginContextProvider = (props) => {
             window.scrollTo(0, 0)
           }
         });
-  
-        alert("Registration Complete")
     }
   
     const handleChangeLogin = (event) => {

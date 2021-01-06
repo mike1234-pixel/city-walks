@@ -5,3 +5,7 @@
 .walk-card:hover {
   transform: scale(1.05);
 }
+
+.walks-search-icon {
+  margin: 25px 0;
+}

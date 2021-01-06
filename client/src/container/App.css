@@ -22,7 +22,15 @@
   text-align: center;
 }
 
+.min-page-height {
+  min-height: 70vh;
+}
+
 /* body styles start */
+html {
+  scroll-behavior: smooth;
+}
+
 #root {
   font-family: "Comfortaa";
   /* background-image: url("https://media.istockphoto.com/photos/abstract-wide-angle-soft-christmas-background-picture-id1183539451?k=6&m=1183539451&s=612x612&w=0&h=JwWfcefXJUoqtW0nJoKfrF5vj98m_7I5Y_WO5iJXzaw=");

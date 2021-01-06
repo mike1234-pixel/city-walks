@@ -83,3 +83,14 @@ Admin.findOne({ username: username }, (err, foundAdmin) => {
 ```
 
 - You will now be able to login as an admin using your credentials, and your password will be encrypted in the database.
+
+email verification steps:
+
+1. check in the db if the email is already there, if not create the account, if so respond with a message that an account using this address already exists,display this message to the user.
+
+this does not address the following:
+
+      Make sure the email actually exists
+      Make sure the person registering actually owns the email address
+
+- 2. do email verification

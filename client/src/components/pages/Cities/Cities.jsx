@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { SearchContext } from '../../../context/SearchContext'
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact'
+import { MDBIcon, MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact'
 import './Cities.css'
 
 const Cities = (props) => {
@@ -17,7 +17,7 @@ const Cities = (props) => {
             <MDBCardBody>
             <MDBCardTitle>{city.city}</MDBCardTitle>
             <MDBCardText>{city.description}</MDBCardText>
-            <MDBBtn outline color="white" className="city-card-btn" onClick={() => handleClickSearch(city.city)}>Click</MDBBtn>
+            <MDBBtn outline color="white" className="city-card-btn" onClick={() => handleClickSearch(city.city)}>Find walks <MDBIcon icon="search"/></MDBBtn>
             </MDBCardBody>
         </MDBCard>
         </MDBCol>
@@ -25,7 +25,7 @@ const Cities = (props) => {
     })
 
     return (
-        <div className="cities-page-container">
+        <div className="cities-page-container min-page-height">
             <div className="page-heading-container">
                 <h1 className="page-heading">Cities</h1>
             </div>

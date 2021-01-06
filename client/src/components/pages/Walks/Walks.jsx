@@ -1,6 +1,6 @@
 import { useEffect, useContext } from "react"
 import { useHistory } from "react-router-dom"
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact'
+import { MDBIcon, MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact'
 import { FaSearchLocation } from "react-icons/fa"
 import { SearchContext } from '../../../context/SearchContext'
 import urlify from '../../../functions/urlify'
@@ -24,11 +24,11 @@ const Walks = (props) => {
     
     if (searchValue === "") {
     return (
-        <div>
+        <div className="min-page-height">
             <div className="page-heading-container">
                 <h1 className="page-heading">Walks</h1>
                 <MDBBtn outline color="elegant" className="city-card-btn" onClick={() => setSearchValue("")}>Show all walks</MDBBtn>
-                <p><FaSearchLocation className="search-location-icon"/>{`  ${searchValue}`}</p>
+                <p className="walks-search-icon"><FaSearchLocation className="search-location-icon"/>{`  ${searchValue}`}</p>
             </div>
             <div  className="card-container">
             {walksArr.map(v => {
@@ -40,7 +40,7 @@ const Walks = (props) => {
                         <MDBCardTitle>{v.city}</MDBCardTitle>
                         <MDBCardTitle className="display-font">{v.walk}</MDBCardTitle>
                         <MDBCardText>{v.description}</MDBCardText>
-                        <MDBBtn outline color="elegant" className="city-card-btn" onClick={() =>handleRedirect(urlify(v.walk))}>Explore</MDBBtn>
+                        <MDBBtn outline color="elegant" className="city-card-btn" onClick={() =>handleRedirect(urlify(v.walk))}>Explore <MDBIcon icon="walking" /></MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                     </MDBCol>
@@ -51,11 +51,11 @@ const Walks = (props) => {
     )
     } else if (walksArr.map(v => { v.walk.toLowerCase().includes(searchValue.toLowerCase()) || v.city.toLowerCase().includes(searchValue.toLowerCase()) } )) {
         return (
-        <div>
+        <div className="min-page-height">
             <div className="page-heading-container">
                 <h1 className="page-heading" data-testid="walks-page-heading">Walks</h1>
                 <MDBBtn outline color="elegant" className="city-card-btn" onClick={() => setSearchValue("")}>Show all walks</MDBBtn>
-                <p><FaSearchLocation className="search-location-icon"/>{`  ${searchValue}`}</p>
+                <p className="walks-search-icon"><FaSearchLocation className="search-location-icon"/>{`  ${searchValue}`}</p>
             </div>
             <div className="card-container">
                 {walksArr.map(v => {
@@ -68,7 +68,7 @@ const Walks = (props) => {
                         <MDBCardTitle>{v.city}</MDBCardTitle>
                         <MDBCardTitle className="display-font">{v.walk}</MDBCardTitle>
                         <MDBCardText>{v.description}</MDBCardText>
-                        <MDBBtn outline color="elegant" className="city-card-btn" onClick={() =>handleRedirect(urlify(v.walk))}>Explore</MDBBtn>
+                        <MDBBtn outline color="elegant" className="city-card-btn" onClick={() =>handleRedirect(urlify(v.walk))}>Explore <MDBIcon icon="walking" /></MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                     </MDBCol>

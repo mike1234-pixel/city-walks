@@ -1,0 +1,34 @@
+.featured-walks-heading-container {
+  margin: 40px 0;
+}
+
+.featured-walks-link {
+  color: var(--elegant-color-dark);
+}
+
+.featured-walks-link:hover {
+  color: var(--blue);
+}
+
+.featured-walks-btn {
+  margin-bottom: 30px;
+}
+
+.featured-walks-h3-container {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.featured-walks-h3 {
+  background: var(--elegant-color-dark);
+  display: inline-block;
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+  min-width: 50%;
+  border-radius: 50px;
+}
+
+hr {
+  border: 1px solid var(--elegant-color-dark);
+}

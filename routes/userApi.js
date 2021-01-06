@@ -29,22 +29,37 @@ app.get('/cities', (req, res) => {
 });
 
 app.post('/register-user', (req, res) => {
-    
-  bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
-    const newUser =  new User({
-      fname: req.body.fname,
-      lname: req.body.lname,
-      email: req.body.email,
-      password: hash
-    });
-    newUser.save((err) => {
-      if (err) {
-        console.log(err);
+
+  User.findOne({email: req.body.email}, (err, foundUser) =>{
+    if (err) {
+      console.log(err)
+    } else {
+      if (foundUser === null) {
+        console.log("creating new account")
+          bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
+            const newUser =  new User({
+              fname: req.body.fname,
+              lname: req.body.lname,
+              email: req.body.email,
+              password: hash
+            });
+            newUser.save((err) => {
+              if (err) {
+                console.log(err);
+              } else {
+                res.send(newUser)
+              }
+            })
+          })
       } else {
-        res.send(newUser)
+      console.log(foundUser)
+      console.log("an account with this email already exists")
+      res.send("An account with this email already exists.")
       }
-    })
+    }
   })
+  
+    
 })
 
 app.post('/login-user', (req, res) => {
