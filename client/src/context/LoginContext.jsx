@@ -53,7 +53,7 @@ export const LoginContextProvider = (props) => {
           } else if (res.data === "An account with this email already exists.") {
             alert("An account with this email already exists.")
           } else if (res.data === "We have sent you an email. Please verify your account by clicking the link in the mail.") {
-            alert("We have sent you an email. Please verify your account by clicking the link in the mail.")
+            alert("We have sent you an email. Please verify your account by clicking the link in the email. (This code expires after 10 minutes)")
            } else {
             alert("Registration Complete")
             setLoggedIn(true)
@@ -93,6 +93,8 @@ export const LoginContextProvider = (props) => {
       .then((res, err) => {
         if (err) {
           console.log(err);
+        } else if (res.data === "Your account exists but is not activated. Please click 'verify account' for email verification.") {
+          alert("Your account exists but is not activated. Please click 'verify account' for email verification.")
         } else if (res.data === "unsuccessful login attempt") {
           alert("Unsuccessful Login Attempt. Please Try Again.")
         } else {

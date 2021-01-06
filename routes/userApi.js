@@ -51,6 +51,37 @@ app.get('/cities', (req, res) => {
   });
 });
 
+// http://localhost:5000/verify-user/5ff5efe00e2f501d28b903fa/4242172e-8866-410c-8b39-6f0a6c830ed1
+
+app.get('/verify-user/:userId/:secretCode', (req, res) => {
+  console.log("email link hit") // need to make sure i'm getting feedback on this link
+ 
+  const { userId, secretCode } = req.params;
+ 
+  User.findOne({_id: userId}, (err, foundUser) => {
+    if (err) {
+      console.log(err)
+    } else {
+      const email = foundUser.email;
+
+      SecretCode.findOne({code: secretCode}, (err, foundSecretCode) => {
+        if (err) {
+          console.log(err)
+        } else {
+          User.findOneAndUpdate({email: email}, {status: "active"}, (err) => {
+            if (err) {
+              console.log(err)
+            } else {
+              res.send("user account activated") // the user will see this so send them a proper styled template
+            }
+          })
+        }
+      })
+    }
+  })
+
+})
+
 app.post('/register-user', (req, res) => {
 
   User.findOne({email: req.body.email}, (err, foundUser) =>{
@@ -116,7 +147,7 @@ app.post('/register-user', (req, res) => {
                         from: SENDER_EMAIL_ADDRESS,
                         to: req.body.email,
                         subject: "Email Verification for City Walks",
-                        html: "<p>Hi, thanks for signing up. Please verify your account by clicking <a href='https://localhost:5000/verify-user/" + newUser.id +"/" + secretCode + "'>this link</a></p>",
+                        html: "<p>Hi, thanks for signing up. Please verify your account by clicking <a href='http://localhost:5000/verify-user/" + newUser.id +"/" + secretCode + "'>this link</a></p>",
                       };
 
                       console.log(mailOptions)
@@ -149,23 +180,22 @@ app.post('/register-user', (req, res) => {
 
 })
 
-app.post('/verify-user', (req, res) => {
-  console.log("email link hit")
-  console.log(req.body)
-})
+
 
 app.post('/login-user', (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
 
- 
+  const { email, password } = req.body;
+
   User.findOne({ email: email}, (err, foundUser) => {
     if (foundUser === null) {
       console.log("foundUser is null")
-      res.send("unsuccessful login attempt")
+      res.send("unsuccessful login attempt") // account does not exist
     } else {
       bcrypt.compare(password, foundUser.password, (err, result) => {
-        if (result === true) {
+        if (foundUser.status === "pending") {
+          console.log(foundUser.status)
+          res.send("Your account exists but is not activated. Please click 'verify account' for email verification.")
+        } else if (result === true) {
           res.send(foundUser);
         } else {
           res.send("unsuccessful login attempt")
