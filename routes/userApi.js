@@ -61,7 +61,7 @@ app.post('/register-user', (req, res) => {
       if (foundUser === null) {
             console.log("creating new account")
 
-            // let secretCode;
+            let secretCode;
 
             // create secret code to verify email address
             const newSecretCode = new SecretCode({
@@ -92,14 +92,11 @@ app.post('/register-user', (req, res) => {
                     // send email start
                     console.log("sending email")
 
-                    // Mailing.sendEmail = data => {
                         oauth2Client.setCredentials({
                         refresh_token: MAILING_SERVICE_REFRESH_TOKEN,
                       });  
-                    // }
                     
-                      const accessToken = oauth2Client.getAccessToken(); // returns a promise
-                      // emails are being sent but deal with handling this promise
+                      const accessToken = oauth2Client.getAccessToken(); 
                       
                       const transporter = nodemailer.createTransport({
                         service: 'gmail',
@@ -119,7 +116,7 @@ app.post('/register-user', (req, res) => {
                         from: SENDER_EMAIL_ADDRESS,
                         to: req.body.email,
                         subject: "Email Verification for City Walks",
-                        html: "<p>Hi, thanks for signing up. Please verify your account by clicking this link.</p>",
+                        html: "<p>Hi, thanks for signing up. Please verify your account by clicking <a href='https://localhost:5000/verify-user/" + newUser.id +"/" + secretCode + "'>this link</a></p>",
                       };
 
                       console.log(mailOptions)
@@ -133,8 +130,6 @@ app.post('/register-user', (req, res) => {
                     });
                     // send email end
                     
-                  
-                    // }
                   }
                 
                 })
@@ -156,7 +151,7 @@ app.post('/register-user', (req, res) => {
 
 app.post('/verify-user', (req, res) => {
   console.log("email link hit")
-  res.send("email verified. Please login")
+  console.log(req.body)
 })
 
 app.post('/login-user', (req, res) => {
