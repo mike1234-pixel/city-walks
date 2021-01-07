@@ -5,6 +5,7 @@ import { MDBBtn, MDBIcon } from "mdbreact";
 import LoginForm from "./LoginForm/LoginForm";
 import RegistrationForm from "./RegistrationForm/RegistrationForm";
 import VerificationForm from "./VerificationForm/VerificationForm";
+import ResetPasswordForm from "./ResetPasswordForm/ResetPasswordForm"
 import ForgotPasswordForm from "./ForgotPasswordForm/ForgotPasswordForm";
 import { LoginContext } from "../../../context/LoginContext";
 import "./LoginPage.css";
@@ -25,6 +26,8 @@ const LoginPage = () => {
     displayForm = <RegistrationForm />;
   } else if (form === "verificationForm") {
     displayForm = <VerificationForm />;
+  } else if (form === "resetPasswordForm") {
+    displayForm = <ResetPasswordForm />
   } else if (form === "forgotPasswordForm") {
     displayForm = <ForgotPasswordForm />;
   }
@@ -68,6 +71,13 @@ const LoginPage = () => {
               onClick={() => setForm("verificationForm")}
             >
               Resend Account Verification Email
+            </MDBBtn>
+            <MDBBtn
+              outline
+              color="elegant"
+              onClick={() => setForm("resetPasswordForm")}
+            >
+              Reset Password
             </MDBBtn>
             <MDBBtn
               outline

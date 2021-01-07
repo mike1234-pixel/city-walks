@@ -334,4 +334,43 @@ module.exports = function (app) {
     
   })
 
+
+  app.post('/reset-password-with-old-password', (req, res) => {
+    const { email, oldPassword, newPassword } = req.body
+    
+   User.findOne({email: email}, (err, foundUser) => {
+     if (err) {
+       console.log(err)
+     } else if (foundUser === null) {
+       res.send("user not found")
+     } else {
+      bcrypt.compare(oldPassword, foundUser.password, (err, result) => {
+       if (err) {
+         console.log(err)
+       } else {
+         if (result === true) {
+          bcrypt.hash(newPassword, saltRounds, (err, hash) => {
+            if (err) {
+              console.log(err)
+            } else {
+              User.findOneAndUpdate({email: email}, {password: hash}, (err, foundUser) => {
+                if (err) {
+                  console.log(err)
+                } else if (foundUser === null) {
+                  res.send("user not found")
+                } else {
+                  res.send("password successfully updated")
+                }
+              })
+            }
+          })
+         } else {
+           res.send("old password does not match password in the database")
+         }
+       }
+      })
+     }
+   })
+  })
+
 };

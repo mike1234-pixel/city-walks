@@ -19,6 +19,11 @@ export const LoginContextProvider = (props) => {
   
     const [verificationEmail, setVerificationEmail] = useState("")
 
+    const [resetPasswordEmail, setResetPasswordEmail] = useState("")
+    const [resetPasswordOldPassword, setResetPasswordOldPassword] = useState("")
+    const [resetPasswordNewPassword, setResetPasswordNewPassword] = useState("")
+    const [resetPasswordConfirmNewPassword, setResetPasswordConfirmNewPassword] = useState("")
+
     const [forgotPasswordEmail, setForgotPasswordEmail] = useState("")
 
     const handleChangeRegistration = (event) => {
@@ -144,6 +149,60 @@ axios
     })
 }
 
+  // reset password
+
+  const handleChangeResetPassword = (event) => {
+    switch(event.target.name) {
+        case "reset-email":
+          setResetPasswordEmail(event.target.value)
+          break;
+        case "old-password":
+          setResetPasswordOldPassword(event.target.value)
+          break;
+        case "new-password":
+          setResetPasswordNewPassword(event.target.value)
+          break;
+        case "confirm-new-password":
+          setResetPasswordConfirmNewPassword(event.target.value)
+          break;
+      }   
+  }
+
+const handleSubmitResetPassword = (event) => {
+    console.log("handle submit reset password")
+    event.preventDefault()
+
+    const payload = {
+        email: resetPasswordEmail,
+        oldPassword: resetPasswordOldPassword,
+        newPassword: resetPasswordNewPassword,
+      };
+
+      if (resetPasswordNewPassword === resetPasswordConfirmNewPassword) {
+        axios
+        .post("http://localhost:5000/reset-password-with-old-password", qs.stringify(payload))
+        .then((res, err) => {
+          if (err) {
+            console.log(err);
+          } else if (res.data === "user not found") {
+            alert("We could not find your account. Please try again.")
+          } else if (res.data === "old password does not match password in the database") {
+            alert("The password you entered does not match the account. Please try again or use the Forgot Password option.")
+          } else if (res.data === "password successfully updated") {
+            alert("Password reset. You can now login.")
+            setResetPasswordEmail("")
+            setResetPasswordOldPassword("")
+            setResetPasswordNewPassword("")
+            setResetPasswordConfirmNewPassword("")
+            window.scrollTo(0, 0)
+          }
+        })
+      } else {
+        alert("Passwords don't match. Please try again.")
+      }
+
+}
+
   // forgot password
 
   const handleChangeForgotPassword = (event) => {
@@ -184,31 +243,38 @@ axios
     return (
         <LoginContext.Provider 
             value={{
-                firstName: firstName,
-                lastName: lastName,
-                registrationEmail: registrationEmail,
-                registrationPassword: registrationPassword,
-                handleChangeRegistration: handleChangeRegistration,
-                handleSubmitRegistration: handleSubmitRegistration,
-                loggedIn: loggedIn,
+                firstName,
+                lastName,
+                registrationEmail,
+                registrationPassword,
+                handleChangeRegistration,
+                handleSubmitRegistration,
+                loggedIn,
                 // login state and functions
-                loginEmail: loginEmail,
-                loginPassword: loginPassword,
+                loginEmail,
+                loginPassword,
                 handleChangeLogin: handleChangeLogin,
                 handleSubmitLogin: handleSubmitLogin,
                 // logged in user data
-                userFirstName: userFirstName,
-                userLastName: userLastName,
+                userFirstName,
+                userLastName,
                 // resend verification email
-                verificationEmail: verificationEmail,
-                handleChangeVerification: handleChangeVerification,
-                handleSubmitVerification: handleSubmitVerification,
+                verificationEmail,
+                handleChangeVerification,
+                handleSubmitVerification,
+                // reset password
+                resetPasswordEmail,
+                resetPasswordOldPassword,
+                resetPasswordNewPassword,
+                resetPasswordConfirmNewPassword,
+                handleChangeResetPassword,
+                handleSubmitResetPassword,
                 // forgot password
-                forgotPasswordEmail: forgotPasswordEmail,
-                handleChangeForgotPassword: handleChangeForgotPassword,
-                handleSubmitForgotPassword: handleSubmitForgotPassword,
+                forgotPasswordEmail,
+                handleChangeForgotPassword,
+                handleSubmitForgotPassword,
                 // logout function
-                logOut: logOut
+                logOut
             }}
         >
             {props.children}
