@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # City Walks API
 
 This is a REST **express** server designed to interact with a React client contained in the **client** directory.
@@ -22,11 +24,11 @@ This API uses a **MongoDB** database which is interacted with via **mongoose**.
 
 Models and schemas are contained within the **models** directory.
 
-## Authentication and Encryption
+## Authentication and Hashing
 
 The API supports user registration and authentication using the **bcrypt** package to salt and hash the passwords, with **_10 salt rounds_** being applied.
 
-Only encrypted passwords are stored in the database.
+Only hashed passwords are stored in the database.
 
 ## Security
 
@@ -82,7 +84,7 @@ Admin.findOne({ username: username }, (err, foundAdmin) => {
 });
 ```
 
-- You will now be able to login as an admin using your credentials, and your password will be encrypted in the database.
+- You will now be able to login as an admin using your credentials, and your password will be hashed in the database.
 
 email verification steps:
 

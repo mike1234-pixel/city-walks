@@ -15,6 +15,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(helmet());
 
+// content security policy
+app.use((req, res, next) => {
+  res.setHeader(
+    'Content-Security-Policy',
+    "script-src 'self' https://cdnjs.cloudflare.com"
+  );
+  next();
+});
+
 // cors
 app.use(cors());
 app.options('*', cors());

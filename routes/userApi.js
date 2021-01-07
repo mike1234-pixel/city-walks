@@ -258,4 +258,80 @@ module.exports = function (app) {
 
     res.send("verification email has been sent");
   });
+
+
+  app.post('/forgot-password', (req, res) => {
+    console.log(req.body)
+
+    // email the user a link containing a password reset form
+    // form should contain email and password fields so i can access both
+    // the password reset form triggers a get request containing the new password
+    // in the get route hash the password and reset the password in the db for that user
+
+    // send email start
+    oauth2Client.setCredentials({
+      refresh_token: MAILING_SERVICE_REFRESH_TOKEN,
+    });
+
+    const accessToken = oauth2Client.getAccessToken();
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        type: "OAuth2",
+        user: SENDER_EMAIL_ADDRESS,
+        clientId: MAILING_SERVICE_CLIENT_ID,
+        clientSecret: MAILING_SERVICE_CLIENT_SECRET,
+        refreshToken: MAILING_SERVICE_REFRESH_TOKEN,
+        accessToken,
+      },
+    });
+
+    const mailOptions = {
+      from: SENDER_EMAIL_ADDRESS,
+      to: req.body.email,
+      subject: "Reset Password for City Walks",
+      html: "<p>Hi, please click on this link and enter your email and password to reset.<a href='http://localhost:5000/forgot-password/'>this link</a></p>",
+    };
+
+    console.log(mailOptions);
+
+    transporter.sendMail(mailOptions, (err, info) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("email sent.");
+        res.send("email sent")
+      }
+    });
+    // send email end
+  })
+
+  app.get('/forgot-password', (req, res) => {
+    res.sendFile(path.join(__dirname, '../views', 'forgotpassword.html')); 
+  })
+
+  app.post('/reset-password', (req, res) => {
+    console.log(req.body)
+
+    const { email, newPassword } = req.body;
+
+    bcrypt.hash(newPassword, saltRounds, (err, hash) => {
+      if (err) {
+        console.log(err)
+      } else {
+        User.findOneAndUpdate({email: email}, {password: hash}, (err, foundUser) => {
+          if (err) {
+            console.log(err)
+          } else if (foundUser === null) {
+            res.sendFile(path.join(__dirname, '../views', 'passwordresetfail.html')); 
+          } else {
+            res.sendFile(path.join(__dirname, '../views', 'passwordresetsuccess.html')); 
+          }
+        })
+      }
+    })
+    
+  })
+
 };

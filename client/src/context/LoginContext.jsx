@@ -19,6 +19,8 @@ export const LoginContextProvider = (props) => {
   
     const [verificationEmail, setVerificationEmail] = useState("")
 
+    const [forgotPasswordEmail, setForgotPasswordEmail] = useState("")
+
     const handleChangeRegistration = (event) => {
         switch(event.target.name) {
             case "registration-fname":
@@ -141,6 +143,37 @@ axios
       }
     })
 }
+
+  // forgot password
+
+  const handleChangeForgotPassword = (event) => {
+    switch(event.target.name) {
+        case "forgot-password-email":
+          setForgotPasswordEmail(event.target.value)
+          break;
+      }   
+  }
+
+const handleSubmitForgotPassword = (event) => {
+    console.log("handle submit forgot password")
+    event.preventDefault()
+
+    const payload = {
+        email: forgotPasswordEmail,
+      };
+
+axios
+    .post("http://localhost:5000/forgot-password", qs.stringify(payload))
+    .then((res, err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        alert("We have sent you an email. Please click the click in your email to reset your password")
+        setForgotPasswordEmail("")
+        window.scrollTo(0, 0)
+      }
+    })
+}
   
   const logOut = () => {
     setLoggedIn(false)
@@ -170,6 +203,10 @@ axios
                 verificationEmail: verificationEmail,
                 handleChangeVerification: handleChangeVerification,
                 handleSubmitVerification: handleSubmitVerification,
+                // forgot password
+                forgotPasswordEmail: forgotPasswordEmail,
+                handleChangeForgotPassword: handleChangeForgotPassword,
+                handleSubmitForgotPassword: handleSubmitForgotPassword,
                 // logout function
                 logOut: logOut
             }}
