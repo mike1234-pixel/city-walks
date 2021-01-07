@@ -1,6 +1,7 @@
 import { createContext, useState } from "react"
 import axios from "axios"
 import qs from "qs"
+import LoggedOutView from "../components/pages/LoginPage/LoggedOutView/LoggedOutView"
 import LoginForm from "../components/pages/LoginPage/LoginForm/LoginForm";
 import RegistrationForm from "../components/pages/LoginPage/RegistrationForm/RegistrationForm"
 import VerificationForm from "../components/pages/LoginPage/VerificationForm/VerificationForm";
@@ -32,10 +33,12 @@ export const LoginContextProvider = (props) => {
     const [forgotPasswordEmail, setForgotPasswordEmail] = useState("")
 
     // set display form on LoginPage
-    const [form, setForm] = useState("");
+    const [form, setForm] = useState("loggedOutView");
 
     let displayForm;
-    if (form === "loginForm") {
+    if (form === "loggedOutView") {
+      displayForm = <LoggedOutView/>;
+    } else if (form === "loginForm") {
       displayForm = <LoginForm />;
     } else if (form === "registrationForm") {
       displayForm = <RegistrationForm />;
@@ -260,6 +263,7 @@ axios
     setLoggedIn(false)
     setUserFirstName("")
     setUserLastName("")
+    setForm("loggedOutView")
   }
 
     return (

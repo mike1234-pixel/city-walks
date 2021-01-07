@@ -13,6 +13,7 @@ import {
   MDBCollapse,
 } from "mdbreact";
 import { LoginContext } from "../../../context/LoginContext";
+import LoggedInView from './LoggedInView/LoggedInView';
 import "./LoginPage.css";
 
 const LoginPage = () => {
@@ -56,7 +57,7 @@ const LoginPage = () => {
                 </MDBNavbarNav>
               </MDBCollapse>
             </MDBNavbar>
-            <h2 className="login-heading">Welcome back {userFirstName}</h2>
+            <LoggedInView/>
           </div>
         ) : (
           <div>
