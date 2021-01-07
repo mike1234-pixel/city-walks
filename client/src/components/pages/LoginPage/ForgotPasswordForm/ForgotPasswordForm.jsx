@@ -14,11 +14,11 @@ const ForgotPasswordForm = () => {
     return (
         <div key="user-forgot-password">
         <div className="forgot-password-header-container">
-          <h2>Reset Forgotten Password</h2>
+          <h2 className="forgot-password-header">Forgot Your Password?</h2>
           <p>Please submit your email.</p>
           <p>We will send you an email to confirm it's you. Click the link in the email to reset your password.</p>
         </div>
-          <form onSubmit={handleSubmitForgotPassword} className="forgot-password-form">
+          <form onSubmit={handleSubmitForgotPassword} className="forgot-password-form display-form">
               <MDBInput key="input-5" type="email" name="forgot-password-email" id="forgot-password-email" value={forgotPasswordEmail} label="email" onChange={handleChangeForgotPassword} required/>
               <MDBBtn outline color="elegant" type="submit">
                   Reset Password <MDBIcon far icon="paper-plane" />

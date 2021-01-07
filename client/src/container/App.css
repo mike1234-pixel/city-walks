@@ -1,4 +1,8 @@
-/*  global css only */
+/**
+ * /*  global css only
+ *
+ * @format
+ */
 
 /* font import */
 @import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
@@ -24,6 +28,10 @@
 
 .min-page-height {
   min-height: 70vh;
+}
+
+.display-form {
+  padding: 20px;
 }
 
 /* body styles start */

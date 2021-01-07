@@ -1,6 +1,11 @@
 import { createContext, useState } from "react"
 import axios from "axios"
 import qs from "qs"
+import LoginForm from "../components/pages/LoginPage/LoginForm/LoginForm";
+import RegistrationForm from "../components/pages/LoginPage/RegistrationForm/RegistrationForm"
+import VerificationForm from "../components/pages/LoginPage/VerificationForm/VerificationForm";
+import ResetPasswordForm from "../components/pages/LoginPage/ResetPasswordForm/ResetPasswordForm";
+import ForgotPasswordForm from "../components/pages/LoginPage/ForgotPasswordForm/ForgotPasswordForm";
 
 export const LoginContext = createContext();
 
@@ -25,6 +30,22 @@ export const LoginContextProvider = (props) => {
     const [resetPasswordConfirmNewPassword, setResetPasswordConfirmNewPassword] = useState("")
 
     const [forgotPasswordEmail, setForgotPasswordEmail] = useState("")
+
+    // set display form on LoginPage
+    const [form, setForm] = useState("");
+
+    let displayForm;
+    if (form === "loginForm") {
+      displayForm = <LoginForm />;
+    } else if (form === "registrationForm") {
+      displayForm = <RegistrationForm />;
+    } else if (form === "verificationForm") {
+      displayForm = <VerificationForm />;
+    } else if (form === "resetPasswordForm") {
+      displayForm = <ResetPasswordForm />;
+    } else if (form === "forgotPasswordForm") {
+      displayForm = <ForgotPasswordForm />;
+    }
 
     const handleChangeRegistration = (event) => {
         switch(event.target.name) {
@@ -111,6 +132,7 @@ export const LoginContextProvider = (props) => {
           setLoggedIn(true)
           setLoginEmail("")
           setLoginPassword("")
+          setForm("")
           setUserFirstName(res.data.fname)
           setUserLastName(res.data.lname)
           window.scrollTo(0, 0)
@@ -243,13 +265,18 @@ axios
     return (
         <LoginContext.Provider 
             value={{
+               // display form
+               displayForm,
+               setForm,
+               // logged in state 
+               loggedIn,
+               // registration state and functions
                 firstName,
                 lastName,
                 registrationEmail,
                 registrationPassword,
                 handleChangeRegistration,
                 handleSubmitRegistration,
-                loggedIn,
                 // login state and functions
                 loginEmail,
                 loginPassword,

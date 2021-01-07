@@ -38,6 +38,9 @@ module.exports = function (app) {
     User.findOne({ _id: userId }, (err, foundUser) => {
       if (err) {
         console.log(err);
+      } else if (foundUser === null) {
+        console.log("user not found")
+        res.send("invalid attempt")
       } else {
         const email = foundUser.email;
 
@@ -262,11 +265,6 @@ module.exports = function (app) {
 
   app.post('/forgot-password', (req, res) => {
     console.log(req.body)
-
-    // email the user a link containing a password reset form
-    // form should contain email and password fields so i can access both
-    // the password reset form triggers a get request containing the new password
-    // in the get route hash the password and reset the password in the db for that user
 
     // send email start
     oauth2Client.setCredentials({

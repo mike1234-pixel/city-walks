@@ -1,4 +1,10 @@
+/** @format */
+
 .login-header-container {
   width: 100%;
   text-align: center;
+}
+
+.login-form-header {
+  font-family: var(--display-font);
 }

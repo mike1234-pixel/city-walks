@@ -1,4 +1,14 @@
+/** @format */
+
 .registration-header-container {
   width: 100%;
   text-align: center;
+}
+
+.registration-header {
+  font-family: var(--display-font);
+}
+
+#request-activation-link {
+  color: var(--blue);
 }

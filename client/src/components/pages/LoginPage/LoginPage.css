@@ -1,4 +1,10 @@
-.user-portal-header-btns-container {
-  text-align: center;
-  width: 100%;
+/** @format */
+
+.user-portal-logo {
+  font-family: var(--logo-font);
+  font-size: 130%;
+}
+
+.login-panel {
+  background: var(--blue);
 }

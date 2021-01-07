@@ -1,96 +1,123 @@
 /** @format */
 
 import { useState, useEffect, useContext } from "react";
-import { MDBBtn, MDBIcon } from "mdbreact";
-import LoginForm from "./LoginForm/LoginForm";
-import RegistrationForm from "./RegistrationForm/RegistrationForm";
-import VerificationForm from "./VerificationForm/VerificationForm";
-import ResetPasswordForm from "./ResetPasswordForm/ResetPasswordForm"
-import ForgotPasswordForm from "./ForgotPasswordForm/ForgotPasswordForm";
+import {
+  MDBBtn,
+  MDBIcon,
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarNav,
+  MDBNavItem,
+  MDBNavLink,
+  MDBHamburgerToggler,
+  MDBCollapse,
+} from "mdbreact";
 import { LoginContext } from "../../../context/LoginContext";
 import "./LoginPage.css";
 
 const LoginPage = () => {
-  const [form, setForm] = useState("");
+  const [toggleLoginPanel, setToggleLoginPanel] = useState(false);
 
-  const { loggedIn, userFirstName, logOut } = useContext(LoginContext);
+  const handleToggleLoginPanel = () => {
+    setToggleLoginPanel(!toggleLoginPanel);
+  };
+
+  const { loggedIn, userFirstName, logOut, displayForm, setForm } = useContext(LoginContext);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  let displayForm;
-  if (form === "loginForm") {
-    displayForm = <LoginForm />;
-  } else if (form === "registrationForm") {
-    displayForm = <RegistrationForm />;
-  } else if (form === "verificationForm") {
-    displayForm = <VerificationForm />;
-  } else if (form === "resetPasswordForm") {
-    displayForm = <ResetPasswordForm />
-  } else if (form === "forgotPasswordForm") {
-    displayForm = <ForgotPasswordForm />;
-  }
-
   return (
-    <div className="user-portal" key="login-page">
-      <div className="user-portal-header-btns-container">
-        <div className="page-heading-container">
-          <h1 className="page-heading">User Portal</h1>
-          <h1>turn this into an admin panel</h1>
-          <h1>NONE OF THIS SHOULD BE DISPLAYED WHEN THE USER IS LOGGED IN</h1>
-        </div>
+    <div className="user-portal min-page-height" key="login-page">
         {loggedIn ? (
-          <h2 className="login-heading">Welcome back {userFirstName}</h2>
-        ) : (
-          <h2 className="login-heading">Login or Register</h2>
-        )}
-        {loggedIn ? (
-          <MDBBtn outline color="elegant" onClick={logOut}>
-            Log Out <MDBIcon icon="sign-out-alt" />
-          </MDBBtn>
+          <div>
+          <MDBNavbar className="login-panel" dark expand="md">
+              <MDBNavbarBrand>
+                <strong className="white-text user-portal-logo">User Portal</strong>
+              </MDBNavbarBrand>
+              <MDBHamburgerToggler
+                color="#fff"
+                className="hamburger1"
+                id="hamburger2"
+                onClick={handleToggleLoginPanel}
+              />
+              <MDBCollapse
+                id="navbarCollapse3"
+                isOpen={toggleLoginPanel}
+                navbar
+              >
+                <MDBNavbarNav right>
+                  <MDBNavItem>
+                    <MDBNavLink to="#!" onClick={logOut}>
+                      Logout <MDBIcon icon="key" />
+                    </MDBNavLink>
+                  </MDBNavItem>
+                </MDBNavbarNav>
+              </MDBCollapse>
+            </MDBNavbar>
+            <h2 className="login-heading">Welcome back {userFirstName}</h2>
+          </div>
         ) : (
           <div>
-            <MDBBtn
-              outline
-              color="elegant"
-              onClick={() => setForm("loginForm")}
-            >
-              Login
-            </MDBBtn>
-            <MDBBtn
-              outline
-              color="elegant"
-              onClick={() => setForm("registrationForm")}
-            >
-              Register
-            </MDBBtn>
-            <MDBBtn
-              outline
-              color="elegant"
-              onClick={() => setForm("verificationForm")}
-            >
-              Resend Account Verification Email
-            </MDBBtn>
-            <MDBBtn
-              outline
-              color="elegant"
-              onClick={() => setForm("resetPasswordForm")}
-            >
-              Reset Password
-            </MDBBtn>
-            <MDBBtn
-              outline
-              color="elegant"
-              onClick={() => setForm("forgotPasswordForm")}
-            >
-              Forgot Password
-            </MDBBtn>
+            <MDBNavbar className="login-panel" dark expand="md">
+              <MDBNavbarBrand>
+                <strong className="white-text user-portal-logo">User Portal</strong>
+              </MDBNavbarBrand>
+              <MDBHamburgerToggler
+                color="#fff"
+                className="hamburger1"
+                id="hamburger2"
+                onClick={handleToggleLoginPanel}
+              />
+              <MDBCollapse
+                id="navbarCollapse3"
+                isOpen={toggleLoginPanel}
+                navbar
+              >
+                <MDBNavbarNav justify>
+                  <MDBNavItem>
+                    <MDBNavLink to="#!" onClick={() => setForm("loginForm")}>
+                      Login <MDBIcon icon="key" />
+                    </MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink
+                      to="#!"
+                      onClick={() => setForm("registrationForm")}
+                    >
+                      Register <MDBIcon far icon="edit" />
+                    </MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink
+                      to="#!"
+                      onClick={() => setForm("verificationForm")}
+                    >
+                      Resend Account Verification Email <MDBIcon far icon="envelope" />
+                    </MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink
+                      to="#!"
+                      onClick={() => setForm("resetPasswordForm")}
+                    >
+                      Reset Password <MDBIcon icon="unlock-alt" />
+                    </MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink
+                      to="#!"
+                      onClick={() => setForm("forgotPasswordForm")}
+                    >
+                      Forgot Password <MDBIcon far icon="question-circle" />
+                    </MDBNavLink>
+                  </MDBNavItem>
+                </MDBNavbarNav>
+              </MDBCollapse>
+            </MDBNavbar>
           </div>
         )}
-      </div>
-      <br />
-      <br />
       <br />
       {displayForm}
     </div>

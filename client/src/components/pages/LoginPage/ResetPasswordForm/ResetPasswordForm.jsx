@@ -16,10 +16,11 @@ const ResetPasswordForm = () => {
 
     return (
     <div>
-      <div className="reset-password-container">
-        <h2>Login</h2>
+      <div className="reset-password-header-container">
+        <h2 className="reset-password-header">Reset Password</h2>
+        <p>Reset your account password by submitting your old password and the password you want to replace it with.</p>
       </div>
-        <form onSubmit={handleSubmitResetPassword} className="reset-password-form">
+        <form onSubmit={handleSubmitResetPassword} className="reset-password-form display-form">
             <MDBInput type="email" name="reset-email" id="reset-email" value={resetPasswordEmail} label="email" onChange={handleChangeResetPassword} required/>
             <MDBInput type="password" name="old-password" id="old-password" value={resetPasswordOldPassword} label="old password" onChange={handleChangeResetPassword} minLength="8" required/>
             <MDBInput type="password" name="new-password" id="new-password" value={resetPasswordNewPassword} label="new password" onChange={handleChangeResetPassword} minLength="8" required/>
