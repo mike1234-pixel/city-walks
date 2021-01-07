@@ -25,8 +25,6 @@ const oauth2Client = new OAuth2(
   OAUTH_PLAYGROUND
 );
 
-const Mailing = {};
-
 module.exports = function (app) {
   // http://localhost:5000/verify-user/5ff5efe00e2f501d28b903fa/4242172e-8866-410c-8b39-6f0a6c830ed1
 
