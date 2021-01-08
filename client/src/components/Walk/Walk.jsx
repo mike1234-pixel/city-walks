@@ -14,7 +14,8 @@ const Walk = (props) => {
       startingPoint, 
       content1, 
       content2, 
-      content3, 
+      content3,
+      mapImg, 
       img1, 
       img2, 
       img3,
@@ -34,7 +35,6 @@ const Walk = (props) => {
 
     const handleClick = () => {
       setTogglePopUp(!togglePopUp)
-      console.log(togglePopUp)
     }
 
     return (
@@ -62,7 +62,7 @@ const Walk = (props) => {
           <MDBBtn id="see-map-btn" onClick={handleClick} >
           {togglePopUp ? "Unsee Map" : "See Map" } <MDBIcon icon="map-marked-alt" />
           </MDBBtn>
-          {togglePopUp && <PopUp mapImg={img1} handleClick={handleClick}/>}
+          {togglePopUp && <PopUp mapImg={mapImg} handleClick={handleClick}/>}
         </div>
     </div>
     )

@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
         content2: String,
         content3: String,
         coverImg: String,
+        mapImg: String,
         img1: String,
         img2: String, 
         img3: String,

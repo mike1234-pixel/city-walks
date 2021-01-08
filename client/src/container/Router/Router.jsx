@@ -35,7 +35,8 @@ const Router = (props) => {
             startingPoint={walk.startingPoint} 
             content1={walk.content1} 
             content2={walk.content2} 
-            content3={walk.content3} 
+            content3={walk.content3}
+            mapImg={walk.mapImg} 
             img1={walk.img1} 
             img2={walk.img2} 
             img3={walk.img3}

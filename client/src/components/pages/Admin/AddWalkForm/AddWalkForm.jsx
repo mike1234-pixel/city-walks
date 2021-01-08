@@ -15,6 +15,7 @@ const AddWalkForm = () => {
     const [content2, setContent2] = useState("")
     const [content3, setContent3] = useState("")
     const [coverImg, setCoverImg] = useState("")
+    const [mapImg, setMapImg] = useState("")
     const [img1, setImg1] = useState("")
     const [img2, setImg2] = useState("")
     const [img3, setImg3] = useState("")
@@ -50,6 +51,9 @@ const AddWalkForm = () => {
               break;
             case "cover-img":
               setCoverImg(event.target.value)
+              break;
+            case "map-img":
+              setMapImg(event.target.value)
               break;
             case "img1":
               setImg1(event.target.value)
@@ -93,6 +97,7 @@ const AddWalkForm = () => {
             content2: content2,
             content3: content3,
             coverImg: coverImg,
+            mapImg: mapImg,
             img1: img1,
             img2: img2, 
             img3: img3, 
@@ -145,6 +150,7 @@ const AddWalkForm = () => {
             <MDBInput type="textarea" rows="4" name="content2" id="content2" value={content2} label="paragraph 2 (569 character limit)" onChange={handleChange} maxLength="569" required/>
             <MDBInput type="textarea" rows="4" name="content3" id="content3" value={content3} label="paragraph 3 (569 character limit)" onChange={handleChange} maxLength="569" required/>
             <MDBInput type="text" name="cover-img" id="cover-img" value={coverImg} label="cover image link" onChange={handleChange} required/>
+            <MDBInput type="text" name="map-img" id="map-img" value={mapImg} label="map image link" onChange={handleChange} required/>
             <MDBInput type="text" name="img1" id="img1" value={img1} label="image 1 link" onChange={handleChange} required/>
             <MDBInput type="text" name="img2" id="img2" value={img2} label="image 2 link" onChange={handleChange} required/>
             <MDBInput type="text" name="img3" id="img3" value={img3} label="image 3 link" onChange={handleChange} required/>
