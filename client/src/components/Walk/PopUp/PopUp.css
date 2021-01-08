@@ -1,0 +1,28 @@
+/** @format */
+
+.popup-container {
+  position: relative;
+}
+
+.popup {
+  background: rgba(63, 63, 63, 0.842);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.popup-img {
+  width: 80vw;
+  height: 80vh;
+  margin: auto;
+}
+
+@media (min-width: 1000px) {
+  .popup-img {
+    width: 40vw;
+  }
+}

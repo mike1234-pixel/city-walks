@@ -1,7 +1,8 @@
-import { useEffect } from "react"
-import { MDBIcon, MDBAnimation } from "mdbreact"
+import { useEffect, useState } from "react"
+import { MDBIcon, MDBAnimation, MDBBtn } from "mdbreact"
 import SectionA from '../SectionA/SectionA'
 import SectionB from '../SectionB/SectionB'
+import PopUp from './PopUp/PopUp'
 import './Walk.css'
 
 const Walk = (props) => {
@@ -29,6 +30,13 @@ const Walk = (props) => {
         window.scrollTo(0, 0);
       });
 
+    const [togglePopUp, setTogglePopUp] = useState(false)
+
+    const handleClick = () => {
+      setTogglePopUp(!togglePopUp)
+      console.log(togglePopUp)
+    }
+
     return (
     <div>
       <div className="walk-heading-container">
@@ -51,6 +59,10 @@ const Walk = (props) => {
               {twitterLink !== undefined && <a href={twitterLink} target="_blank"><MDBIcon fab icon="twitter" /></a>}
             </div>
           </MDBAnimation>
+          <MDBBtn id="see-map-btn" onClick={handleClick} >
+          {togglePopUp ? "Unsee Map" : "See Map" } <MDBIcon icon="map-marked-alt" />
+          </MDBBtn>
+          {togglePopUp && <PopUp mapImg={img1} handleClick={handleClick}/>}
         </div>
     </div>
     )

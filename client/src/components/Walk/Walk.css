@@ -1,3 +1,5 @@
+/** @format */
+
 .walk-heading-container {
   width: 100%;
   text-align: center;
@@ -18,4 +20,15 @@
   justify-content: space-around;
   font-size: 30px;
   margin: auto;
+}
+
+#see-map-btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 1;
+  z-index: 10;
+  background-color: var(--blue) !important;
+  color: var(--elegant-color-dark);
+  border: 2px var(--elegant-color-dark) solid;
 }
