@@ -6,6 +6,7 @@ import "mdbreact/dist/css/mdb.css";
 import App from "./container/App.jsx";
 import registerServiceWorker from './registerServiceWorker';
 import axios from "axios"
+import { RecaptchaContextProvider } from "./context/RecaptchaContext"
 import { SearchContextProvider } from "./context/SearchContext"
 import { LoginContextProvider } from "./context/LoginContext"
 
@@ -21,11 +22,13 @@ axios
       console.log(walksData)
       console.log(citiesData)
       ReactDOM.render(
-      <LoginContextProvider>
-        <SearchContextProvider>
-          <App walks={walksData.data} cities={citiesData.data}/>
-        </SearchContextProvider>
-      </LoginContextProvider>
+        <RecaptchaContextProvider>
+          <LoginContextProvider>
+            <SearchContextProvider>
+              <App walks={walksData.data} cities={citiesData.data}/>
+            </SearchContextProvider>
+          </LoginContextProvider>
+        </RecaptchaContextProvider>
       , document.getElementById('root'));
     })
   )

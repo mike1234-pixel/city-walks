@@ -1,6 +1,7 @@
 /** @format */
 
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { RecaptchaContext } from "../../../context/RecaptchaContext"
 import { MDBInput, MDBBtn, MDBIcon } from "mdbreact";
 import axios from "axios";
 import qs from "qs"
@@ -10,6 +11,8 @@ const Contact = () => {
   const [contactName, setContactName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactMessage, setContactMessage] = useState("");
+
+  const {siteKey} = useContext(RecaptchaContext)
 
   const handleChange = (event) => {
     switch (event.target.name) {
@@ -28,11 +31,20 @@ const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const payload = {
-      name: contactName,
-      email: contactEmail,
-      message: contactMessage,
-    };
+    window.grecaptcha.ready(() => {
+      window.grecaptcha.execute(siteKey, { action: 'submit' }).then(token => {
+        submitData(token);
+      });
+    });
+
+    const submitData = token => {
+
+      const payload = {
+        name: contactName,
+        email: contactEmail,
+        message: contactMessage,
+        gRecaptchaResponse: token
+      };
 
     axios
       .post("http://localhost:5000/contact-form", qs.stringify(payload))
@@ -48,6 +60,7 @@ const Contact = () => {
         }
       });
   };
+}
 
   return (
     <div className="page-heading-container min-page-height">

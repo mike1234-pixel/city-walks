@@ -4,6 +4,8 @@ const uuid = require("uuid").v4;
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
+// recaptcha
+const fetch = require('node-fetch')
 
 const OAUTH_PLAYGROUND = "https://developers.google.com/oauthplayground";
 
@@ -12,7 +14,8 @@ const {
   MAILING_SERVICE_CLIENT_SECRET,
   MAILING_SERVICE_REFRESH_TOKEN,
   SENDER_EMAIL_ADDRESS,
-  PROTON_EMAIL_ADDRESS
+  PROTON_EMAIL_ADDRESS,
+  GOOGLE_RECAPTCHA_SECRET_KEY
 } = process.env;
 
 const oauth2Client = new OAuth2(
@@ -24,8 +27,11 @@ const oauth2Client = new OAuth2(
 module.exports = function (app) {
   app.post("/contact-form", (req, res) => {
 
-    const { name, email, message } = req.body
-
+    const { name, email, message, gRecaptchaResponse } = req.body
+    console.log(req.body)
+    const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${GOOGLE_RECAPTCHA_SECRET_KEY}&response=${gRecaptchaResponse}`;
+      
+    const sendEmail = () => {
     // send email start
     console.log("sending email");
 
@@ -80,5 +86,15 @@ module.exports = function (app) {
       });
     // send email end
     res.send("message received")
+    }
+
+    fetch(verifyUrl, { method: 'POST' }).then((res, err) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log(res)
+        sendEmail()
+      }
+    })
   });
 };
