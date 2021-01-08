@@ -88,13 +88,15 @@ module.exports = function (app) {
     res.send("message received")
     }
 
-    fetch(verifyUrl, { method: 'POST' }).then((res, err) => {
-      if (err) {
-        console.log(err)
+    fetch(verifyUrl, { method: 'POST' })
+    .then(res => res.json())
+    .then(json => {
+      console.log(json) // recaptcha score here
+      if (json.score > 0.6) {
+      sendEmail()
       } else {
-        console.log(res)
-        sendEmail()
+        res.send("request failed recaptcha")
       }
-    })
+    });
   });
 };

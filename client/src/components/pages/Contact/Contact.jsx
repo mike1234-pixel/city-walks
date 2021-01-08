@@ -51,6 +51,8 @@ const Contact = () => {
       .then((res, err) => {
         if (err) {
           console.log(err);
+        } if (res.data === "request failed recaptcha") {
+          alert("request failed recaptcha.")
         } else {
           alert("Thanks for getting in touch. We will be in touch shortly.");
           setContactName("");
