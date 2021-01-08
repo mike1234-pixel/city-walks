@@ -24,13 +24,16 @@ const Cities = (props) => {
         )
     })
 
+    console.log("cities")
+    console.log(cities)
+
     return (
         <div className="cities-page-container min-page-height">
             <div className="page-heading-container">
                 <h1 className="page-heading">Cities</h1>
             </div>
                 <div className="card-container">{cities}</div>
-            </div>
+        </div>
     )
 }
 

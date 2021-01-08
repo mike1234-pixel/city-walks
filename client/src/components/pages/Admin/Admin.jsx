@@ -7,6 +7,7 @@ import AddCityForm from './AddCityForm/AddCityForm'
 import SetFeaturedWalkForm from './SetFeaturedWalkForm/SetFeaturedWalkForm'
 import DeleteWalkForm from './DeleteWalkForm/DeleteWalkForm'
 import DeleteCityForm from './DeleteCityForm/DeleteCityForm'
+import AddBoardForm from './AddBoardForm/AddBoardForm'
 import './Admin.css'
 
 const Admin = () => {
@@ -29,6 +30,8 @@ const Admin = () => {
         displayForm = <DeleteWalkForm/>
     } else if (form === "deleteCity") {
       displayForm = <DeleteCityForm/>
+    } else if (form === "addBoard") {
+      displayForm = <AddBoardForm/>
     }
 
     useEffect(() => {
@@ -105,6 +108,9 @@ const Admin = () => {
                     </MDBNavItem>
                     <MDBNavItem>
                       <MDBNavLink to="#!" onClick={() => setForm("deleteCity")}>Delete City</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                      <MDBNavLink to="#!" onClick={() => setForm("addBoard")}>Add Board</MDBNavLink>
                     </MDBNavItem>
                     </MDBNavbarNav>
                     <MDBNavbarNav right>
