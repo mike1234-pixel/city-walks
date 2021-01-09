@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react"
+import { useHistory } from "react-router-dom"
 import axios from "axios"
 import BoardBox from "../components/pages/LoginPage/LoggedInView/Components/BoardBox/BoardBox"
 
@@ -8,6 +9,7 @@ export const ForumContextProvider = (props) => {
  
     const [loadingBoards, setLoadingBoards] = useState(true)
     const [boards, setBoards] = useState([])
+    const [selectedThreads, setSelectedThreads] = useState([])
 
     let displayBoards;
 
@@ -21,6 +23,7 @@ export const ForumContextProvider = (props) => {
         } else {
             console.log(res.data)
             setBoards(res.data)
+            console.log(boards)
             setLoadingBoards(false)
         }
 
@@ -29,7 +32,7 @@ export const ForumContextProvider = (props) => {
     if (!loadingBoards) {
     displayBoards = boards.map((board, index) => {
         return (
-            <BoardBox name={board.name} description={board.description} key={index} />
+            <BoardBox name={board.name} description={board.description} index={index} />
                 )
         })
     }
@@ -38,7 +41,10 @@ export const ForumContextProvider = (props) => {
         <ForumContext.Provider 
             value={{
                 loadingBoards,
-                displayBoards
+                displayBoards,
+                boards, // data
+                selectedThreads, 
+                setSelectedThreads
             }}>
             {props.children}
         </ForumContext.Provider>

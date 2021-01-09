@@ -1,9 +1,13 @@
 import './ThreadBox.css'
 
-const ThreadBox = () => {
+const ThreadBox = (props) => {
+
+    const { userFirstName, title, content, replies, submittedOn, userId } = props
+
     return (
         <div className="thread-box">
-            <p>THREAD NAME</p>
+            <p>{title}</p>
+            <p>{content}</p>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import Nav from '../../components/Nav/Nav'
 import Home from '../../components/pages/Home/Home'
 import Cities from '../../components/pages/Cities/Cities'
@@ -68,7 +68,7 @@ const Router = (props) => {
             {/* the render method here ensures the inputs in the forms don't lose focus */}
             {/* https://www.xspdf.com/resolution/59715158.html */}
             <Route path="/login" render={() => <LoginPage />} />
-            <Route path="/threads" render={() => <Threads/>}/>
+            <Route path="/threads" render={() => <Threads />}/>
             <Route path="/admin" component={Admin} />
             {newRoutes}
             <Route component={NotFound404} />
