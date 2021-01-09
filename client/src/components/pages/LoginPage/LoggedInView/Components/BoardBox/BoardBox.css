@@ -3,7 +3,8 @@
 #board-box {
   background-color: var(--elegant-color-dark);
   color: white;
-  width: 80% !important;
+  width: 80%;
+  margin-top: 1rem;
 }
 
 #board-box-link {

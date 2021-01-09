@@ -1,0 +1,15 @@
+/** @format */
+
+#thread-box {
+  background-color: var(--elegant-color-dark);
+  color: white;
+  margin-top: 1rem;
+  width: 90vw;
+}
+
+.reply {
+  background: var(--blue);
+  color: black;
+  padding: 20px;
+  margin: 5px;
+}

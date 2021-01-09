@@ -30,7 +30,7 @@ const BoardBox = (props) => {
 
 
     return (
-        <MDBCard className="card-body" id="board-box" style={{ width: "22rem", marginTop: "1rem" }}>
+        <MDBCard className="card-body" id="board-box">
             <MDBCardTitle className="board-box-title">{name}</MDBCardTitle>
                 <MDBCardText className="board-box-desription">
                 {description}

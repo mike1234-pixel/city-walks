@@ -15,9 +15,10 @@ const Threads = () => {
     // map through it and display the threads.
 
     const threads = selectedThreads.map((thread, index) => {
+        console.log(thread)
         return (
         <ThreadBox 
-            userFirstName={thread.userFirstName}
+            userFirstName={thread.UserFirstName}
             title={thread.title}
             content={thread.content}
             replies={thread.replies}
@@ -28,7 +29,7 @@ const Threads = () => {
     })
 
     return (
-        <div>
+        <div className="threads-container">
             <p>{threads}</p>
         </div>
     )

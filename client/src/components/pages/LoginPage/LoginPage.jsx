@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useContext } from "react";
 import {
+  MDBBtn,
   MDBIcon,
   MDBNavbar,
   MDBNavbarBrand,
@@ -49,9 +50,9 @@ const LoginPage = () => {
               >
                 <MDBNavbarNav right>
                   <MDBNavItem>
-                    <MDBNavLink to="#!" onClick={logOut}>
+                    <MDBBtn onClick={logOut}>
                       Logout <MDBIcon icon="key" />
-                    </MDBNavLink>
+                    </MDBBtn>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
@@ -77,41 +78,37 @@ const LoginPage = () => {
               >
                 <MDBNavbarNav justify>
                   <MDBNavItem>
-                    <MDBNavLink to="#!" onClick={() => setForm("loginForm")}>
+                    <MDBBtn onClick={() => setForm("loginForm")}>
                       Login <MDBIcon icon="key" />
-                    </MDBNavLink>
+                    </MDBBtn>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink
-                      to="#!"
+                    <MDBBtn
                       onClick={() => setForm("registrationForm")}
                     >
                       Register <MDBIcon far icon="edit" />
-                    </MDBNavLink>
+                    </MDBBtn>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink
-                      to="#!"
+                    <MDBBtn
                       onClick={() => setForm("verificationForm")}
                     >
                       Resend Account Verification Email <MDBIcon far icon="envelope" />
-                    </MDBNavLink>
+                    </MDBBtn>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink
-                      to="#!"
+                    <MDBBtn
                       onClick={() => setForm("resetPasswordForm")}
                     >
                       Reset Password <MDBIcon icon="unlock-alt" />
-                    </MDBNavLink>
+                    </MDBBtn>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink
-                      to="#!"
+                    <MDBBtn
                       onClick={() => setForm("forgotPasswordForm")}
                     >
                       Forgot Password <MDBIcon far icon="question-circle" />
-                    </MDBNavLink>
+                    </MDBBtn>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
