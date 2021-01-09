@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useContext } from "react";
 import {
-  MDBBtn,
   MDBIcon,
   MDBNavbar,
   MDBNavbarBrand,
@@ -13,7 +12,7 @@ import {
   MDBCollapse,
 } from "mdbreact";
 import { LoginContext } from "../../../context/LoginContext";
-import LoggedInView from './LoggedInView/LoggedInView';
+import Board from './LoggedInView/Board';
 import "./LoginPage.css";
 
 const LoginPage = () => {
@@ -57,7 +56,7 @@ const LoginPage = () => {
                 </MDBNavbarNav>
               </MDBCollapse>
             </MDBNavbar>
-            <LoggedInView/>
+            <Board/>
           </div>
         ) : (
           <div>

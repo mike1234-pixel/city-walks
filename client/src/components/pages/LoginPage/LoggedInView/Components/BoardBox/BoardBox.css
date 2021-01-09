@@ -1,0 +1,11 @@
+/** @format */
+
+.board-box {
+  background-color: var(--elegant-color-dark);
+  color: white;
+  width: 80%;
+}
+
+#board-box-link {
+  color: var(--blue);
+}

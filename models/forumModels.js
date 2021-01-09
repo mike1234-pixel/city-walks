@@ -22,10 +22,17 @@ const mongoose = require('mongoose');
       })
 
 
-        mongoose.model(`Reply`, replySchema)
 
-        mongoose.model(`Thread`, threadSchema)
+        const Reply = mongoose.model(`Reply`, replySchema)
 
-        module.exports = mongoose.model(`Board`, boardSchema)
+        const Thread = mongoose.model(`Thread`, threadSchema)
+        
+        const Board = mongoose.model(`Board`, boardSchema)
+
+        module.exports = {
+          Board: Board,
+          Thread: Thread,
+          Reply: Reply
+        }
 
 

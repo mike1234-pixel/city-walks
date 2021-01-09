@@ -1,9 +1,18 @@
-const Board = require( '../models/forumModels')
+const { Board } = require( '../models/forumModels')
 
 module.exports = function (app) {
 
+    app.get('/boards', (req, res) => {
+        Board.find({}, (err, docs) => {
+            if (!err) {
+              res.send(docs);
+            } else {
+              throw err;
+            }
+          });
+    })
+
     app.post('/add-board', (req, res) => {
-        console.log(req.body)
         Board.create(req.body)
     })
 
