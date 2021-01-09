@@ -12,7 +12,7 @@ import {
   MDBCollapse,
 } from "mdbreact";
 import { LoginContext } from "../../../context/LoginContext";
-import Board from './LoggedInView/Board';
+import Boards from './LoggedInView/Boards';
 import "./LoginPage.css";
 
 const LoginPage = () => {
@@ -56,7 +56,7 @@ const LoginPage = () => {
                 </MDBNavbarNav>
               </MDBCollapse>
             </MDBNavbar>
-            <Board/>
+            <Boards/>
           </div>
         ) : (
           <div>

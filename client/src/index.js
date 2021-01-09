@@ -9,6 +9,7 @@ import axios from "axios"
 import { RecaptchaContextProvider } from "./context/RecaptchaContext"
 import { SearchContextProvider } from "./context/SearchContext"
 import { LoginContextProvider } from "./context/LoginContext"
+import { ForumContextProvider } from "./context/ForumContext"
 
 const requestOne = axios.get('http://localhost:5000/walks');
 const requestTwo = axios.get('http://localhost:5000/cities');
@@ -22,13 +23,15 @@ axios
       console.log(walksData)
       console.log(citiesData)
       ReactDOM.render(
-        <RecaptchaContextProvider>
-          <LoginContextProvider>
-            <SearchContextProvider>
-              <App walks={walksData.data} cities={citiesData.data}/>
-            </SearchContextProvider>
-          </LoginContextProvider>
-        </RecaptchaContextProvider>
+        <ForumContextProvider>
+          <RecaptchaContextProvider>
+            <LoginContextProvider>
+              <SearchContextProvider>
+                <App walks={walksData.data} cities={citiesData.data}/>
+              </SearchContextProvider>
+            </LoginContextProvider>
+          </RecaptchaContextProvider>
+        </ForumContextProvider>
       , document.getElementById('root'));
     })
   )

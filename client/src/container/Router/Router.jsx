@@ -10,6 +10,7 @@ import Admin from '../../components/pages/Admin/Admin'
 import NotFound404 from '../../components/pages/404/NotFound404'
 import Footer from '../../components/Footer/Footer'
 import Walk from '../../components/Walk/Walk'
+import Threads from '../../components/pages/LoginPage/LoggedInView/Components/Threads/Threads'
 import urlify from '../../functions/urlify'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
@@ -67,6 +68,7 @@ const Router = (props) => {
             {/* the render method here ensures the inputs in the forms don't lose focus */}
             {/* https://www.xspdf.com/resolution/59715158.html */}
             <Route path="/login" render={() => <LoginPage />} />
+            <Route path="/threads" render={() => <Threads/>}/>
             <Route path="/admin" component={Admin} />
             {newRoutes}
             <Route component={NotFound404} />

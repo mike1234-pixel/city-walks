@@ -1,9 +1,9 @@
 /** @format */
 
-.board-box {
+#board-box {
   background-color: var(--elegant-color-dark);
   color: white;
-  width: 80%;
+  width: 80% !important;
 }
 
 #board-box-link {

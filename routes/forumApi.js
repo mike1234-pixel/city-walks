@@ -3,7 +3,8 @@ const { Board } = require( '../models/forumModels')
 module.exports = function (app) {
 
     app.get('/boards', (req, res) => {
-        Board.find({}, (err, docs) => {
+        // return only 'name' and 'description' fields 
+        Board.find({}, 'name description', (err, docs) => {
             if (!err) {
               res.send(docs);
             } else {
@@ -15,5 +16,7 @@ module.exports = function (app) {
     app.post('/add-board', (req, res) => {
         Board.create(req.body)
     })
+
+
 
 }
