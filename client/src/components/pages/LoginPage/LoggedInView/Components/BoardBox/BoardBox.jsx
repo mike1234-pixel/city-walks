@@ -6,9 +6,9 @@ import './BoardBox.css'
 
 const BoardBox = (props) => {
 
-    const { setSelectedThreads, boards } = useContext(ForumContext)
+    const { setSelectedThreads, boards, setCurrentBoardName, setCurrentBoardId } = useContext(ForumContext)
 
-    const { name, description, index } = props
+    const { boardId, name, description, index } = props
 
     let history = useHistory()
 
@@ -25,6 +25,9 @@ const BoardBox = (props) => {
         const handleClickSelectBoard = (boards, boardIndex) => {
             setSelectedThreads(boards[boardIndex].threads)
             console.log("SELECTED BOARD " + JSON.stringify(boards[boardIndex].threads))
+            console.log("SELECTED BOARD" + JSON.stringify(boards[boardIndex]))
+            setCurrentBoardName(boards[boardIndex].name)
+            setCurrentBoardId(boards[boardIndex].name)
             handleRedirect('threads')
         }
 

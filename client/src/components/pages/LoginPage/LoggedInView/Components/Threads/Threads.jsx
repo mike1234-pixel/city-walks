@@ -18,6 +18,7 @@ const Threads = () => {
         console.log(thread)
         return (
         <ThreadBox 
+            threadId={thread._id}
             userFirstName={thread.UserFirstName}
             title={thread.title}
             content={thread.content}

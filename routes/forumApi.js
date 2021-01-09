@@ -17,4 +17,8 @@ module.exports = function (app) {
         Board.create(req.body)
     })
 
+    app.post('/add-reply', (req, res) => {
+      console.log(req.body)
+    })
+
 }

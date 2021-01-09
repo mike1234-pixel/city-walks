@@ -1,12 +1,50 @@
-import { useState } from "react"
-import { MDBBtn, MDBCard, MDBCardTitle, MDBCardText } from "mdbreact"
+import { useState, useContext } from "react"
+import { MDBInput, MDBBtn, MDBCard, MDBCardTitle, MDBCardText } from "mdbreact"
+import axios from "axios"
+import qs from "qs"
+import { LoginContext } from "../../../../../../context/LoginContext"
+import { ForumContext } from "../../../../../../context/ForumContext"
 import './ThreadBox.css'
 
 const ThreadBox = (props) => {
 
-    const { userFirstName, title, content, replies, submittedOn, userId } = props
+    const { userFirstName: currentUserFirstName, userId: currentUserId } = useContext(LoginContext)
+    const { currentBoardName, currentBoardId } = useContext(ForumContext)
+
+    const { threadId, userFirstName, title, content, replies, submittedOn, userId } = props
 
     const [showAllReplies, setShowAllReplies] = useState(false)
+    const [reply, setReply] = useState("")
+
+    const handleChange = (event) => {
+        setReply(event.target.value)
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        setReply("")
+
+        let payload = {
+            currentBoardId: currentBoardId,
+            currentBoardName: currentBoardName,
+            threadId: threadId,
+            userId: currentUserFirstName,
+            userFirstName: currentUserFirstName,
+            reply: reply, // send current user id
+          };
+
+        axios
+        .post("http://localhost:5000/add-reply", qs.stringify(payload))
+        .then((err) => {
+          if (err) {
+            console.log(err);
+          } else {
+              alert("reply submitted.")
+              window.scrollTo(0, 0)
+          }
+        });
+
+    }
 
     const replyComponents = replies.map((reply) => {
         return (
@@ -37,6 +75,13 @@ const ThreadBox = (props) => {
                 <p>Replies</p>
                 <div className="replies-container">{displayReplies}</div>
                 <MDBBtn onClick={() => setShowAllReplies(!showAllReplies)}>{showAllReplies ? "hide replies" : "show all replies"}</MDBBtn>
+                <form onSubmit={handleSubmit}>
+                    <MDBInput  type="text" name="reply" id="reply" label="reply" value={reply} onChange={handleChange}/>
+                    <MDBBtn type="submit">Submit</MDBBtn>
+                    <p>{currentUserId}</p>
+                    <p>{currentUserFirstName}</p>
+                    <p>{threadId}</p>
+                </form>
         </MDBCard>
     )
 }

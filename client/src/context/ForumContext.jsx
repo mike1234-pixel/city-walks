@@ -11,6 +11,9 @@ export const ForumContextProvider = (props) => {
     const [boards, setBoards] = useState([])
     const [selectedThreads, setSelectedThreads] = useState([])
 
+    const [currentBoardName, setCurrentBoardName] = useState("")
+    const [currentBoardId, setCurrentBoardId] = useState("")
+
     let displayBoards;
 
     useEffect(() => {
@@ -32,7 +35,7 @@ export const ForumContextProvider = (props) => {
     if (!loadingBoards) {
     displayBoards = boards.map((board, index) => {
         return (
-            <BoardBox name={board.name} description={board.description} index={index} />
+            <BoardBox boardId={board._id} name={board.name} description={board.description} index={index} />
                 )
         })
     }
@@ -44,7 +47,11 @@ export const ForumContextProvider = (props) => {
                 displayBoards,
                 boards, // data
                 selectedThreads, 
-                setSelectedThreads
+                setSelectedThreads,
+                currentBoardName,
+                setCurrentBoardName,
+                currentBoardId,
+                setCurrentBoardId
             }}>
             {props.children}
         </ForumContext.Provider>

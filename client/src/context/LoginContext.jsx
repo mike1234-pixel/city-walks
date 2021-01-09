@@ -13,6 +13,7 @@ export const LoginContext = createContext();
 export const LoginContextProvider = (props) => {
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
+    const [userId, setUserId] = useState("")
     const [registrationEmail, setRegistrationEmail] = useState("")
     const [registrationPassword, setRegistrationPassword] = useState("")
   
@@ -136,6 +137,7 @@ export const LoginContextProvider = (props) => {
           setLoginEmail("")
           setLoginPassword("")
           setForm("")
+          setUserId(res.data._id)
           setUserFirstName(res.data.fname)
           setUserLastName(res.data.lname)
           window.scrollTo(0, 0)
@@ -288,6 +290,7 @@ axios
                 handleSubmitLogin: handleSubmitLogin,
                 // logged in user data
                 userFirstName,
+                userId,
                 userLastName,
                 // resend verification email
                 verificationEmail,
