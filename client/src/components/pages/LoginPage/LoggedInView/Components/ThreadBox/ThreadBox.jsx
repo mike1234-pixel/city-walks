@@ -8,7 +8,7 @@ import './ThreadBox.css'
 
 const ThreadBox = (props) => {
 
-    const { userFirstName: currentUserFirstName, userId: currentUserId } = useContext(LoginContext)
+    const { userFirstName: currentUserFirstName, userId: currentUserId, loggedIn } = useContext(LoginContext)
 
     const { currentBoardName, threadId, userFirstName, title, content, replies, submittedOn, userId } = props
 
@@ -94,8 +94,8 @@ const ThreadBox = (props) => {
                 <div className="replies-container">{displayReplies}</div>
                 <MDBBtn onClick={() => setShowAllReplies(!showAllReplies)}>{showAllReplies ? "hide replies" : "show all replies"}</MDBBtn>
                 <form onSubmit={handleSubmit}>
-                    <MDBInput  type="text" name="reply" id="reply" label="reply" value={reply} onChange={handleChange}/>
-                    <MDBBtn type="submit">Submit</MDBBtn>
+                    {loggedIn && <div><MDBInput  type="text" name="reply" id="reply" label="reply" value={reply} onChange={handleChange}/><MDBBtn type="submit">Submit</MDBBtn></div>  }
+                    
                 </form>
         </MDBCard>
     )

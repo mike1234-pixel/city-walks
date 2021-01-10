@@ -17,22 +17,28 @@ const Threads = ({match}) => {
     let threads = "loading";
     
     if (!loadingBoards) {
+
     const selectedBoard = boards.filter((board) => board.name === boardName)[0]
 
-    threads = selectedBoard.threads.map((thread) => {
-        return (
-        <ThreadBox 
-            currentBoardName={boardName}
-            threadId={thread._id}
-            userFirstName={thread.UserFirstName}
-            title={thread.title}
-            content={thread.content}
-            replies={thread.replies}
-            submittedOn={thread.submittedOn}
-            userId={thread.userId}
-            />
-        )
-    })
+    if (selectedBoard === undefined) {
+        threads = "page not found"
+    } else {
+
+        threads = selectedBoard.threads.map((thread) => {
+            return (
+            <ThreadBox 
+                currentBoardName={boardName}
+                threadId={thread._id}
+                userFirstName={thread.UserFirstName}
+                title={thread.title}
+                content={thread.content}
+                replies={thread.replies}
+                submittedOn={thread.submittedOn}
+                userId={thread.userId}
+                />
+            )
+        })
+    }
 }
 
     return (
