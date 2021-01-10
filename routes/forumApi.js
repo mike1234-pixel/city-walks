@@ -19,6 +19,25 @@ module.exports = function (app) {
 
     app.post('/add-reply', (req, res) => {
       console.log(req.body)
+
+      const { currentBoardName, threadId, userId, userFirstName, reply } = req.body
+
+      const replyObj = {
+        userId, userId,
+        userFirstName: userFirstName,
+        reply: reply
+      }
+ 
+      Board.findOne({ name: currentBoardName}, (err, board) => {
+        if (err) {
+          console.log(err)
+        } else {
+          const thread = board.threads.id(threadId);
+          thread.replies.push(replyObj);
+          board.save(); 
+          res.send("comment submitted")
+        }
+      })
     })
 
 }

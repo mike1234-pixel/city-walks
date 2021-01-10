@@ -25,7 +25,6 @@ const ThreadBox = (props) => {
         setReply("")
 
         let payload = {
-            currentBoardId: currentBoardId,
             currentBoardName: currentBoardName,
             threadId: threadId,
             userId: currentUserFirstName,
