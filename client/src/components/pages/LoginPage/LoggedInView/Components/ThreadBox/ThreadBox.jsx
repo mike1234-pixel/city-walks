@@ -27,7 +27,7 @@ const ThreadBox = (props) => {
         let payload = {
             currentBoardName: currentBoardName,
             threadId: threadId,
-            userId: currentUserFirstName,
+            userId: currentUserId,
             userFirstName: currentUserFirstName,
             reply: reply, // send current user id
           };
@@ -42,7 +42,25 @@ const ThreadBox = (props) => {
               window.scrollTo(0, 0)
           }
         });
+    }
 
+    const handleClick = (replyId) => {
+        let payload = {
+            currentBoardName: currentBoardName,
+            threadId: threadId,
+            replyId: replyId
+          };
+
+        axios
+        .delete("http://localhost:5000/delete-reply", { data: payload })
+        .then((err) => {
+          if (err) {
+            console.log(err);
+          } else {
+              alert("reply deleted.")
+              window.scrollTo(0, 0)
+          }
+        });
     }
 
     const replyComponents = replies.map((reply) => {
@@ -51,6 +69,7 @@ const ThreadBox = (props) => {
             <p>{reply.userFirstName} replied!</p>
             <p>{reply.reply}</p>
             <p>{reply.submittedOn}</p>
+            {reply.userId === currentUserId ? <MDBBtn onClick={() => handleClick(reply._id)}>Delete</MDBBtn>: null}
         </div>
         )
     })
@@ -77,9 +96,6 @@ const ThreadBox = (props) => {
                 <form onSubmit={handleSubmit}>
                     <MDBInput  type="text" name="reply" id="reply" label="reply" value={reply} onChange={handleChange}/>
                     <MDBBtn type="submit">Submit</MDBBtn>
-                    <p>{currentUserId}</p>
-                    <p>{currentUserFirstName}</p>
-                    <p>{threadId}</p>
                 </form>
         </MDBCard>
     )

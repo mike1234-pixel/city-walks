@@ -40,4 +40,26 @@ module.exports = function (app) {
       })
     })
 
+    app.delete('/delete-reply', (req, res) => {
+        const { currentBoardName, threadId, replyId } = req.body
+
+        Board.findOne({name: currentBoardName}, (err, board)=> {
+          if (err) {
+            console.log(err)
+          } else {
+            const thread = board.threads.id(threadId);
+            const reply = thread.replies.id(replyId);
+            if (reply === null) {
+              res.send('reply does not exist') 
+            } else {
+              thread.replies.pull(replyId);
+              board.save();
+              console.log("reply deleted")
+              res.send('reply deleted');
+            }
+          }
+
+        })
+    })
+
 }
