@@ -9,9 +9,9 @@ import './ThreadBox.css'
 const ThreadBox = (props) => {
 
     const { userFirstName: currentUserFirstName, userId: currentUserId } = useContext(LoginContext)
-    const { currentBoardName, currentBoardId } = useContext(ForumContext)
+    const { currentBoardId } = useContext(ForumContext)
 
-    const { threadId, userFirstName, title, content, replies, submittedOn, userId } = props
+    const { currentBoardName, threadId, userFirstName, title, content, replies, submittedOn, userId } = props
 
     const [showAllReplies, setShowAllReplies] = useState(false)
     const [reply, setReply] = useState("")

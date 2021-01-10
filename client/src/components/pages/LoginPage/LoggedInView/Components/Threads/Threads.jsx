@@ -6,7 +6,7 @@ import "./Threads.css"
 
 const Threads = ({match}) => {
 
-    const { currentBoardName, boards } = useContext(ForumContext)
+    const { setCurrentBoardName, boards } = useContext(ForumContext)
 
     // name of the current board that I want. coming from params
     const boardName = toTitleCase(match.url.replace("/boards/", "").replace(/-/g, " "))
@@ -22,6 +22,7 @@ const Threads = ({match}) => {
     const threads = selectedBoard.threads.map((thread, index) => {
         return (
         <ThreadBox 
+            currentBoardName={boardName}
             threadId={thread._id}
             userFirstName={thread.UserFirstName}
             title={thread.title}
@@ -35,7 +36,7 @@ const Threads = ({match}) => {
 
     return (
         <div className="threads-container">
-            <h1 className="page-heading">{currentBoardName}</h1>
+            <h1 className="page-heading">{boardName}</h1>
             <p>{threads}</p>
         </div>
     )
