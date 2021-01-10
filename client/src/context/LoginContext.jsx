@@ -20,6 +20,7 @@ export const LoginContextProvider = (props) => {
     const [loginEmail, setLoginEmail] = useState("")
     const [loginPassword, setLoginPassword] = useState("")
   
+    // save all of this in local storage
     const [loggedIn, setLoggedIn] = useState(false)
     const [userFirstName, setUserFirstName] = useState("")
     const [userLastName, setUserLastName] = useState("")
@@ -315,3 +316,15 @@ axios
         </LoginContext.Provider>
     )
 }
+
+// // setter
+// localStorage.setItem('myData', data);
+ 
+// // getter
+// localStorage.getItem('myData');
+ 
+// // remove
+// localStorage.removeItem('myData');
+ 
+// // remove all
+// localStorage.clear();

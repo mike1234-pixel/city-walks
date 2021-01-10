@@ -29,7 +29,6 @@ export const ForumContextProvider = (props) => {
             console.log(boards)
             setLoadingBoards(false)
         }
-
     })}, []);
 
     if (!loadingBoards) {
@@ -57,3 +56,4 @@ export const ForumContextProvider = (props) => {
         </ForumContext.Provider>
     )
 }
+

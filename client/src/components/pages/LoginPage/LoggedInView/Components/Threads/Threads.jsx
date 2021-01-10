@@ -5,14 +5,11 @@ import "./Threads.css"
 
 const Threads = () => {
 
-    const { selectedThreads } = useContext(ForumContext)
+    const { selectedThreads, currentBoardName } = useContext(ForumContext)
 
-    useEffect(() =>{
-        console.log(selectedThreads)
-    })
-
-    // selectedThread is an array of threads,
-    // map through it and display the threads.
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        });
 
     const threads = selectedThreads.map((thread, index) => {
         console.log(thread)
@@ -31,6 +28,7 @@ const Threads = () => {
 
     return (
         <div className="threads-container">
+            <h1 className="page-heading">{currentBoardName}</h1>
             <p>{threads}</p>
         </div>
     )

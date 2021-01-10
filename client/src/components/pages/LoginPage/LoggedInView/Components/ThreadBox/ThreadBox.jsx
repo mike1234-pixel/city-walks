@@ -53,14 +53,15 @@ const ThreadBox = (props) => {
 
         axios
         .delete("http://localhost:5000/delete-reply", { data: payload })
-        .then((err) => {
+        .then((res, err) => {
           if (err) {
             console.log(err);
-          } else {
-              alert("reply deleted.")
-              window.scrollTo(0, 0)
+          }  else {
+            alert("reply deleted.")
+            window.scrollTo(0, 0)
           }
         });
+
     }
 
     const replyComponents = replies.map((reply) => {
@@ -102,3 +103,15 @@ const ThreadBox = (props) => {
 }
 
 export default ThreadBox
+
+// // setter
+// localStorage.setItem('myData', data);
+ 
+// // getter
+// localStorage.getItem('myData');
+ 
+// // remove
+// localStorage.removeItem('myData');
+ 
+// // remove all
+// localStorage.clear();
