@@ -1,18 +1,25 @@
 import { useContext, useEffect } from "react"
 import { ForumContext } from "../../../../../../context/ForumContext"
 import ThreadBox from "../ThreadBox/ThreadBox"
+import toTitleCase from "../../../../../../functions/toTitleCase"
 import "./Threads.css"
 
-const Threads = () => {
+const Threads = ({match}) => {
 
-    const { selectedThreads, currentBoardName } = useContext(ForumContext)
+    const { currentBoardName, boards } = useContext(ForumContext)
+
+    // name of the current board that I want. coming from params
+    const boardName = toTitleCase(match.url.replace("/boards/", "").replace(/-/g, " "))
+
+    const selectedBoard = boards.filter((board) => board.name === boardName)[0]
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        console.log(JSON.stringify(boards))
+        console.log(selectedBoard[0])
         });
 
-    const threads = selectedThreads.map((thread, index) => {
-        console.log(thread)
+    const threads = selectedBoard.threads.map((thread, index) => {
         return (
         <ThreadBox 
             threadId={thread._id}

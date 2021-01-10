@@ -37,6 +37,7 @@ export const ForumContextProvider = (props) => {
             <BoardBox boardId={board._id} name={board.name} description={board.description} index={index} />
                 )
         })
+        // create routes for boards with Thread as the view component
     }
 
     return (

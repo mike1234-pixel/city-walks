@@ -55,6 +55,7 @@ const Router = (props) => {
     createRoutes();
   }, [walks]); // only re-run the effect if data changes
 
+
     return (
         <BrowserRouter>
         <div>
@@ -70,6 +71,7 @@ const Router = (props) => {
             <Route path="/login" render={() => <LoginPage />} />
             <Route path="/threads" render={() => <Threads />}/>
             <Route path="/admin" component={Admin} />
+            <Route path="/boards/:board" component={Threads}/>
             {newRoutes}
             <Route component={NotFound404} />
           </Switch>

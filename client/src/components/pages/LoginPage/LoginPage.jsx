@@ -23,7 +23,7 @@ const LoginPage = () => {
     setToggleLoginPanel(!toggleLoginPanel);
   };
 
-  const { loggedIn, userFirstName, logOut, displayForm, setForm } = useContext(LoginContext);
+  const { logOut, displayForm, setForm, loggedIn, userFirstName } = useContext(LoginContext);
 
   useEffect(() => {
     window.scrollTo(0, 0);

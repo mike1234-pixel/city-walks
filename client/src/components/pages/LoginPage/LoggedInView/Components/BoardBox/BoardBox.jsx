@@ -3,6 +3,8 @@ import { useEffect, useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { ForumContext } from "../../../../../../context/ForumContext"
 import './BoardBox.css'
+import { Link } from "react-router-dom"
+import urlify from "../../../../../../functions/urlify"
 
 const BoardBox = (props) => {
 
@@ -22,14 +24,14 @@ const BoardBox = (props) => {
         });
 
 
-        const handleClickSelectBoard = (boards, boardIndex) => {
-            setSelectedThreads(boards[boardIndex].threads)
-            console.log("SELECTED BOARD " + JSON.stringify(boards[boardIndex].threads))
-            console.log("SELECTED BOARD" + JSON.stringify(boards[boardIndex]))
-            setCurrentBoardName(boards[boardIndex].name)
-            setCurrentBoardId(boards[boardIndex].name)
-            handleRedirect('threads')
-        }
+        // const handleClickSelectBoard = (boards, boardIndex) => {
+        //     setSelectedThreads(boards[boardIndex].threads)
+        //     console.log("SELECTED BOARD " + JSON.stringify(boards[boardIndex].threads))
+        //     console.log("SELECTED BOARD" + JSON.stringify(boards[boardIndex]))
+        //     setCurrentBoardName(boards[boardIndex].name)
+        //     setCurrentBoardId(boards[boardIndex].name)
+        //     handleRedirect('threads')
+        // }
 
 
     return (
@@ -39,7 +41,8 @@ const BoardBox = (props) => {
                 {description}
                 </MDBCardText>
                 <div className="flex-row">
-                <a id="board-box-link" onClick={() => handleClickSelectBoard(boards, index)} style={{ marginLeft: "1.25rem" }}>Read More...</a>
+                {/* <a id="board-box-link" onClick={() => handleClickSelectBoard(boards, index)} style={{ marginLeft: "1.25rem" }}>Read More...</a> */}
+                <Link to={'boards/'+urlify(name)}>Read More...</Link>
             </div>
       </MDBCard>
     )
