@@ -13,21 +13,21 @@ import { ForumContextProvider } from "./context/ForumContext"
 
 const requestOne = axios.get('http://localhost:5000/walks');
 const requestTwo = axios.get('http://localhost:5000/cities');
+const requestThree = axios.get('http://localhost:5000/boards');
 
 axios
-  .all([requestOne, requestTwo])
+  .all([requestOne, requestTwo, requestThree])
   .then(
     axios.spread((...responses) => {
       const walksData = responses[0];
       const citiesData = responses[1];
-      console.log(walksData)
-      console.log(citiesData)
+      const boardsData = responses[2];
       ReactDOM.render(
         <ForumContextProvider>
           <RecaptchaContextProvider>
             <LoginContextProvider>
               <SearchContextProvider>
-                <App walks={walksData.data} cities={citiesData.data}/>
+                <App walks={walksData.data} cities={citiesData.data} boards={boardsData}/>
               </SearchContextProvider>
             </LoginContextProvider>
           </RecaptchaContextProvider>

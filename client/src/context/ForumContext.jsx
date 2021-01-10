@@ -1,6 +1,4 @@
-import { createContext, useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
-import axios from "axios"
+import { createContext, useState } from "react"
 import BoardBox from "../components/pages/LoginPage/LoggedInView/Components/BoardBox/BoardBox"
 
 export const ForumContext = createContext();
@@ -16,21 +14,6 @@ export const ForumContextProvider = (props) => {
 
     let displayBoards;
 
-    useEffect(() => {
-    axios
-    .get('http://localhost:5000/boards')
-    .then((res, err) => {
-        if (err) {
-            console.log(err)
-            alert("Could not connect to the server. Please try again.")
-        } else {
-            console.log(res.data)
-            setBoards(res.data)
-            console.log(boards)
-            setLoadingBoards(false)
-        }
-    })}, []);
-
     if (!loadingBoards) {
     displayBoards = boards.map((board, index) => {
         return (
@@ -43,15 +26,17 @@ export const ForumContextProvider = (props) => {
     return (
         <ForumContext.Provider 
             value={{
+                setBoards,
+                boards, // data
+                setLoadingBoards,
                 loadingBoards,
                 displayBoards,
-                boards, // data
-                selectedThreads, 
                 setSelectedThreads,
-                currentBoardName,
+                selectedThreads, 
                 setCurrentBoardName,
+                currentBoardName,
+                setCurrentBoardId,
                 currentBoardId,
-                setCurrentBoardId
             }}>
             {props.children}
         </ForumContext.Provider>

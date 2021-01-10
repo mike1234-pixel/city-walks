@@ -6,20 +6,20 @@ import "./Threads.css"
 
 const Threads = ({match}) => {
 
-    const { setCurrentBoardName, boards } = useContext(ForumContext)
+    const { boards, loadingBoards } = useContext(ForumContext)
 
-    // name of the current board that I want. coming from params
     const boardName = toTitleCase(match.url.replace("/boards/", "").replace(/-/g, " "))
-
-    const selectedBoard = boards.filter((board) => board.name === boardName)[0]
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        console.log(JSON.stringify(boards))
-        console.log(selectedBoard[0])
-        });
+        }, []);
 
-    const threads = selectedBoard.threads.map((thread, index) => {
+    let threads = "loading";
+    
+    if (!loadingBoards) {
+    const selectedBoard = boards.filter((board) => board.name === boardName)[0]
+
+    threads = selectedBoard.threads.map((thread) => {
         return (
         <ThreadBox 
             currentBoardName={boardName}
@@ -33,11 +33,12 @@ const Threads = ({match}) => {
             />
         )
     })
+}
 
     return (
         <div className="threads-container">
             <h1 className="page-heading">{boardName}</h1>
-            <p>{threads}</p>
+            <div>{threads}</div>
         </div>
     )
 }

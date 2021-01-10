@@ -9,7 +9,6 @@ import './ThreadBox.css'
 const ThreadBox = (props) => {
 
     const { userFirstName: currentUserFirstName, userId: currentUserId } = useContext(LoginContext)
-    const { currentBoardId } = useContext(ForumContext)
 
     const { currentBoardName, threadId, userFirstName, title, content, replies, submittedOn, userId } = props
 

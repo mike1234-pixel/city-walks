@@ -6,8 +6,7 @@ import './Boards.css'
 
 const Boards = () => {
 
-    // const { userFirstName } = useContext(LoginContext)
-    const userFirstName = localStorage.getItem('userFirstName')
+    const { userFirstName } = useContext(LoginContext)
     const { loadingBoards, displayBoards } = useContext(ForumContext)
 
     return (
