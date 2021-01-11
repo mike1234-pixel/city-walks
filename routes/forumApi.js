@@ -17,13 +17,40 @@ module.exports = function (app) {
         Board.create(req.body)
     })
 
+    app.post('/add-thread', (req, res) => {
+
+      console.log(req.body)
+
+      const { currentBoardName, userId, userFirstName, title, content } = req.body
+
+      const threadObj = {
+        userId: userId,
+        userFirstName: userFirstName,
+        title: title,
+        content: content,
+      }
+
+      Board.findOne({ name: currentBoardName}, (err, board) => {
+        if (err) {
+          console.log(err)
+        } else {
+          board.threads.push(threadObj)
+          board.save()
+          res.send("thread submitted")
+        }
+
+    })
+
+  })
+
+
     app.post('/add-reply', (req, res) => {
       console.log(req.body)
 
       const { currentBoardName, threadId, userId, userFirstName, reply } = req.body
 
       const replyObj = {
-        userId, userId,
+        userId: userId,
         userFirstName: userFirstName,
         reply: reply
       }
