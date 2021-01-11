@@ -50,7 +50,7 @@ const LoginPage = () => {
               >
                 <MDBNavbarNav right>
                   <MDBNavItem>
-                    <MDBBtn onClick={logOut}>
+                    <MDBBtn outline color="elegant" onClick={logOut}>
                       Logout <MDBIcon icon="key" />
                     </MDBBtn>
                   </MDBNavItem>
@@ -77,33 +77,33 @@ const LoginPage = () => {
               >
                 <MDBNavbarNav justify="true">
                   <MDBNavItem>
-                    <MDBBtn onClick={() => setForm("loginForm")}>
+                    <MDBBtn outline color="elegant" onClick={() => setForm("loginForm")}>
                       Login <MDBIcon icon="key" />
                     </MDBBtn>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBBtn
+                    <MDBBtn outline color="elegant"
                       onClick={() => setForm("registrationForm")}
                     >
                       Register <MDBIcon far icon="edit" />
                     </MDBBtn>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBBtn
+                    <MDBBtn outline color="elegant"
                       onClick={() => setForm("verificationForm")}
                     >
                       Resend Account Verification Email <MDBIcon far icon="envelope" />
                     </MDBBtn>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBBtn
+                    <MDBBtn outline color="elegant"
                       onClick={() => setForm("resetPasswordForm")}
                     >
                       Reset Password <MDBIcon icon="unlock-alt" />
                     </MDBBtn>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBBtn
+                    <MDBBtn outline color="elegant"
                       onClick={() => setForm("forgotPasswordForm")}
                     >
                       Forgot Password <MDBIcon far icon="question-circle" />

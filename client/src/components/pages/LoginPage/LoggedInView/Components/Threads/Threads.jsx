@@ -94,7 +94,7 @@ const addThread =
 <form className="add-thread-form" onSubmit={handleSubmit}>
     <MDBInput type="text" name="add-thread-name" id="add-thread-name" onChange={handleChange} value={threadName} label="thread name"/>
     <MDBInput type="textarea" rows="6" name="add-thread-content" id="add-thread-content" onChange={handleChange} value={threadContent} label="thread content"/>
-    <MDBBtn type="submit">Add Thread</MDBBtn>
+    <MDBBtn outline color="elegant" type="submit">Add Thread</MDBBtn>
 </form>
 </div>
 

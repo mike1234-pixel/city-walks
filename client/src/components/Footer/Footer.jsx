@@ -37,15 +37,12 @@ const Footer = () => {
               </li>
               <li className="list-unstyled">
                 <Link to="/admin">Admin portal</Link>
-              </li>
+            </li>
             </ul>
           </MDBCol>
           <MDBCol md="3">
           <h5 className="title">External Links</h5>
           <ul className="footer-ul">
-          <li className="list-unstyled">
-                <Link to="/login">User Login</Link>
-            </li>
             <li className="list-unstyled">
                 <Link to="/admin">Admin portal</Link>
             </li>

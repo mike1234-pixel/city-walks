@@ -86,8 +86,8 @@ const ThreadBox = (props) => {
         <div className="reply">
             <p>{reply.userFirstName} replied!</p>
             <p>{reply.reply}</p>
-            <p>{reply.submittedOn}</p>
-            {reply.userId === currentUserId && <MDBBtn onClick={() => handleDeleteReply(reply._id)}>Delete</MDBBtn>}
+            <p>{Date(reply.submittedOn)}</p>
+            {reply.userId === currentUserId && <MDBBtn outline color="black" onClick={() => handleDeleteReply(reply._id)}>Delete</MDBBtn>}
         </div>
         )
     })
@@ -103,17 +103,21 @@ const ThreadBox = (props) => {
 
     return (
         <MDBCard className="card-body" id="thread-box">
+          <div className="thread-container">
             <MDBCardTitle className="thread-box-title">{title}</MDBCardTitle>
                 <MDBCardText className="thread-box-content">
                     {content}
                 </MDBCardText>
-                <p>Posted by {userFirstName} on {submittedOn}</p>
-                  {userId === currentUserId && <MDBBtn onClick={() => handleDeleteThread(threadId)}>DELETE THREAD</MDBBtn>}
-                <p>Replies</p>
+                <p>Posted by {userFirstName} on {Date(submittedOn)}</p>
+                  {userId === currentUserId && <MDBBtn outline color="danger" onClick={() => handleDeleteThread(threadId)}>Delete Thread</MDBBtn>}
+            </div>
+            <div className="replies-h3-container">
+                <h3>Replies...</h3>
+            </div>
                 <div className="replies-container">{displayReplies}</div>
-                <MDBBtn onClick={() => setShowAllReplies(!showAllReplies)}>{showAllReplies ? "hide replies" : "show all replies"}</MDBBtn>
+                <MDBBtn outline color="default" className="show-all-replies-btn" onClick={() => setShowAllReplies(!showAllReplies)}>{showAllReplies ? "hide replies" : "show all replies"}</MDBBtn>
                 <form onSubmit={handleSubmit}>
-                    {loggedIn && <div><MDBInput  type="text" name="reply" id="reply" label="reply" value={reply} onChange={handleChange}/><MDBBtn type="submit">Submit</MDBBtn></div>  }
+                    {loggedIn && <div><MDBInput type="textarea" rows="5" name="reply" id="reply" label="reply" value={reply} onChange={handleChange}/><MDBBtn outline color="white" type="submit">Submit</MDBBtn></div>  }
                 </form>
         </MDBCard>
     )
