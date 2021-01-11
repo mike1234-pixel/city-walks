@@ -30,6 +30,10 @@ The API supports user registration and authentication using the **bcrypt** packa
 
 Only hashed passwords are stored in the database.
 
+## Email
+
+This app uses the `nodemailer` package to send emails from an administrator gmail account. The app is authenticated to control the gmail account using Google OAuth, which is set up using the `googleapis` package.
+
 ## Security
 
 The **helmet** package is used to add an extra layer of security.
@@ -90,7 +94,7 @@ Admin.findOne({ username: username }, (err, foundAdmin) => {
 
 The admin portal on the client allows you to manage the website's contents. The adminApi.js file contains the following routes:
 
-- **/admin-login**(post)
+- **/admin-login** (post)
 - **/add-walk** (post)
 - **/delete-walk** (delete)
 - **/add-city** (post)
@@ -122,7 +126,7 @@ If the secret code times out before the user has the opportunity to verify their
 
 The user also has the option to reset their password using their old password by sending a post request to **/reset-password** with their email, old password and new password.
 
-Finally, if the user has forgotten their password they can reset their password without their old password by submitting their email to **/forgot-password**. They will be sent an email containing a link to an html view. Their password is confirmed to be there's and in the view **forgotpassword.html** they can submit their email and a new password. Their account will then be found and their password replaced.
+Finally, if the user has forgotten their password they can reset their password without their old password by submitting their email to **/forgot-password**. They will be sent an email containing a link to an html view. Their password is confirmed to be theirs and in the view **forgotpassword.html** they can submit their email and a new password. Their account will then be found and their password replaced.
 
 ## forumApi.js
 
