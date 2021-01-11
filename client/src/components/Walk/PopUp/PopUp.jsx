@@ -2,7 +2,7 @@ import './PopUp.css'
 
 const PopUp = (props) => {
 
-    const { mapImg, handleClick } = props
+    const { mapImg } = props
 
     return (
         <div className="popup-container">

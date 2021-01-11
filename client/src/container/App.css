@@ -107,13 +107,6 @@ html {
 
 /* card styles start*/
 
-/* .city-card, */
-/* .city-card-btn {
-  box-shadow: none;
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
-} */
 .cutter {
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }

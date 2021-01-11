@@ -79,7 +79,7 @@ const Contact = () => {
           required
         />
         <MDBInput
-          key="input-5"
+          key="input-6"
           type="email"
           name="contact-email"
           id="contact-email"
@@ -89,7 +89,7 @@ const Contact = () => {
           required
         />
         <MDBInput
-          key="input-5"
+          key="input-7"
           type="textarea"
           rows="5"
           name="contact-message"

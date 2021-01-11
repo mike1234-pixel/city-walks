@@ -26,8 +26,8 @@ export const RecaptchaContextProvider = (props) => {
       }
     
       // load the script by passing the URL
-      loadScriptByURL("recaptcha-key", `https://www.google.com/recaptcha/api.js?render=${siteKey}`, function () {
-        console.log("Script loaded!");
+      loadScriptByURL("recaptcha-key", `https://www.google.com/recaptcha/api.js?render=${siteKey}`, () => {
+        console.log("recaptcha script loaded!");
       });
     }, []);
 

@@ -11,7 +11,7 @@ const Cities = (props) => {
 
     const cities = data.map((city) => {
         return (
-        <MDBCol style={{ maxWidth: "22rem" }} key={city._id}>
+        <MDBCol key={city._id}>
         <MDBCard className="city-card">
             <MDBCardImage className="cutter img-fluid" src={city.img} alt={city.city} waves/>
             <MDBCardBody>
@@ -23,9 +23,6 @@ const Cities = (props) => {
         </MDBCol>
         )
     })
-
-    console.log("cities")
-    console.log(cities)
 
     return (
         <div className="cities-page-container min-page-height">

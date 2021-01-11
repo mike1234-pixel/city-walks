@@ -29,7 +29,7 @@ const Threads = ({match}) => {
         threads = "thread not found"
     } else {
         
-        threads = selectedBoard.threads.map((thread) => {
+        threads = selectedBoard.threads.map((thread, index) => {
             return (
             <ThreadBox 
                 currentBoardName={boardName}
@@ -40,6 +40,7 @@ const Threads = ({match}) => {
                 replies={thread.replies}
                 submittedOn={thread.submittedOn}
                 userId={thread.userId}
+                key={index}
                 />
             )
         }).reverse()
@@ -88,11 +89,14 @@ const Threads = ({match}) => {
     }
 
 const addThread = 
-<form onSubmit={handleSubmit}>
+<div className="add-thread-form-container">
+<h2 className="add-thread-form-heading">Post a new discussion thread on this board:</h2>
+<form className="add-thread-form" onSubmit={handleSubmit}>
     <MDBInput type="text" name="add-thread-name" id="add-thread-name" onChange={handleChange} value={threadName} label="thread name"/>
     <MDBInput type="textarea" rows="6" name="add-thread-content" id="add-thread-content" onChange={handleChange} value={threadContent} label="thread content"/>
     <MDBBtn type="submit">Add Thread</MDBBtn>
 </form>
+</div>
 
     return (
         <div className="threads-container">

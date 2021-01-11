@@ -9,8 +9,6 @@ import './Walk.css'
 
 const Walk = ({match}) => {
 
-  console.log(match)
-
   const [togglePopUp, setTogglePopUp] = useState(false)
 
   const handleClick = () => {

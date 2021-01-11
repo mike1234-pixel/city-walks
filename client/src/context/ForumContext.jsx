@@ -17,7 +17,7 @@ export const ForumContextProvider = (props) => {
     if (!loadingBoards) {
     displayBoards = boards.map((board, index) => {
         return (
-            <BoardBox boardId={board._id} name={board.name} description={board.description} index={index} />
+            <BoardBox boardId={board._id} name={board.name} description={board.description} index={index} key={index} />
                 )
         })
         // create routes for boards with Thread as the view component

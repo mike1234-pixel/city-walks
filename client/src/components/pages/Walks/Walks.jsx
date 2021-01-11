@@ -27,7 +27,7 @@ const Walks = (props) => {
             <div  className="card-container">
             {walksArr.map(v => {
                 return (
-                    <MDBCol style={{ maxWidth: "22rem" }} key={v._id}>
+                    <MDBCol key={v._id}>
                     <MDBCard className="walk-card">
                         <MDBCardImage className="cutter img-fluid" src={v.coverImg} alt={v.walk} waves/>
                         <MDBCardBody>
@@ -55,7 +55,7 @@ const Walks = (props) => {
                 {walksArr.map(v => {
                 if (v.walk.toLowerCase().includes(searchValue.toLowerCase()) || v.city.toLowerCase().includes(searchValue.toLowerCase())) {
                 return (
-                    <MDBCol style={{ maxWidth: "22rem" }} key={v._id}>
+                    <MDBCol key={v._id}>
                     <MDBCard className="walk-card">
                         <MDBCardImage className="cutter img-fluid" src={v.coverImg} alt={v.walk} waves/>
                         <MDBCardBody>

@@ -75,7 +75,7 @@ const LoginPage = () => {
                 isOpen={toggleLoginPanel}
                 navbar
               >
-                <MDBNavbarNav justify>
+                <MDBNavbarNav justify="true">
                   <MDBNavItem>
                     <MDBBtn onClick={() => setForm("loginForm")}>
                       Login <MDBIcon icon="key" />
