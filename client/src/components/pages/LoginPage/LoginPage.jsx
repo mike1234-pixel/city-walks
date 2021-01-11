@@ -57,7 +57,6 @@ const LoginPage = () => {
                 </MDBNavbarNav>
               </MDBCollapse>
             </MDBNavbar>
-            <Boards/>
           </div>
         ) : (
           <div>

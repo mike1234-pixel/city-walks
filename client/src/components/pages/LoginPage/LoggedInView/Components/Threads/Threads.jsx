@@ -28,13 +28,13 @@ const Threads = ({match}) => {
     if (selectedBoard === undefined) {
         threads = "thread not found"
     } else {
-
+        
         threads = selectedBoard.threads.map((thread) => {
             return (
             <ThreadBox 
                 currentBoardName={boardName}
                 threadId={thread._id}
-                userFirstName={thread.UserFirstName}
+                userFirstName={thread.userFirstName}
                 title={thread.title}
                 content={thread.content}
                 replies={thread.replies}
@@ -42,7 +42,7 @@ const Threads = ({match}) => {
                 userId={thread.userId}
                 />
             )
-        })
+        }).reverse()
     }
 }
 

@@ -268,6 +268,7 @@ axios
   const logOut = () => {
     localStorage.clear()
     setLoggedIn(false)
+    setUserId("")
     setUserFirstName("")
     setUserLastName("")
     setForm("boards")
