@@ -43,6 +43,24 @@ module.exports = function (app) {
 
   })
 
+  app.delete('/delete-thread', (req, res) => {
+    console.log(req.body)
+
+    const { currentBoardName, threadId } = req.body
+
+    Board.findOne({name: currentBoardName}, (err, board)=> {
+      if (err) {
+        console.log(err)
+      } else {
+        board.threads.pull(threadId)
+        board.save();
+        console.log("thread deleted")
+        res.send('thread deleted');
+      }
+    })
+
+  })
+
 
     app.post('/add-reply', (req, res) => {
       console.log(req.body)

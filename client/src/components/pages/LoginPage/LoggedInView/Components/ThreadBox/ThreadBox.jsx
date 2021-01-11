@@ -9,7 +9,7 @@ const ThreadBox = (props) => {
 
     const { userFirstName: currentUserFirstName, userId: currentUserId, loggedIn } = useContext(LoginContext)
 
-    const { currentBoardName, threadId, userFirstName, title, content, replies, submittedOn } = props
+    const { currentBoardName, threadId, userFirstName, title, content, replies, submittedOn, userId } = props
 
     const [showAllReplies, setShowAllReplies] = useState(false)
     const [reply, setReply] = useState("")
@@ -42,7 +42,7 @@ const ThreadBox = (props) => {
         });
     }
 
-    const handleClick = (replyId) => {
+    const handleDeleteReply = (replyId) => {
         let payload = {
             currentBoardName: currentBoardName,
             threadId: threadId,
@@ -59,7 +59,26 @@ const ThreadBox = (props) => {
             window.location.reload()
           }
         });
+    }
 
+    const handleDeleteThread = (threadId) => {
+      console.log(threadId)
+
+      let payload = {
+        currentBoardName: currentBoardName,
+        threadId: threadId,
+      };
+
+      axios
+      .delete("http://localhost:5000/delete-thread", { data: payload })
+      .then((res, err) => {
+        if (err) {
+          console.log(err);
+        }  else {
+          alert("thread deleted.")
+          window.location.reload()
+        }
+      });
     }
 
     const replyComponents = replies.map((reply) => {
@@ -68,7 +87,7 @@ const ThreadBox = (props) => {
             <p>{reply.userFirstName} replied!</p>
             <p>{reply.reply}</p>
             <p>{reply.submittedOn}</p>
-            {reply.userId === currentUserId ? <MDBBtn onClick={() => handleClick(reply._id)}>Delete</MDBBtn>: null}
+            {reply.userId === currentUserId && <MDBBtn onClick={() => handleDeleteReply(reply._id)}>Delete</MDBBtn>}
         </div>
         )
     })
@@ -89,6 +108,7 @@ const ThreadBox = (props) => {
                     {content}
                 </MDBCardText>
                 <p>Posted by {userFirstName} on {submittedOn}</p>
+                  {userId === currentUserId && <MDBBtn onClick={() => handleDeleteThread(threadId)}>DELETE THREAD</MDBBtn>}
                 <p>Replies</p>
                 <div className="replies-container">{displayReplies}</div>
                 <MDBBtn onClick={() => setShowAllReplies(!showAllReplies)}>{showAllReplies ? "hide replies" : "show all replies"}</MDBBtn>
