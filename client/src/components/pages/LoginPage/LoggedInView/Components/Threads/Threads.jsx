@@ -21,7 +21,7 @@ const Threads = ({match}) => {
     const selectedBoard = boards.filter((board) => board.name === boardName)[0]
 
     if (selectedBoard === undefined) {
-        threads = "page not found"
+        threads = "thread not found"
     } else {
 
         threads = selectedBoard.threads.map((thread) => {

@@ -3,14 +3,13 @@ import { MDBInput, MDBBtn, MDBCard, MDBCardTitle, MDBCardText } from "mdbreact"
 import axios from "axios"
 import qs from "qs"
 import { LoginContext } from "../../../../../../context/LoginContext"
-import { ForumContext } from "../../../../../../context/ForumContext"
 import './ThreadBox.css'
 
 const ThreadBox = (props) => {
 
     const { userFirstName: currentUserFirstName, userId: currentUserId, loggedIn } = useContext(LoginContext)
 
-    const { currentBoardName, threadId, userFirstName, title, content, replies, submittedOn, userId } = props
+    const { currentBoardName, threadId, userFirstName, title, content, replies, submittedOn } = props
 
     const [showAllReplies, setShowAllReplies] = useState(false)
     const [reply, setReply] = useState("")
@@ -95,7 +94,6 @@ const ThreadBox = (props) => {
                 <MDBBtn onClick={() => setShowAllReplies(!showAllReplies)}>{showAllReplies ? "hide replies" : "show all replies"}</MDBBtn>
                 <form onSubmit={handleSubmit}>
                     {loggedIn && <div><MDBInput  type="text" name="reply" id="reply" label="reply" value={reply} onChange={handleChange}/><MDBBtn type="submit">Submit</MDBBtn></div>  }
-                    
                 </form>
         </MDBCard>
     )

@@ -10,6 +10,7 @@ import { RecaptchaContextProvider } from "./context/RecaptchaContext"
 import { SearchContextProvider } from "./context/SearchContext"
 import { LoginContextProvider } from "./context/LoginContext"
 import { ForumContextProvider } from "./context/ForumContext"
+import { WalksContextProvider } from "./context/WalksContext"
 
 const requestOne = axios.get('http://localhost:5000/walks');
 const requestTwo = axios.get('http://localhost:5000/cities');
@@ -27,7 +28,9 @@ axios
           <RecaptchaContextProvider>
             <LoginContextProvider>
               <SearchContextProvider>
-                <App walks={walksData.data} cities={citiesData.data} boards={boardsData}/>
+                <WalksContextProvider>
+                  <App walks={walksData.data} cities={citiesData.data} boards={boardsData}/>
+                </WalksContextProvider>
               </SearchContextProvider>
             </LoginContextProvider>
           </RecaptchaContextProvider>

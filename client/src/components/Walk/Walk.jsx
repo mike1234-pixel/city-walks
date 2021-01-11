@@ -1,69 +1,75 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import { MDBIcon, MDBAnimation, MDBBtn } from "mdbreact"
 import SectionA from '../SectionA/SectionA'
 import SectionB from '../SectionB/SectionB'
 import PopUp from './PopUp/PopUp'
+import toTitleCase from "../../functions/toTitleCase"
+import { WalksContext } from "../../context/WalksContext"
 import './Walk.css'
 
-const Walk = (props) => {
+const Walk = ({match}) => {
 
-    const {
-      walk, 
-      city, 
-      description,
-      startingPoint, 
-      content1, 
-      content2, 
-      content3,
-      mapImg, 
-      img1, 
-      img2, 
-      img3,
-      author,
-      aboutTheAuthor,
-      websiteLink,
-      instagramLink,
-      facebookLink,
-      twitterLink
-    } = props
+  console.log(match)
+
+  const [togglePopUp, setTogglePopUp] = useState(false)
+
+  const handleClick = () => {
+    setTogglePopUp(!togglePopUp)
+  }
+
+  const { walks, isLoading } = useContext(WalksContext)
+
+  const walkName = toTitleCase(match.url.replace("/walks/", "").replace(/-/g, " "))
 
     useEffect(() => {
         window.scrollTo(0, 0);
       });
 
-    const [togglePopUp, setTogglePopUp] = useState(false)
+      let walk = "loading";
 
-    const handleClick = () => {
-      setTogglePopUp(!togglePopUp)
-    }
+      if (!isLoading) {
+
+        let selectedWalk = walks.filter((walk) => walk.walk === walkName)
+        selectedWalk = selectedWalk[0]
+
+        if (selectedWalk === undefined) {
+          walk = "walk not found"
+        } else {
+            walk = 
+            <div>
+            <div className="walk-heading-container">
+              <h1 className="walk-heading display-font">{`${selectedWalk.walk} -- ${selectedWalk.city}`}</h1>
+              <p>{selectedWalk.description}</p>
+              <p>Starting Point: {selectedWalk.startingPoint}</p>
+            </div>
+              <SectionA content={selectedWalk.content1} img={selectedWalk.img1} alt={selectedWalk.walk}/>
+              <SectionB content={selectedWalk.content2} img={selectedWalk.img2} alt={selectedWalk.walk}/>
+              <SectionA content={selectedWalk.content3} img={selectedWalk.img3} alt={selectedWalk.walk}/>
+              <div className="author-info-container">
+                <p>This walk was written by {selectedWalk.author}</p>
+                <p>{selectedWalk.aboutTheAuthor}</p>
+                <p>Connect with {selectedWalk.author.split(" ")[0]}!</p>
+                <MDBAnimation reveal type="rubberBand">
+                  <div className="social-links">
+                    {selectedWalk.websiteLink !== undefined && <a href={selectedWalk.websiteLink} target="_blank"><MDBIcon icon="laptop" /></a>}
+                    {selectedWalk.facebookLink !== undefined && <a href={selectedWalk.facebookLink} target="_blank"><MDBIcon fab icon="facebook" /></a>}
+                    {selectedWalk.instagramLink !== undefined && <a href={selectedWalk.instagramLink} target="_blank"><MDBIcon fab icon="instagram" /></a>}
+                    {selectedWalk.twitterLink !== undefined && <a href={selectedWalk.twitterLink} target="_blank"><MDBIcon fab icon="twitter" /></a>}
+                  </div>
+                </MDBAnimation>
+                <MDBBtn id="see-map-btn" onClick={handleClick} >
+                {togglePopUp ? "Unsee Map" : "See Map" } <MDBIcon icon="map-marked-alt" />
+                </MDBBtn>
+                {togglePopUp && <PopUp mapImg={selectedWalk.mapImg} handleClick={handleClick}/>}
+              </div>
+          </div>
+        }
+      }
+
 
     return (
-    <div>
-      <div className="walk-heading-container">
-        <h1 className="walk-heading display-font">{`${walk} -- ${city}`}</h1>
-        <p>{description}</p>
-        <p>Starting Point: {startingPoint}</p>
-      </div>
-        <SectionA content={content1} img={img1} alt={walk}/>
-        <SectionB content={content2} img={img2} alt={walk}/>
-        <SectionA content={content3} img={img3} alt={walk}/>
-        <div className="author-info-container">
-          <p>This walk was written by {author}</p>
-          <p>{aboutTheAuthor}</p>
-          <p>Connect with {author.split(" ")[0]}!</p>
-          <MDBAnimation reveal type="rubberBand">
-            <div className="social-links">
-              {websiteLink !== undefined && <a href={websiteLink} target="_blank"><MDBIcon icon="laptop" /></a>}
-              {facebookLink !== undefined && <a href={facebookLink} target="_blank"><MDBIcon fab icon="facebook" /></a>}
-              {instagramLink !== undefined && <a href={instagramLink} target="_blank"><MDBIcon fab icon="instagram" /></a>}
-              {twitterLink !== undefined && <a href={twitterLink} target="_blank"><MDBIcon fab icon="twitter" /></a>}
-            </div>
-          </MDBAnimation>
-          <MDBBtn id="see-map-btn" onClick={handleClick} >
-          {togglePopUp ? "Unsee Map" : "See Map" } <MDBIcon icon="map-marked-alt" />
-          </MDBBtn>
-          {togglePopUp && <PopUp mapImg={mapImg} handleClick={handleClick}/>}
-        </div>
+    <div className="min-page-height center">
+      {walk}
     </div>
     )
 }

@@ -1,9 +1,9 @@
 import { useEffect, useContext } from "react"
-import { useHistory } from "react-router-dom"
 import { MDBIcon, MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact'
 import { FaSearchLocation } from "react-icons/fa"
 import { SearchContext } from '../../../context/SearchContext'
 import urlify from '../../../functions/urlify'
+import { Link } from "react-router-dom"
 import './Walks.css'
 
 const Walks = (props) => {
@@ -11,12 +11,6 @@ const Walks = (props) => {
     const walksArr = props.walks
 
     let { searchValue, setSearchValue } = useContext(SearchContext)
-
-    let history = useHistory()
-
-    const handleRedirect =(redirectTo) => {
-          history.push(`/${redirectTo}`)
-    }
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -40,7 +34,7 @@ const Walks = (props) => {
                         <MDBCardTitle>{v.city}</MDBCardTitle>
                         <MDBCardTitle className="display-font">{v.walk}</MDBCardTitle>
                         <MDBCardText>{v.description}</MDBCardText>
-                        <MDBBtn outline color="elegant" className="city-card-btn" onClick={() =>handleRedirect(urlify(v.walk))}>Explore <MDBIcon icon="walking" /></MDBBtn>
+                        <Link to={'walks/'+urlify(v.walk)}><MDBBtn outline color="elegant" className="city-card-btn">Explore <MDBIcon icon="walking" /></MDBBtn></Link>
                         </MDBCardBody>
                     </MDBCard>
                     </MDBCol>
@@ -68,7 +62,7 @@ const Walks = (props) => {
                         <MDBCardTitle>{v.city}</MDBCardTitle>
                         <MDBCardTitle className="display-font">{v.walk}</MDBCardTitle>
                         <MDBCardText>{v.description}</MDBCardText>
-                        <MDBBtn outline color="elegant" className="city-card-btn" onClick={() =>handleRedirect(urlify(v.walk))}>Explore <MDBIcon icon="walking" /></MDBBtn>
+                        <Link to={'walks/'+urlify(v.walk)}><MDBBtn outline color="elegant" className="city-card-btn">Explore <MDBIcon icon="walking" /></MDBBtn></Link>
                         </MDBCardBody>
                     </MDBCard>
                     </MDBCol>
