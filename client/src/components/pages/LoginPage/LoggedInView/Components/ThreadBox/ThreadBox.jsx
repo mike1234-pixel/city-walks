@@ -32,12 +32,12 @@ const ThreadBox = (props) => {
 
         axios
         .post("http://localhost:5000/add-reply", qs.stringify(payload))
-        .then((err) => {
+        .then((res, err) => {
           if (err) {
             console.log(err);
           } else {
               alert("reply submitted.")
-              window.scrollTo(0, 0)
+              window.location.reload()
           }
         });
     }
@@ -56,7 +56,7 @@ const ThreadBox = (props) => {
             console.log(err);
           }  else {
             alert("reply deleted.")
-            window.scrollTo(0, 0)
+            window.location.reload()
           }
         });
 

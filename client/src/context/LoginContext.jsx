@@ -141,6 +141,9 @@ export const LoginContextProvider = (props) => {
           setUserId(res.data._id)
           setUserFirstName(res.data.fname)
           setUserLastName(res.data.lname)
+          localStorage.setItem("loggedIn", true)
+          localStorage.setItem("userId", res.data._id)
+          localStorage.setItem("userFirstName", res.data.fname)
           window.scrollTo(0, 0)
         }
       });
@@ -263,6 +266,7 @@ axios
 }
   
   const logOut = () => {
+    localStorage.clear()
     setLoggedIn(false)
     setUserFirstName("")
     setUserLastName("")
@@ -289,6 +293,9 @@ axios
                 loginPassword,
                 handleChangeLogin: handleChangeLogin,
                 handleSubmitLogin: handleSubmitLogin,
+                setLoggedIn,
+                setUserFirstName,
+                setUserId,
                 // logged in user data
                 userFirstName,
                 userId,

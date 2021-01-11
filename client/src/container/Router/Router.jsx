@@ -18,7 +18,6 @@ const Router = (props) => {
 
     return (
         <BrowserRouter>
-        <div>
           <Nav/>
           <Switch>
             <Route exact path="/" component={() => <Home walks={walks}/>} />
@@ -35,7 +34,6 @@ const Router = (props) => {
             <Route component={NotFound404} />
           </Switch>
           <Footer/>
-        </div>
         </BrowserRouter>
     )
 }
