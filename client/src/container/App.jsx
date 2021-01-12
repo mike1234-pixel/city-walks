@@ -11,7 +11,7 @@ const App = (props) => {
 
   const { setBoards, setLoadingBoards } = useContext(ForumContext)
   const { setWalks,  setIsLoading } = useContext(WalksContext)
-  const { setLoggedIn, setUserId, setUserFirstName } = useContext(LoginContext)
+  const { setPopupVisible, setLoggedIn, setUserId, setUserFirstName } = useContext(LoginContext)
 
   //   set the boards and walks data
       useEffect(() => {
@@ -19,6 +19,13 @@ const App = (props) => {
         setLoadingBoards(false)
         setWalks(walks)
         setIsLoading(false)
+
+        if (localStorage.getItem("popupVisible") === null) {
+           localStorage.setItem("popupVisible", true)
+           setPopupVisible(true)
+        }
+        
+
 
         if (localStorage.getItem("loggedIn") !== null) {
           setLoggedIn(true)
@@ -29,11 +36,13 @@ const App = (props) => {
       },[])
 
         return (
-          <Router 
-            // core app data
-            walks={walks} 
-            cities={cities} 
-            />
+          <div>
+            <Router 
+              // core app data
+              walks={walks} 
+              cities={cities} 
+              />
+            </div>
         )
 
 }

@@ -143,6 +143,8 @@ The forum api contains all the following routes that relate to the forum on the 
 
 The contactApi handles contact form submissions. It contains a single post route to **/contact-form** which sends the administrator an email containing the form content, and sends the sender an email with the message "Thanks very much for getting in touch. We will get back to you with a response shortly."
 
+The request on this route is verified by _Google Recaptcha V3_ and If the recaptcha score is less than 0.7 the server will reject the request.
+
 ## dataApi.js (Walks and Page data)
 
 The dataApi contains get routes for **/walks** and **/cities** which send the respective collections to the client.

@@ -44,6 +44,22 @@ The `userFirstName`, `userId` credentials and `loggedIn` state are stored in `lo
 
 All ajax requests are made using the **axios** and **qs** packages.
 
+## Recaptcha
+
+Google recaptcha is set up in **./src/components/page/Contact/Contact.jsx** withe the following code:
+
+```javascript
+window.grecaptcha.ready(() => {
+  window.grecaptcha.execute(siteKey, { action: "submit" }).then((token) => {
+    submitData(token);
+  });
+});
+```
+
+All other inputs on the app require the use of an activated account where the user's email has been verified, and so do not use recaptcha.
+
+If the recaptcha score is less than 0.7 the server will reject the request.
+
 ## Routing
 
 **react-router-dom** is used for routing the frontend.

@@ -1,3 +1,4 @@
+import { useContext } from "react"
 import { MDBBtn, MDBIcon } from "mdbreact"
 import { FaArrowAltCircleDown } from "react-icons/fa"
 import { Link } from "react-router-dom"
@@ -5,6 +6,8 @@ import Carousel from '../../Carousel/Carousel'
 import SectionA from '../../SectionA/SectionA'
 import SectionB from '../../SectionB/SectionB'
 import urlify from '../../../functions/urlify'
+import PopUp from "../../PopUp/PopUp"
+import { LoginContext } from "../../../context/LoginContext"
 import './Home.css'
 
 const Home = (props) => {
@@ -18,8 +21,11 @@ const Home = (props) => {
         featuredWalks = walks;
     }
 
+    const { popupVisible } = useContext(LoginContext)
+
     return (
         <div>
+            {popupVisible && <PopUp/>}
             <Carousel/>
             <div className="page-heading-container featured-walks-heading-container">
                 <h2 className="page-heading"><a href="#featured-walk-1" className="featured-walks-link"><FaArrowAltCircleDown className="arrow" /> Featured Walks <FaArrowAltCircleDown className="arrow"/></a></h2>

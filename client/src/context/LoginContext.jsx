@@ -11,6 +11,8 @@ import Boards from "../components/pages/LoginPage/LoggedInView/Boards"
 export const LoginContext = createContext();
 
 export const LoginContextProvider = (props) => {
+    const [popupVisible, setPopupVisible] = useState(false)
+
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [userId, setUserId] = useState("")
@@ -33,6 +35,11 @@ export const LoginContextProvider = (props) => {
     const [resetPasswordConfirmNewPassword, setResetPasswordConfirmNewPassword] = useState("")
 
     const [forgotPasswordEmail, setForgotPasswordEmail] = useState("")
+
+    const handlePopup = () => {
+      setPopupVisible(false)
+      localStorage.setItem("popupVisible", false)
+    }
 
     // set display form on LoginPage
     const [form, setForm] = useState("loggedOutView");
@@ -277,6 +284,9 @@ axios
     return (
         <LoginContext.Provider 
             value={{
+              popupVisible,
+              setPopupVisible,
+              handlePopup,
                // display form
                displayForm,
                setForm,
