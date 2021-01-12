@@ -35,9 +35,6 @@ const Footer = () => {
               <li className="list-unstyled">
                 <Link to="/boards">User Login</Link>
               </li>
-              <li className="list-unstyled">
-                <Link to="/admin">Admin portal</Link>
-            </li>
             </ul>
           </MDBCol>
           <MDBCol md="3">

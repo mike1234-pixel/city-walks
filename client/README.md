@@ -80,3 +80,7 @@ The client contains:
 To run the tests run:
 
 `npm test`
+
+## Future Improvements
+
+- If the database grows significantly in size then **lazy loading / infinite scrolling** should be implemented.

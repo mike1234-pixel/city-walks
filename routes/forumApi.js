@@ -17,6 +17,19 @@ module.exports = function (app) {
         Board.create(req.body)
     })
 
+    app.delete('/delete-board', (req, res) => {
+
+      const { boardName } = req.body 
+
+      Board.findOneAndDelete({ name: boardName}, (err, doc) => {
+        if (err) {
+          console.log(err)
+        } else {
+          console.log("board deleted")
+        }
+      })
+    })
+
     app.post('/add-thread', (req, res) => {
 
       console.log(req.body)
