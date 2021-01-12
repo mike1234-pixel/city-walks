@@ -369,4 +369,16 @@ module.exports = function (app) {
    })
   })
 
+  app.delete('/delete-account', (req, res) => {
+    const { userId } = req.body
+
+    User.findOneAndDelete({ _id: userId}, (err, doc) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log("user deleted")
+      }
+    })
+  })
+
 };

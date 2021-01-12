@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from "react-router-dom"
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from 'mdbreact'
+import { LoginContext } from "../../context/LoginContext"
+import axios from "axios"
 import './Footer.css'
 
 const Footer = () => {
+
+  const { loggedIn, userId, logOut } = useContext(LoginContext)
+
+  const deleteAccount = () => {
+
+    const payload = {
+      userId: userId,
+    }
+
+    axios.delete("http://localhost:5000/delete-account", {data: payload})
+        .then((err) => {
+            if (err) {
+              console.log(err);
+            }
+          });
+  
+          alert("Account Deleted. You can sign up again at any time.")
+          logOut()
+          window.scrollTo(0, 0);
+  }
+
   return (
     <MDBFooter className="font-small pt-4 mt-4 footer">
       <MDBContainer fluid className="text-center text-md-left">
@@ -46,6 +69,10 @@ const Footer = () => {
             <li className="list-unstyled">
                 <Link to="/privacy">Privacy Policy</Link>
             </li>
+            {loggedIn && 
+            <li className="list-unstyled">
+                <a onClick={deleteAccount}>Delete Account</a>
+            </li>}
             </ul>
           </MDBCol>
         </MDBRow>
