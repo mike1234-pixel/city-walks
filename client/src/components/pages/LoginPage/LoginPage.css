@@ -8,3 +8,7 @@
 .login-panel {
   background: var(--blue);
 }
+
+.user-portal-link {
+  padding: 20px;
+}

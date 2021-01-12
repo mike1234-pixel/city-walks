@@ -2,18 +2,15 @@
 
 import { useState, useEffect, useContext } from "react";
 import {
-  MDBBtn,
   MDBIcon,
   MDBNavbar,
   MDBNavbarBrand,
   MDBNavbarNav,
   MDBNavItem,
-  MDBNavLink,
   MDBHamburgerToggler,
   MDBCollapse,
 } from "mdbreact";
 import { LoginContext } from "../../../context/LoginContext";
-import Boards from './LoggedInView/Boards';
 import "./LoginPage.css";
 
 const LoginPage = () => {
@@ -23,7 +20,7 @@ const LoginPage = () => {
     setToggleLoginPanel(!toggleLoginPanel);
   };
 
-  const { logOut, displayForm, setForm, loggedIn, userFirstName } = useContext(LoginContext);
+  const { logOut, displayForm, setForm, loggedIn } = useContext(LoginContext);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -50,9 +47,9 @@ const LoginPage = () => {
               >
                 <MDBNavbarNav right>
                   <MDBNavItem>
-                    <MDBBtn outline color="elegant" onClick={logOut}>
+                    <a className="user-portal-link" onClick={logOut}>
                       Logout <MDBIcon icon="key" />
-                    </MDBBtn>
+                    </a>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
@@ -77,37 +74,37 @@ const LoginPage = () => {
               >
                 <MDBNavbarNav justify="true">
                   <MDBNavItem>
-                    <MDBBtn outline color="elegant" onClick={() => setForm("loginForm")}>
+                    <a className="user-portal-link" onClick={() => setForm("loginForm")}>
                       Login <MDBIcon icon="key" />
-                    </MDBBtn>
+                    </a>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBBtn outline color="elegant"
+                    <a className="user-portal-link"
                       onClick={() => setForm("registrationForm")}
                     >
                       Register <MDBIcon far icon="edit" />
-                    </MDBBtn>
+                    </a>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBBtn outline color="elegant"
+                    <a className="user-portal-link"
                       onClick={() => setForm("verificationForm")}
                     >
                       Resend Account Verification Email <MDBIcon far icon="envelope" />
-                    </MDBBtn>
+                    </a>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBBtn outline color="elegant"
+                    <a className="user-portal-link"
                       onClick={() => setForm("resetPasswordForm")}
                     >
                       Reset Password <MDBIcon icon="unlock-alt" />
-                    </MDBBtn>
+                    </a>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBBtn outline color="elegant"
+                    <a className="user-portal-link"
                       onClick={() => setForm("forgotPasswordForm")}
                     >
                       Forgot Password <MDBIcon far icon="question-circle" />
-                    </MDBBtn>
+                    </a>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>

@@ -126,7 +126,9 @@ If the secret code times out before the user has the opportunity to verify their
 
 The user also has the option to reset their password using their old password by sending a post request to **/reset-password** with their email, old password and new password.
 
-Finally, if the user has forgotten their password they can reset their password without their old password by submitting their email to **/forgot-password**. They will be sent an email containing a link to an html view. Their password is confirmed to be theirs and in the view **forgotpassword.html** they can submit their email and a new password. Their account will then be found and their password replaced.
+If the user has forgotten their password they can reset their password without their old password by submitting their email to **/forgot-password**. They will be sent an email containing a link to an html view. Their password is confirmed to be theirs and in the view **forgotpassword.html** they can submit their email and a new password. Their account will then be found and their password replaced.
+
+Finally, a logged in user can delete their account with their \_id on the **/delete-account** route. (The userId is held in localStorage on the client so this is sent over automatically).
 
 ## forumApi.js
 
@@ -134,6 +136,7 @@ The forum api contains all the following routes that relate to the forum on the 
 
 - **/boards** (get) - sends the boards data to the client
 - **/add-board** (post) - add a new discussion board (when logged in as administrator)
+- **/delete-board** (delete) - delete an existing discussion board using the board name (when logged in as administrator)
 - **/add-thread** (post) - add a new thread to a board when logged in as a user.
 - **/delete-thread** (delete) - delete a thread that belongs to your account when logged in as a user. When threads are added a `userId` field is attached to the thread which contains the \_id of the current user. On the client this is checked against the userId of the current logged in user to determine whether to display the delete button.
 - **/add-reply** (post) - add a new reply to a thread when logged in as a user.
