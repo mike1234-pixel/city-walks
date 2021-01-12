@@ -4,6 +4,8 @@ import { FaSearchLocation } from "react-icons/fa"
 import { SearchContext } from '../../../context/SearchContext'
 import urlify from '../../../functions/urlify'
 import { Link } from "react-router-dom"
+import PopUp from "../../PopUp/PopUp"
+import { LoginContext } from "../../../context/LoginContext"
 import './Walks.css'
 
 const Walks = (props) => {
@@ -11,6 +13,7 @@ const Walks = (props) => {
     const walksArr = props.walks
 
     let { searchValue, setSearchValue } = useContext(SearchContext)
+    const { popupVisible } = useContext(LoginContext)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -19,6 +22,7 @@ const Walks = (props) => {
     if (searchValue === "") {
     return (
         <div className="min-page-height">
+            {popupVisible && <PopUp/>}
             <div className="page-heading-container">
                 <h1 className="page-heading">Walks</h1>
                 <MDBBtn outline color="elegant" className="city-card-btn" onClick={() => setSearchValue("")}>Show all walks</MDBBtn>

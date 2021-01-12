@@ -1,6 +1,15 @@
 /** @format */
 
+.popup-container {
+  position: relative;
+  z-index: 20;
+}
+
 .popup {
   background: black;
   color: white;
+  font-size: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }

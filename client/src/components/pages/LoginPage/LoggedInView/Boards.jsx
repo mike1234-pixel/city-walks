@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ForumContext } from "../../../../context/ForumContext"
 import { LoginContext } from "../../../../context/LoginContext";
+import PopUp from "../../../../components/PopUp/PopUp"
 
 import './Boards.css'
 
@@ -9,8 +10,11 @@ const Boards = () => {
     const { userFirstName } = useContext(LoginContext)
     const { loadingBoards, displayBoards } = useContext(ForumContext)
 
+    const { popupVisible } = useContext(LoginContext)
+
     return (
         <div>
+            {popupVisible && <PopUp/>}
             <div className="page-heading-container">
                 <h1 className="page-heading">Forum</h1>
                 <h2 className="login-heading">Welcome back {userFirstName}</h2>

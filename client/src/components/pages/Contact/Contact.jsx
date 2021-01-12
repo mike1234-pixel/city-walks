@@ -3,11 +3,16 @@
 import { useState, useContext } from "react"
 import { RecaptchaContext } from "../../../context/RecaptchaContext"
 import { MDBInput, MDBBtn, MDBIcon } from "mdbreact";
+import PopUp from "../../PopUp/PopUp"
+import { LoginContext } from "../../../context/LoginContext"
 import axios from "axios";
 import qs from "qs"
 import "./Contact.css";
 
 const Contact = () => {
+
+  const { popupVisible } = useContext(LoginContext)
+
   const [contactName, setContactName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactMessage, setContactMessage] = useState("");
@@ -65,6 +70,8 @@ const Contact = () => {
 }
 
   return (
+  <div>
+  {popupVisible && <PopUp/>}
     <div className="page-heading-container min-page-height">
       <h1 className="page-heading">Contact</h1>
       <form onSubmit={handleSubmit} className="contact-form display-form">
@@ -104,6 +111,7 @@ const Contact = () => {
         </MDBBtn>
       </form>
     </div>
+  </div>
   );
 };
 

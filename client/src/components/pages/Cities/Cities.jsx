@@ -1,6 +1,8 @@
 import { useContext } from "react"
 import { SearchContext } from '../../../context/SearchContext'
 import { MDBIcon, MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact'
+import PopUp from "../../PopUp/PopUp"
+import { LoginContext } from "../../../context/LoginContext"
 import './Cities.css'
 
 const Cities = (props) => {
@@ -8,6 +10,7 @@ const Cities = (props) => {
     const data = props.cities
 
     const { handleClickSearch } = useContext(SearchContext)
+    const { popupVisible } = useContext(LoginContext)
 
     const cities = data.map((city) => {
         return (
@@ -26,6 +29,7 @@ const Cities = (props) => {
 
     return (
         <div className="cities-page-container min-page-height">
+            {popupVisible && <PopUp/>}
             <div className="page-heading-container">
                 <h1 className="page-heading">Cities</h1>
             </div>

@@ -1,9 +1,18 @@
+import { useContext } from "react"
+import PopUp from "../../PopUp/PopUp"
+import { LoginContext } from "../../../context/LoginContext"
 import './About.css'
 
 const About = () => {
+
+    const { popupVisible } = useContext(LoginContext)
+
     return (
-        <div className="page-heading-container min-page-height">
-            <h1 className="page-heading">About</h1>
+        <div>
+            {popupVisible && <PopUp/>}
+            <div className="page-heading-container min-page-height">
+                <h1 className="page-heading">About</h1>
+            </div>
         </div>
     )
 }

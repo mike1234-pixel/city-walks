@@ -6,12 +6,13 @@ import toTitleCase from "../../../../../../functions/toTitleCase"
 import { MDBBtn, MDBInput } from "mdbreact"
 import axios from "axios"
 import qs from "qs"
+import PopUp from "../../../../../PopUp/PopUp"
 import "./Threads.css"
 
 const Threads = ({match}) => {
 
     const { boards, loadingBoards } = useContext(ForumContext)
-    const { loggedIn, userId, userFirstName } = useContext(LoginContext)
+    const { loggedIn, userId, userFirstName, popupVisible } = useContext(LoginContext)
 
     const boardName = toTitleCase(match.url.replace("/boards/", "").replace(/-/g, " "))
 
@@ -100,6 +101,7 @@ const addThread =
 
     return (
         <div className="threads-container">
+            {popupVisible && <PopUp/>}
             <h1 className="page-heading">{boardName}</h1>
                 {loggedIn && addThread}
             <div>{threads}</div>

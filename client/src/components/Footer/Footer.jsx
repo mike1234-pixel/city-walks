@@ -41,10 +41,13 @@ const Footer = () => {
             </ul>
           </MDBCol>
           <MDBCol md="3">
-          <h5 className="title">External Links</h5>
+          <h5 className="title">Extra Links</h5>
           <ul className="footer-ul">
             <li className="list-unstyled">
                 <Link to="/admin">Admin portal</Link>
+            </li>
+            <li className="list-unstyled">
+                <Link to="/privacy">Privacy Policy</Link>
             </li>
             </ul>
           </MDBCol>

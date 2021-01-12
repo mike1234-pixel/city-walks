@@ -7,6 +7,7 @@ import Contact from '../../components/pages/Contact/Contact'
 import LoginPage from '../../components/pages/LoginPage/LoginPage'
 import Admin from '../../components/pages/Admin/Admin'
 import NotFound404 from '../../components/pages/404/NotFound404'
+import PrivacyPolicy from "../../components/pages/PrivacyPolicy/PrivacyPolicy"
 import Footer from '../../components/Footer/Footer'
 import Walk from '../../components/Walk/Walk'
 import Threads from '../../components/pages/LoginPage/LoggedInView/Components/Threads/Threads'
@@ -31,6 +32,7 @@ const Router = (props) => {
             <Route exact path="/boards" render={() => <LoginPage />} />
             <Route path="/boards/:board" component={Threads}/>
             <Route path="/admin" component={Admin} />
+            <Route path="/privacy" component={PrivacyPolicy}/>
             <Route component={NotFound404} />
           </Switch>
           <Footer/>

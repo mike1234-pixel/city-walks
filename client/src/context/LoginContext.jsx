@@ -274,6 +274,7 @@ axios
   
   const logOut = () => {
     localStorage.clear()
+    localStorage.setItem("popupVisible", false)
     setLoggedIn(false)
     setUserId("")
     setUserFirstName("")

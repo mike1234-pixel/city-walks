@@ -5,6 +5,8 @@ import SectionB from '../SectionB/SectionB'
 import PopUp from './PopUp/PopUp'
 import toTitleCase from "../../functions/toTitleCase"
 import { WalksContext } from "../../context/WalksContext"
+import PrivacyPopUp from "../../components/PopUp/PopUp"
+import { LoginContext } from "../../context/LoginContext"
 import './Walk.css'
 
 const Walk = ({match}) => {
@@ -16,6 +18,7 @@ const Walk = ({match}) => {
   }
 
   const { walks, isLoading } = useContext(WalksContext)
+  const { popupVisible } = useContext(LoginContext)
 
   const walkName = toTitleCase(match.url.replace("/walks/", "").replace(/-/g, " "))
 
@@ -66,9 +69,12 @@ const Walk = ({match}) => {
 
 
     return (
-    <div className="min-page-height center">
-      {walk}
-    </div>
+      <div>
+        {popupVisible && <PrivacyPopUp/>}
+        <div className="min-page-height center">
+          {walk}
+        </div>
+      </div>
     )
 }
 
