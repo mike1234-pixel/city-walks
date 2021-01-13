@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddBoardForm Page renders correctly 1`] = `
+<div>
+  <h2>
+    Add Board
+  </h2>
+  <form
+    className="add-board-form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="md-form"
+    >
+      
+      <input
+        aria-disabled={false}
+        className="form-control"
+        data-test="input"
+        disabled={false}
+        id="board-name"
+        name="board-name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onInput={[Function]}
+        required={true}
+        type="text"
+        value=""
+      />
+      <label
+        aria-labelledby=""
+        className=""
+        data-error=""
+        data-success=""
+        htmlFor="board-name"
+        id=""
+        onClick={[Function]}
+      >
+        board name
+      </label>
+    </div>
+    <div
+      className="md-form"
+    >
+      
+      <input
+        aria-disabled={false}
+        className="form-control"
+        data-test="input"
+        disabled={false}
+        id="board-description"
+        name="board-description"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onInput={[Function]}
+        required={true}
+        type="text"
+        value=""
+      />
+      <label
+        aria-labelledby=""
+        className=""
+        data-error=""
+        data-success=""
+        htmlFor="board-description"
+        id=""
+        onClick={[Function]}
+      >
+        board description
+      </label>
+    </div>
+    <button
+      className="btn-elegant btn-outline-elegant btn Ripple-parent"
+      data-test="button"
+      onMouseUp={[Function]}
+      onTouchStart={[Function]}
+      type="submit"
+    >
+      Add Board 
+      <i
+        className="fa fa-plus"
+        data-test="fa"
+      />
+      <div
+        className="Ripple Ripple-outline "
+        data-test="waves"
+        style={
+          Object {
+            "height": "0px",
+            "left": "0px",
+            "top": "0px",
+            "width": "0px",
+          }
+        }
+      />
+    </button>
+  </form>
+</div>
+`;

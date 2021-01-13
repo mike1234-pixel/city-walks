@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Map Pop Up (in Walk) renders correctly 1`] = `
+<div
+  className="popup-container"
+>
+  <div
+    className="popup"
+  >
+    <img
+      className="popup-img"
+      src="mapimg"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage Page renders correctly 1`] = `
+<div
+  className="user-portal min-page-height"
+>
+  <div>
+    <nav
+      className="navbar-dark navbar navbar-expand-md login-panel"
+      data-test="navbar"
+      role="navigation"
+    >
+      <div
+        className="navbar-brand"
+        data-test="navbar-brand"
+      >
+        <strong
+          className="white-text user-portal-logo"
+        >
+          User Portal
+        </strong>
+      </div>
+      <input
+        className="hamburger-button__checkbox"
+        data-test="hamburger-toggler"
+        defaultChecked={false}
+        id="hamburger2"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        className="hamburger-button__button hamburger1"
+        htmlFor="hamburger2"
+        id="nav-icon1"
+      >
+        <span
+          style={
+            Object {
+              "background": "#fff",
+            }
+          }
+        />
+        <span
+          style={
+            Object {
+              "background": "#fff",
+            }
+          }
+        />
+        <span
+          style={
+            Object {
+              "background": "#fff",
+            }
+          }
+        />
+      </label>
+      <div
+        className="collapse navbar-collapse"
+        data-test="collapse"
+        id="navbarCollapse3"
+        style={Object {}}
+      >
+        <ul
+          className="navbar-nav justify-content-around w-100"
+          data-test="navbar-nav"
+          justify="true"
+        >
+          <li
+            className="nav-item"
+            data-test="nav-item"
+          >
+            <a
+              className="user-portal-link"
+              onClick={[Function]}
+            >
+              Login 
+              <i
+                className="fa fa-key"
+                data-test="fa"
+              />
+            </a>
+          </li>
+          <li
+            className="nav-item"
+            data-test="nav-item"
+          >
+            <a
+              className="user-portal-link"
+              onClick={[Function]}
+            >
+              Register 
+              <i
+                className="far fa-edit"
+                data-test="fa"
+              />
+            </a>
+          </li>
+          <li
+            className="nav-item"
+            data-test="nav-item"
+          >
+            <a
+              className="user-portal-link"
+              onClick={[Function]}
+            >
+              Resend Account Verification Email 
+              <i
+                className="far fa-envelope"
+                data-test="fa"
+              />
+            </a>
+          </li>
+          <li
+            className="nav-item"
+            data-test="nav-item"
+          >
+            <a
+              className="user-portal-link"
+              onClick={[Function]}
+            >
+              Reset Password 
+              <i
+                className="fa fa-unlock-alt"
+                data-test="fa"
+              />
+            </a>
+          </li>
+          <li
+            className="nav-item"
+            data-test="nav-item"
+          >
+            <a
+              className="user-portal-link"
+              onClick={[Function]}
+            >
+              Forgot Password 
+              <i
+                className="far fa-question-circle"
+                data-test="fa"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <br />
+  <div>
+    <div
+      className="page-heading-container"
+    >
+      <h1
+        className="page-heading"
+      >
+        Forum
+      </h1>
+      <h2
+        className="login-heading"
+      >
+        Welcome back 
+        
+      </h2>
+      <p>
+        Here you can join in the discussion and put forward your own recomendations. Discussions are subdivided by category:
+      </p>
+    </div>
+    <p>
+      Loading...
+    </p>
+  </div>
+</div>
+`;

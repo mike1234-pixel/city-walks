@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section B renders correctly 1`] = `
+<div
+  className="section-b grid-container-b"
+>
+  <div
+    className="grid-item-b grid-item-b-image-box"
+  >
+    <div
+      className="view overlay zoom"
+      data-test="view"
+      onMouseDown={[Function]}
+      onTouchStart={[Function]}
+      style={Object {}}
+    >
+      <img
+        alt="alt attribute"
+        className="grid-item-b-img"
+        src="imagefile"
+      />
+    </div>
+  </div>
+  <div
+    className="grid-item-b grid-item-b-text-box"
+  >
+    <p>
+      mock content
+    </p>
+  </div>
+</div>
+`;

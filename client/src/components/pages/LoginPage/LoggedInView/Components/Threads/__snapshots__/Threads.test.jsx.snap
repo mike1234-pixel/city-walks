@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Threads renders correctly 1`] = `
+<div
+  className="threads-container"
+>
+  <h1
+    className="page-heading"
+  >
+    Your City
+  </h1>
+  <div>
+    loading
+  </div>
+</div>
+`;

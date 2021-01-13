@@ -2,7 +2,7 @@
 
 exports[`Footer renders correctly 1`] = `
 <footer
-  className="page-footer blue font-small pt-4 mt-4"
+  className="page-footer font-small pt-4 mt-4 footer"
   data-test="footer"
 >
   <div
@@ -20,56 +20,116 @@ exports[`Footer renders correctly 1`] = `
         <h5
           className="title"
         >
-          Footer Content
+          City Walks is...
         </h5>
         <p>
-          Here you can use rows and columns here to organize your footer content.
+          (City Walks description)
         </p>
       </div>
       <div
-        className="col-md-6"
+        className="col-md-3"
         data-test="col"
       >
         <h5
           className="title"
         >
-          Links
+          Site Links
         </h5>
-        <ul>
+        <ul
+          className="footer-ul"
+        >
           <li
             className="list-unstyled"
           >
             <a
-              href="#!"
+              href="/"
+              onClick={[Function]}
             >
-              Link 1
+              Home
             </a>
           </li>
           <li
             className="list-unstyled"
           >
             <a
-              href="#!"
+              href="/cities"
+              onClick={[Function]}
             >
-              Link 2
+              Cities
             </a>
           </li>
           <li
             className="list-unstyled"
           >
             <a
-              href="#!"
+              href="/walks"
+              onClick={[Function]}
             >
-              Link 3
+              Walks
             </a>
           </li>
           <li
             className="list-unstyled"
           >
             <a
-              href="#!"
+              href="/about"
+              onClick={[Function]}
             >
-              Link 4
+              About
+            </a>
+          </li>
+          <li
+            className="list-unstyled"
+          >
+            <a
+              href="/contact"
+              onClick={[Function]}
+            >
+              Contact
+            </a>
+          </li>
+          <li
+            className="list-unstyled"
+          >
+            <a
+              href="/boards"
+              onClick={[Function]}
+            >
+              User Login
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        className="col-md-3"
+        data-test="col"
+      >
+        <h5
+          className="title"
+        >
+          Extra Links
+        </h5>
+        <ul
+          className="footer-ul"
+        >
+          <li
+            className="list-unstyled"
+          >
+            <a
+              href="/admin"
+              onClick={[Function]}
+            >
+              Admin portal
+            </a>
+          </li>
+          <li
+            className="list-unstyled"
+          >
+            <a
+              href="/privacy"
+              onClick={[Function]}
+            >
+              Privacy Policy
             </a>
           </li>
         </ul>
@@ -84,13 +144,8 @@ exports[`Footer renders correctly 1`] = `
       data-test="container"
     >
       © 
-      2020
-       Copyright: 
-      <a
-        href="https://www.mdbootstrap.com"
-      >
-         MDBootstrap.com 
-      </a>
+      2021
+       Copyright
     </div>
   </div>
 </footer>

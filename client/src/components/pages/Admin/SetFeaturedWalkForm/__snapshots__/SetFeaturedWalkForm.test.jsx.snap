@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SetFeaturedWalkForm Page renders correctly 1`] = `
+<div>
+  <h2>
+    Set Featured Walks
+  </h2>
+  <p>
+    Administrator note: a prerequisite of this working is that at least one record has the featuredWalk field set to true.
+  </p>
+  <p>
+    Only records where walk is fully in Title Case can be set as a featured walk. For example, 'Bond Street to Baker Street' will not pass.
+  </p>
+  <p>
+    The form will convert your input to Title Case.
+  </p>
+  <form
+    className="set-featured-walk-form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="md-form"
+    >
+      
+      <input
+        aria-disabled={false}
+        className="form-control"
+        data-test="input"
+        disabled={false}
+        id="featured-walk-1"
+        name="featured-walk-1"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onInput={[Function]}
+        required={true}
+        type="text"
+        value=""
+      />
+      <label
+        aria-labelledby=""
+        className=""
+        data-error=""
+        data-success=""
+        htmlFor="featured-walk-1"
+        id=""
+        onClick={[Function]}
+      >
+        featured walk 1 (walk name, e.g 'Stoke Newington')
+      </label>
+    </div>
+    <div
+      className="md-form"
+    >
+      
+      <input
+        aria-disabled={false}
+        className="form-control"
+        data-test="input"
+        disabled={false}
+        id="featured-walk-2"
+        name="featured-walk-2"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onInput={[Function]}
+        required={true}
+        type="text"
+        value=""
+      />
+      <label
+        aria-labelledby=""
+        className=""
+        data-error=""
+        data-success=""
+        htmlFor="featured-walk-2"
+        id=""
+        onClick={[Function]}
+      >
+        featured walk 2 (walk name, e.g 'Buckingham Palace')
+      </label>
+    </div>
+    <div
+      className="md-form"
+    >
+      
+      <input
+        aria-disabled={false}
+        className="form-control"
+        data-test="input"
+        disabled={false}
+        id="featured-walk-3"
+        name="featured-walk-3"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onInput={[Function]}
+        required={true}
+        type="text"
+        value=""
+      />
+      <label
+        aria-labelledby=""
+        className=""
+        data-error=""
+        data-success=""
+        htmlFor="featured-walk-3"
+        id=""
+        onClick={[Function]}
+      >
+        featured walk 3 (walk name, e.g 'Old Street')
+      </label>
+    </div>
+    <button
+      className="btn-elegant btn-outline-elegant btn Ripple-parent"
+      data-test="button"
+      onMouseUp={[Function]}
+      onTouchStart={[Function]}
+      type="submit"
+    >
+      Set Featured Walks
+      <i
+        className="far fa-star ml-2"
+        data-test="fa"
+      />
+      <div
+        className="Ripple Ripple-outline "
+        data-test="waves"
+        style={
+          Object {
+            "height": "0px",
+            "left": "0px",
+            "top": "0px",
+            "width": "0px",
+          }
+        }
+      />
+    </button>
+  </form>
+</div>
+`;

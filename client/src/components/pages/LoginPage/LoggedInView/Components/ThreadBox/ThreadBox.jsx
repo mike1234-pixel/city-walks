@@ -81,9 +81,9 @@ const ThreadBox = (props) => {
       });
     }
 
-    const replyComponents = replies.map((reply) => {
+    const replyComponents = replies.map((reply, index) => {
         return (
-        <div className="reply">
+        <div className="reply" key={index}>
             <p>{reply.userFirstName} replied!</p>
             <p>{reply.reply}</p>
             <p>{Date(reply.submittedOn)}</p>

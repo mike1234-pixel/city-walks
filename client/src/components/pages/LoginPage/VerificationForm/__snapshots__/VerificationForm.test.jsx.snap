@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VerificationForm renders correctly 1`] = `
+<div>
+  <div
+    className="verification-header-container"
+  >
+    <h2
+      className="verification-header"
+    >
+      Activate Your Account
+    </h2>
+    <p>
+      Submit your email address to resend the verification email to activate your account.
+    </p>
+    <p>
+      You must activate your account within 10 minutes of receiving the email.
+    </p>
+    <p>
+      If the email link expires then submit your email address again to receive a fresh activation link.
+    </p>
+  </div>
+  <form
+    className="verification-form display-form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="md-form"
+    >
+      
+      <input
+        aria-disabled={false}
+        className="form-control"
+        data-test="input"
+        disabled={false}
+        id="verification-email"
+        name="verification-email"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onInput={[Function]}
+        required={true}
+        type="email"
+        value=""
+      />
+      <label
+        aria-labelledby=""
+        className=""
+        data-error=""
+        data-success=""
+        htmlFor="verification-email"
+        id=""
+        onClick={[Function]}
+      >
+        email
+      </label>
+    </div>
+    <button
+      className="btn-elegant btn-outline-elegant btn Ripple-parent"
+      data-test="button"
+      onMouseUp={[Function]}
+      onTouchStart={[Function]}
+      type="submit"
+    >
+      Resend Email 
+      <i
+        className="far fa-paper-plane"
+        data-test="fa"
+      />
+      <div
+        className="Ripple Ripple-outline "
+        data-test="waves"
+        style={
+          Object {
+            "height": "0px",
+            "left": "0px",
+            "top": "0px",
+            "width": "0px",
+          }
+        }
+      />
+    </button>
+  </form>
+</div>
+`;

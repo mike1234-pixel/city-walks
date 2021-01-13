@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Admin Page renders correctly 1`] = `
+<div
+  className="admin-portal"
+>
+  <form
+    className="admin-login-form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="md-form"
+    >
+      
+      <input
+        aria-disabled={false}
+        className="form-control"
+        data-test="input"
+        disabled={false}
+        id="admin-username"
+        maxLength="70"
+        name="admin-username"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onInput={[Function]}
+        required={true}
+        type="text"
+        value=""
+      />
+      <label
+        aria-labelledby=""
+        className=""
+        data-error=""
+        data-success=""
+        htmlFor="admin-username"
+        id=""
+        onClick={[Function]}
+      >
+        admin username
+      </label>
+    </div>
+    <div
+      className="md-form"
+    >
+      
+      <input
+        aria-disabled={false}
+        className="form-control"
+        data-test="input"
+        disabled={false}
+        id="admin-password"
+        maxLength="70"
+        name="admin-password"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onInput={[Function]}
+        required={true}
+        type="password"
+        value=""
+      />
+      <label
+        aria-labelledby=""
+        className=""
+        data-error=""
+        data-success=""
+        htmlFor="admin-password"
+        id=""
+        onClick={[Function]}
+      >
+        admin password
+      </label>
+    </div>
+    <button
+      className="btn-elegant btn-outline-elegant btn Ripple-parent"
+      data-test="button"
+      onMouseUp={[Function]}
+      onTouchStart={[Function]}
+      type="submit"
+    >
+      Administrator Login 
+      <i
+        className="fa fa-sign-in-alt"
+        data-test="fa"
+      />
+      <div
+        className="Ripple Ripple-outline "
+        data-test="waves"
+        style={
+          Object {
+            "height": "0px",
+            "left": "0px",
+            "top": "0px",
+            "width": "0px",
+          }
+        }
+      />
+    </button>
+  </form>
+</div>
+`;

@@ -1,15 +1,12 @@
-import React from 'react'
 import renderer from 'react-test-renderer'
-import SearchBar from './SearchBar'
+import PrivacyPolicy from './PrivacyPolicy'
 
 // snapshot test
-it('SearchBar renders correctly', () => {  
+it('Privacy Policy renders correctly', () => {  
+
   const tree = renderer
-    .create(<SearchBar/>)
+    .create(
+        <PrivacyPolicy/>)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
-
-
-
-
