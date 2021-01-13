@@ -8,5 +8,3 @@ const toTitleCase = (str) => {
   }
 
 export default toTitleCase
-
-// jim-bob --> Jim-Bob

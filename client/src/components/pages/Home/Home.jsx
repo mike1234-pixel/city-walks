@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { MDBBtn, MDBIcon } from "mdbreact"
 import { FaArrowAltCircleDown } from "react-icons/fa"
 import { Link } from "react-router-dom"
@@ -13,6 +13,10 @@ import './Home.css'
 const Home = (props) => {
 
     const { walks } = props
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
     let featuredWalks = walks.filter(walk => walk.featuredWalk === true);
 
@@ -44,7 +48,7 @@ const Home = (props) => {
             </div>
             <SectionB content={featuredWalks[1].content1} img={featuredWalks[1].coverImg} alt={featuredWalks[1].walk}/>
             <div className="center">
-                <Link to={"/walks/"+(urlify(featuredWalks[1].walk))}><MDBBtn outline color="elegant" className="featured-walks-btn">Explore {featuredWalks[1].walk} <MDBIcon icon="walking" /></MDBBtn></Link>
+                <Link to={"/walks/"+(urlify(featuredWalks[1].walk))}><MDBBtn className="section-b-home-btn" outline color="elegant" className="featured-walks-btn">Explore {featuredWalks[1].walk} <MDBIcon icon="walking" /></MDBBtn></Link>
             </div>
             <hr/>
             <div className="center featured-walks-h3-container">

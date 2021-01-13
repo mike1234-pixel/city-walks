@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { SearchContext } from '../../../context/SearchContext'
 import { MDBIcon, MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact'
 import PopUp from "../../PopUp/PopUp"
@@ -11,6 +11,10 @@ const Cities = (props) => {
 
     const { handleClickSearch } = useContext(SearchContext)
     const { popupVisible } = useContext(LoginContext)
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
     const cities = data.map((city) => {
         return (

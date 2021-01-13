@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import PopUp from "../../PopUp/PopUp"
 import { LoginContext } from "../../../context/LoginContext"
 import './About.css'
@@ -6,6 +6,10 @@ import './About.css'
 const About = () => {
 
     const { popupVisible } = useContext(LoginContext)
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
     return (
         <div>

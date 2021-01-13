@@ -1,6 +1,6 @@
 /** @format */
 
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import { RecaptchaContext } from "../../../context/RecaptchaContext"
 import { MDBInput, MDBBtn, MDBIcon } from "mdbreact";
 import PopUp from "../../PopUp/PopUp"
@@ -12,6 +12,10 @@ import "./Contact.css";
 const Contact = () => {
 
   const { popupVisible } = useContext(LoginContext)
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const [contactName, setContactName] = useState("");
   const [contactEmail, setContactEmail] = useState("");

@@ -15,11 +15,11 @@ exports[`Nav renders correctly 1`] = `
       data-test="navbar-brand"
     >
       <b
-        className="black-text"
+        className="white-text"
       >
         <a
           aria-current="page"
-          className="nav-link Ripple-parent black-text active"
+          className="nav-link Ripple-parent white-text logo active"
           data-test="nav-link"
           href="/"
           onClick={[Function]}
@@ -59,21 +59,21 @@ exports[`Nav renders correctly 1`] = `
       <span
         style={
           Object {
-            "background": "#000",
+            "background": "#fff",
           }
         }
       />
       <span
         style={
           Object {
-            "background": "#000",
+            "background": "#fff",
           }
         }
       />
       <span
         style={
           Object {
-            "background": "#000",
+            "background": "#fff",
           }
         }
       />
@@ -94,7 +94,7 @@ exports[`Nav renders correctly 1`] = `
         >
           <a
             aria-current="page"
-            className="nav-link Ripple-parent black-text active"
+            className="nav-link Ripple-parent white-text active"
             data-test="nav-link"
             href="/"
             onClick={[Function]}
@@ -123,7 +123,7 @@ exports[`Nav renders correctly 1`] = `
         >
           <a
             aria-current={null}
-            className="nav-link Ripple-parent black-text"
+            className="nav-link Ripple-parent white-text"
             data-test="nav-link"
             href="/cities"
             onClick={[Function]}
@@ -151,7 +151,7 @@ exports[`Nav renders correctly 1`] = `
         >
           <a
             aria-current={null}
-            className="nav-link Ripple-parent black-text"
+            className="nav-link Ripple-parent white-text"
             data-test="nav-link"
             href="/walks"
             onClick={[Function]}
@@ -179,7 +179,7 @@ exports[`Nav renders correctly 1`] = `
         >
           <a
             aria-current={null}
-            className="nav-link Ripple-parent black-text"
+            className="nav-link Ripple-parent white-text"
             data-test="nav-link"
             href="/about"
             onClick={[Function]}
@@ -207,7 +207,7 @@ exports[`Nav renders correctly 1`] = `
         >
           <a
             aria-current={null}
-            className="nav-link Ripple-parent black-text"
+            className="nav-link Ripple-parent white-text"
             data-test="nav-link"
             href="/contact"
             onClick={[Function]}
@@ -215,6 +215,34 @@ exports[`Nav renders correctly 1`] = `
             onTouchStart={[Function]}
           >
             Contact
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </a>
+        </li>
+        <li
+          className="nav-item"
+          data-test="nav-item"
+        >
+          <a
+            aria-current={null}
+            className="nav-link Ripple-parent white-text"
+            data-test="nav-link"
+            href="/boards"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+          >
+            Forum
             <div
               className="Ripple "
               data-test="waves"
@@ -238,7 +266,9 @@ exports[`Nav renders correctly 1`] = `
           className="nav-item"
           data-test="nav-item"
         >
-          <form>
+          <form
+            onSubmit={[Function]}
+          >
             <span
               className="search-container"
               style={

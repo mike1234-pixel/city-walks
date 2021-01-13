@@ -19,7 +19,7 @@ const App = (props) => {
         setLoadingBoards(false)
         setWalks(walks)
         setIsLoading(false)
-
+        
         if (localStorage.getItem("popupVisible") === null) {
            localStorage.setItem("popupVisible", true)
            setPopupVisible(true)

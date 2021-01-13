@@ -1,10 +1,33 @@
 import App from "./App"
+import { ForumContextProvider } from "../context/ForumContext"
+import { SearchContextProvider } from "../context/SearchContext"
+import { LoginContextProvider } from "../context/LoginContext"
+import { RecaptchaContextProvider } from "../context/RecaptchaContext"
+import { WalksContextProvider } from "../context/WalksContext"
 import { render, fireEvent } from "@testing-library/react" // https://testing-library.com/docs/react-testing-library/cheatsheet
+import WalksTestData from "./WalksTestData.json"
+import CitiesTestData from "./CitiesTestData.json"
+import BoardsTestData from "./BoardsTestData.json"
 
-describe("App.jsx tests", () => {
+// integration tests (simulate user interaction)
+describe("App integration tests", () => {
 
   it("renders without crashing", () => {
-    const { getByLabelText, getByTestId } = render(<App/>)
+    window.scrollTo = jest.fn()
+
+    const { getByLabelText, getByTestId } = render(
+      <ForumContextProvider>
+      <RecaptchaContextProvider>
+        <LoginContextProvider>
+          <SearchContextProvider>
+            <WalksContextProvider>
+              <App walks={WalksTestData} cities={CitiesTestData} boards={BoardsTestData}/>
+            </WalksContextProvider>
+          </SearchContextProvider>
+        </LoginContextProvider>
+      </RecaptchaContextProvider>
+    </ForumContextProvider>
+    )
     // assert element exists
     getByLabelText("Search")
 
@@ -16,6 +39,3 @@ describe("App.jsx tests", () => {
   })
 
 })
-
-// don't write any tests that would be testing asynchronous code or api requests and their content as yet, 
-// i.e. tests on the results of the dummyData.json results

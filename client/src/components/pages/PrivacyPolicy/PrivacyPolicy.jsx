@@ -1,9 +1,17 @@
+import { useEffect } from "react"
 import "./PrivacyPolicy.css"
 
 const PrivacyPolicy = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+
     return (
-        <div>
-            <h1>City Walks Privacy Policy</h1>
+        <div className="privacy-policy-container">
+            <div className="page-heading-container">
+                <h1 className="page-heading">City Walks Privacy Policy</h1>
+            </div>
             <p>City Walks is a non-commercial application and is unaffiliated with any company or organisation. This privacy policy explains how City Walks uses the personal data we collect from you when you use our website.</p>
             <h3>Topics:</h3>
             <ul>
@@ -55,7 +63,7 @@ const PrivacyPolicy = () => {
                 <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us at out email: city.walks.uk@gmail.com</p>
             <h2>What are cookies?</h2>
                 <p>Cookies are text files placed on your computer to collect standard Internet log information and visitor behaviour information. When you visit our website, we may collect information from you automatically through cookies or similar technology.</p>
-                <p>For further information, visit<a target="_blank" href="https://www.allaboutcookies.org/">allaboutcookies.org</a></p>
+                <p>For further information, visit <a target="_blank" href="https://www.allaboutcookies.org/">allaboutcookies.org</a></p>
             <h2>How do we use cookies?</h2>
                 <p>City Walks uses cookies in a range of ways to improve your experience on our website, including:</p>
                 <ul>
