@@ -6,6 +6,7 @@ exports[`Cities Page renders correctly 1`] = `
 >
   <div
     className="page-heading-container"
+    data-testid="cities-page-heading"
   >
     <h1
       className="page-heading"

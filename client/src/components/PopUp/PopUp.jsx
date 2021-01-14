@@ -9,8 +9,8 @@ const PopUp = () => {
     const { handlePopup } = useContext(LoginContext)
 
     return (
-        <div className="popup-container">
-            <div className="popup">
+        <div className="popup-container-cookies">
+            <div className="popup-cookies">
                 <p>To make City Walks work, we log user data. By using City Walks, you agree to our <Link to="/privacy">Privacy Policy</Link>, including cookie policy.</p>
                 <MDBBtn onClick={handlePopup}>Accept</MDBBtn>
             </div>

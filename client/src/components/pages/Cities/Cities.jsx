@@ -34,7 +34,7 @@ const Cities = (props) => {
     return (
         <div className="cities-page-container min-page-height">
             {popupVisible && <PopUp/>}
-            <div className="page-heading-container">
+            <div data-testid="cities-page-heading" className="page-heading-container">
                 <h1 className="page-heading">Cities</h1>
             </div>
                 <div className="card-container">{cities}</div>

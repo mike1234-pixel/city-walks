@@ -69,7 +69,7 @@ const Walk = ({match}) => {
 
 
     return (
-      <div>
+      <div data-testid="walk-page">
         {popupVisible && <PrivacyPopUp/>}
         <div className="min-page-height center">
           {walk}

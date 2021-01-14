@@ -54,12 +54,12 @@ const PrivacyPolicy = () => {
                 <p>City Walks is a non-commercial application and so will not use your data for marketing purposes.</p>
             <h2>What are your data protection rights?</h2>
                 <p>City Walks woud like to make sure you are fully aware of all your data protection rights. Every user is entitled to the following:</p>
-                <p><b>The right to access - </b>You have the right to request City Walks for copies of your personal data. We may charge you a small fee for this service.</p>
-                <p><b>The right to rectification - </b>You have the right to request that City Walks correct any information you believe is inaccurate. You also have the right to request City Walks to complete information you believe is incomplete.</p>
-                <p><b>The right to erasure - </b>You have the right to request that City Walks erase your personal data, under certain conditions.</p>
-                <p><b>The right to restrict processing - </b>You have the right to request that City Walks restrict the processing of your personal data, under certain conditions.</p>
-                <p><b>The right to object to processing - </b>You have the right to object to City Walks's processing of your personal data, under certain conditions.</p>
-                <p><b>The right to data portability - </b>You have the right to request that City Walks transfer the data we have collected to another organisation, or directly to you, under certain conditions.</p>
+                <p><strong className="bold-text">The right to access - </strong>You have the right to request City Walks for copies of your personal data. We may charge you a small fee for this service.</p>
+                <p><strong className="bold-text">The right to rectification - </strong>You have the right to request that City Walks correct any information you strongelieve is inaccurate. You also have the right to request City Walks to complete information you believe is incomplete.</p>
+                <p><strong className="bold-text">The right to erasure - </strong>You have the right to request that City Walks erase your personal data, under certain conditions.</p>
+                <p><strong className="bold-text">The right to restrict processing - </strong>You have the right to request that City Walks restrict the processing of your personal data, under certain conditions.</p>
+                <p><strong className="bold-text">The right to object to processing - </strong>You have the right to object to City Walks's processing of your personal data, under certain conditions.</p>
+                <p><strong className="bold-text">The right to data portability - </strong>You have the right to request that City Walks transfer the data we have collected to another organisation, or directly to you, under certain conditions.</p>
                 <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us at out email: city.walks.uk@gmail.com</p>
             <h2>What are cookies?</h2>
                 <p>Cookies are text files placed on your computer to collect standard Internet log information and visitor behaviour information. When you visit our website, we may collect information from you automatically through cookies or similar technology.</p>

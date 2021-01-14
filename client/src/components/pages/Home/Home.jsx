@@ -40,7 +40,7 @@ const Home = (props) => {
             </div>
             <SectionA content={featuredWalks[0].content1} img={featuredWalks[0].coverImg} alt={featuredWalks[0].walk}/>
             <div className="center">
-                <Link to={"/walks/"+(urlify(featuredWalks[0].walk))}><MDBBtn outline color="elegant" className="featured-walks-btn">Explore {featuredWalks[0].walk} <MDBIcon icon="walking" /></MDBBtn></Link>
+                <Link to={"/walks/"+(urlify(featuredWalks[0].walk))}><MDBBtn data-testid="explore-btn-1" outline color="elegant" className="featured-walks-btn">Explore {featuredWalks[0].walk} <MDBIcon icon="walking" /></MDBBtn></Link>
             </div>
             <hr/>
             <div className="center featured-walks-h3-container">
@@ -48,7 +48,7 @@ const Home = (props) => {
             </div>
             <SectionB content={featuredWalks[1].content1} img={featuredWalks[1].coverImg} alt={featuredWalks[1].walk}/>
             <div className="center">
-                <Link to={"/walks/"+(urlify(featuredWalks[1].walk))}><MDBBtn className="section-b-home-btn" outline color="elegant" className="featured-walks-btn">Explore {featuredWalks[1].walk} <MDBIcon icon="walking" /></MDBBtn></Link>
+                <Link to={"/walks/"+(urlify(featuredWalks[1].walk))}><MDBBtn data-testid="explore-btn-2" className="section-b-home-btn" outline color="elegant" className="featured-walks-btn">Explore {featuredWalks[1].walk} <MDBIcon icon="walking" /></MDBBtn></Link>
             </div>
             <hr/>
             <div className="center featured-walks-h3-container">
@@ -56,7 +56,7 @@ const Home = (props) => {
             </div>
             <SectionA content={featuredWalks[2].content1} img={featuredWalks[2].coverImg} alt={featuredWalks[2].walk}/>
             <div className="center">
-                <Link to={"/walks/"+(urlify(featuredWalks[2].walk))}><MDBBtn outline color="elegant" className="featured-walks-btn">Explore {featuredWalks[2].walk} <MDBIcon icon="walking" /></MDBBtn></Link>
+                <Link to={"/walks/"+(urlify(featuredWalks[2].walk))}><MDBBtn data-testid="explore-btn-3" outline color="elegant" className="featured-walks-btn">Explore {featuredWalks[2].walk} <MDBIcon icon="walking" /></MDBBtn></Link>
             </div>
         </div>
     )

@@ -86,7 +86,7 @@ const ThreadBox = (props) => {
         <div className="reply" key={index}>
             <p>{reply.userFirstName} replied!</p>
             <p>{reply.reply}</p>
-            <p>{Date(reply.submittedOn)}</p>
+            <p>{reply.submittedOn.replace('T', ' ').substring(0, 19)}</p>
             {reply.userId === currentUserId && <MDBBtn outline color="black" onClick={() => handleDeleteReply(reply._id)}>Delete</MDBBtn>}
         </div>
         )
@@ -108,7 +108,7 @@ const ThreadBox = (props) => {
                 <MDBCardText className="thread-box-content">
                     {content}
                 </MDBCardText>
-                <p>Posted by {userFirstName} on {Date(submittedOn)}</p>
+                <p>Posted by {userFirstName} on {submittedOn.replace('T', ' ').substring(0, 19)}</p>
                   {userId === currentUserId && <MDBBtn outline color="danger" onClick={() => handleDeleteThread(threadId)}>Delete Thread</MDBBtn>}
             </div>
             <div className="replies-h3-container">

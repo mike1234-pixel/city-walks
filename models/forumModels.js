@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
       userId: String,
       userFirstName: String,
       reply: String,
-      submittedOn: { type: Date, default: new Date() }
+      submittedOn: { type: Date, default: new Date().toISOString().replace('T', ' ').substring(0, 19)}
     })
 
     const threadSchema = new mongoose.Schema({
@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
       userFirstName: String,
       title: String,
       content: String,
-      submittedOn: { type: Date, default: new Date() },
+      submittedOn: { type: Date, default: new Date().toISOString().replace('T', ' ').substring(0, 19)},
       replies: [replySchema]
     })
 

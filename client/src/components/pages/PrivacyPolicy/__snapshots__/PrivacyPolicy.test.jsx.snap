@@ -124,39 +124,51 @@ exports[`Privacy Policy renders correctly 1`] = `
     City Walks woud like to make sure you are fully aware of all your data protection rights. Every user is entitled to the following:
   </p>
   <p>
-    <b>
+    <strong
+      className="bold-text"
+    >
       The right to access - 
-    </b>
+    </strong>
     You have the right to request City Walks for copies of your personal data. We may charge you a small fee for this service.
   </p>
   <p>
-    <b>
+    <strong
+      className="bold-text"
+    >
       The right to rectification - 
-    </b>
-    You have the right to request that City Walks correct any information you believe is inaccurate. You also have the right to request City Walks to complete information you believe is incomplete.
+    </strong>
+    You have the right to request that City Walks correct any information you strongelieve is inaccurate. You also have the right to request City Walks to complete information you believe is incomplete.
   </p>
   <p>
-    <b>
+    <strong
+      className="bold-text"
+    >
       The right to erasure - 
-    </b>
+    </strong>
     You have the right to request that City Walks erase your personal data, under certain conditions.
   </p>
   <p>
-    <b>
+    <strong
+      className="bold-text"
+    >
       The right to restrict processing - 
-    </b>
+    </strong>
     You have the right to request that City Walks restrict the processing of your personal data, under certain conditions.
   </p>
   <p>
-    <b>
+    <strong
+      className="bold-text"
+    >
       The right to object to processing - 
-    </b>
+    </strong>
     You have the right to object to City Walks's processing of your personal data, under certain conditions.
   </p>
   <p>
-    <b>
+    <strong
+      className="bold-text"
+    >
       The right to data portability - 
-    </b>
+    </strong>
     You have the right to request that City Walks transfer the data we have collected to another organisation, or directly to you, under certain conditions.
   </p>
   <p>

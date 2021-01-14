@@ -2,10 +2,10 @@
 
 exports[`PopUp renders correctly 1`] = `
 <div
-  className="popup-container"
+  className="popup-container-cookies"
 >
   <div
-    className="popup"
+    className="popup-cookies"
   >
     <p>
       To make City Walks work, we log user data. By using City Walks, you agree to our 

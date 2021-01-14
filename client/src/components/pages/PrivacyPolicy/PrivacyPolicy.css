@@ -4,3 +4,7 @@
   min-height: 70vh;
   padding: 0 30px 30px;
 }
+
+.bold-text {
+  font-weight: bold;
+}

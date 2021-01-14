@@ -151,3 +151,7 @@ The request on this route is verified by _Google Recaptcha V3_ and If the recapt
 ## dataApi.js (Walks and Page data)
 
 The dataApi contains get routes for **/walks** and **/cities** which send the respective collections to the client.
+
+## Future Improvements
+
+- Add Open Authentication for user registration/login for Google and the main social sites.

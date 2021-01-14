@@ -26,7 +26,7 @@ const Walks = (props) => {
             <div className="page-heading-container">
                 <h1 className="page-heading">Walks</h1>
                 <MDBBtn outline color="elegant" className="city-card-btn" onClick={() => setSearchValue("")}>Show all walks</MDBBtn>
-                <p className="walks-search-icon"><FaSearchLocation className="search-location-icon"/>{`  ${searchValue}`}</p>
+                <p data-testid="walks-search-icon" className="walks-search-icon"><FaSearchLocation className="search-location-icon"/>{`  ${searchValue}`}</p>
             </div>
             <div  className="card-container">
             {walksArr.map(v => {
@@ -53,7 +53,7 @@ const Walks = (props) => {
             <div className="page-heading-container">
                 <h1 className="page-heading" data-testid="walks-page-heading">Walks</h1>
                 <MDBBtn outline color="elegant" className="city-card-btn" onClick={() => setSearchValue("")}>Show all walks</MDBBtn>
-                <p className="walks-search-icon"><FaSearchLocation className="search-location-icon"/>{`  ${searchValue}`}</p>
+                <p data-testid="walks-search-icon" className="walks-search-icon"><FaSearchLocation className="search-location-icon"/>{`  ${searchValue}`}</p>
             </div>
             <div className="card-container">
                 {walksArr.map(v => {

@@ -70,16 +70,19 @@ Routing logic can be found in the `Router` component in **./src/container/Router
 
 ## Testing
 
-Test files are kept in the same folders as the components they test.
+**Jest snapshot test** files are kept in the same folders as the components they test.
 
-The client contains:
+_Test data_ for the snapshot tests is contained within the _container directory_, so that snapshot tests can import data locally rather than making an ajax call.
 
-- **jest** snapshot tests.
-- **react-testing-library** integration tests.
+**react-testing-library integration tests** for the whole app are contained within the App.test.js file.
 
 To run the tests run:
 
 `npm test`
+
+To run tests for a single component run:
+
+`npm test <ComponentName>`
 
 ## Future Improvements
 

@@ -36,6 +36,7 @@ exports[`Walks Page renders correctly 1`] = `
     </button>
     <p
       className="walks-search-icon"
+      data-testid="walks-search-icon"
     >
       <svg
         className="search-location-icon"

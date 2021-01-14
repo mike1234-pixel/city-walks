@@ -125,6 +125,7 @@ exports[`Nav renders correctly 1`] = `
             aria-current={null}
             className="nav-link Ripple-parent white-text"
             data-test="nav-link"
+            data-testid="nav-link-cities"
             href="/cities"
             onClick={[Function]}
             onMouseUp={[Function]}
