@@ -396,4 +396,27 @@ module.exports = function (app) {
     })
   })
 
+  app.delete('/delete-blog-comment', (req, res) => {
+
+    const { currentBlogTitle, commentId } = req.body
+  
+    Blog.findOne({title: currentBlogTitle}, (err, blogPost)=> {
+      if (err) {
+        console.log(err)
+      } else {
+        const comment = blogPost.comments.id(commentId);
+        if (comment === null) {
+          res.send('comment does not exist') 
+        } else {
+          blogPost.comments.pull(commentId);
+          blogPost.save();
+          console.log("comment deleted")
+          res.send('comment deleted');
+        }
+      }
+
+    })
+
+  })
+
 };

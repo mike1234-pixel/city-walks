@@ -48,6 +48,25 @@ const BlogPost = ({match}) => {
       window.location.reload()
       }
 
+      const handleDeleteComment = (commentId) => {
+
+        let payload = {
+          currentBlogTitle: blogTitle,
+          commentId: commentId,
+        };
+  
+        axios
+        .delete("http://localhost:5000/delete-blog-comment", { data: payload })
+        .then((res, err) => {
+          if (err) {
+            console.log(err);
+          }  else {
+            alert("comment deleted.")
+            window.location.reload()
+          }
+        });
+      }
+
       let post = "loading"
 
       if (!blogsLoading) {
@@ -69,6 +88,7 @@ const BlogPost = ({match}) => {
                   <p>{comment.userFirstName} commented:</p>
                   <p>{comment.comment}</p>
                   <p>{comment.submittedOn.replace('T', ' ').substring(0, 19)}</p>
+                  {userId === comment.userId && <MDBBtn onClick={() => handleDeleteComment(comment._id)}>Delete Comment</MDBBtn>}
                 </div>
               )
             })}
