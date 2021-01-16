@@ -82,6 +82,16 @@ exports[`Footer renders correctly 1`] = `
             className="list-unstyled"
           >
             <a
+              href="/blog"
+              onClick={[Function]}
+            >
+              Blog
+            </a>
+          </li>
+          <li
+            className="list-unstyled"
+          >
+            <a
               href="/contact"
               onClick={[Function]}
             >

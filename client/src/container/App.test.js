@@ -4,10 +4,12 @@ import { SearchContextProvider } from "../context/SearchContext"
 import { LoginContextProvider } from "../context/LoginContext"
 import { RecaptchaContextProvider } from "../context/RecaptchaContext"
 import { WalksContextProvider } from "../context/WalksContext"
+import { BlogsContextProvider } from "../context/BlogsContext"
 import { render, fireEvent, cleanup } from "@testing-library/react" // https://testing-library.com/docs/react-testing-library/cheatsheet
 import WalksTestData from "./WalksTestData.json"
 import CitiesTestData from "./CitiesTestData.json"
 import BoardsTestData from "./BoardsTestData.json"
+import BlogsTestData from "./BlogsTestData.json"
 
 // integration tests (simulate user interaction)
 describe("App integration tests", () => {
@@ -24,7 +26,9 @@ describe("App integration tests", () => {
         <LoginContextProvider>
           <SearchContextProvider>
             <WalksContextProvider>
-              <App walks={WalksTestData} cities={CitiesTestData} boards={BoardsTestData}/>
+              <BlogsContextProvider>
+                <App walks={WalksTestData} cities={CitiesTestData} boards={BoardsTestData} blogPosts={BlogsTestData}/>
+              </BlogsContextProvider>
             </WalksContextProvider>
           </SearchContextProvider>
         </LoginContextProvider>
