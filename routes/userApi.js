@@ -1,6 +1,7 @@
 /** @format */
 
 const User = require("../models/userModel");
+const Blog = require("../models/blogPostModel")
 const SecretCode = require("../models/secretCodeModel");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
@@ -370,6 +371,27 @@ module.exports = function (app) {
         console.log(err)
       } else {
         console.log("user deleted")
+      }
+    })
+  })
+
+  app.post('/add-blog-comment', (req, res) => {
+
+    const { currentBlogTitle, comment, userFirstName, userId } = req.body
+
+    const commentObj = {
+      userId: userId,
+      userFirstName: userFirstName,
+      comment: comment
+    }
+
+    Blog.findOne({ title: currentBlogTitle}, (err, board) => {
+      if (err) {
+        console.log(err)
+      } else {
+        board.comments.push(commentObj);
+        board.save(); 
+        res.send("comment submitted")
       }
     })
   })

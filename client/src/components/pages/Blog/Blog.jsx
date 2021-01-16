@@ -1,27 +1,41 @@
+import { useEffect } from "react"
 import { Link } from "react-router-dom"
+import { MDBBtn, MDBIcon, MDBCard, MDBCol, MDBCardBody, MDBCardImage, MDBCardText, MDBCardTitle} from  "mdbreact"
 import urlify from "../../../functions/urlify"
 import "./Blog.css"
 
 const Blog = (props) => {
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      });
+
     const { blogPosts } = props;
 
     return (
         <div className="min-page-height">
-            <p>blog page</p>
-            {blogPosts.map((post, index) => {
+            <div className="page-heading-container">
+                <h1 className="page-heading">Blog</h1>
+            </div>
+            <div className="card-container">
+            {blogPosts.map((post) => {
                 return (
-                    <div key={index} className="blog-post">
-                        <Link to={"/blog/" + urlify(post.title)}>
-                            <h1>{post.title}</h1>
-                            <p>{post.content.slice(0,199) + "..."}</p>
-                            <img src={post.img}/>
-                        </Link>
-                    </div>
+                    <MDBCol key={post._id}>
+                    <MDBCard className="blog-card">
+                        <MDBCardImage className="cutter img-fluid" src={post.img} alt={post.title} waves/>
+                        <MDBCardBody>
+                        <MDBCardTitle className="display-font">{post.title}</MDBCardTitle>
+                        <MDBCardText>{post.content.slice(0,199) + "..."}</MDBCardText>
+                        <Link to={'/blog/'+urlify(post.title)}><MDBBtn outline color="elegant" className="city-card-btn">Read <MDBIcon icon="book-open" /></MDBBtn></Link>
+                        </MDBCardBody>
+                    </MDBCard>
+                    </MDBCol>
                 )
             })}
+            </div>
         </div>
     )
 }
 
 export default Blog
+
