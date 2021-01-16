@@ -10,6 +10,7 @@ import DeleteCityForm from './DeleteCityForm/DeleteCityForm'
 import AddBoardForm from './AddBoardForm/AddBoardForm'
 import DeleteBoardForm from "./DeleteBoardForm/DeleteBoardForm"
 import AddBlogPostForm from "./AddBlogPostForm/AddBlogPostForm"
+import DeleteBlogPostForm from "./DeleteBlogPostForm/DeleteBlogPostForm"
 import './Admin.css'
 
 const Admin = () => {
@@ -38,6 +39,8 @@ const Admin = () => {
         displayForm = <DeleteBoardForm/>
     } else if (form === "addBlogPost") {
         displayForm = <AddBlogPostForm/>
+    } else if (form === "deleteBlogPost") {
+      displayForm = <DeleteBlogPostForm/>
     }
 
     useEffect(() => {
@@ -123,6 +126,9 @@ const Admin = () => {
                     </MDBNavItem>
                     <MDBNavItem>
                       <MDBNavLink to="#!" onClick={() => setForm("addBlogPost")}>Add Blog Post</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                      <MDBNavLink to="#!" onClick={() => setForm("deleteBlogPost")}>Delete Blog Post</MDBNavLink>
                     </MDBNavItem>
                     </MDBNavbarNav>
                     <MDBNavbarNav right>

@@ -89,4 +89,17 @@ app.post('/add-blog-post', (req, res) => {
   Blog.create(req.body)
 })
 
+app.delete('/delete-blog-post', (req, res) => {
+  const { postTitle } = req.body
+
+  Blog.findOneAndDelete({title: postTitle}, (err, doc) => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log("post deleted")
+      res.send("post deleted")
+    }
+  })
+})
+
 }
