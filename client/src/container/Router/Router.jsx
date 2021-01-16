@@ -4,6 +4,7 @@ import Cities from '../../components/pages/Cities/Cities'
 import Walks from '../../components/pages/Walks/Walks'
 import About from '../../components/pages/About/About'
 import Blog from "../../components/pages/Blog/Blog"
+import BlogPost from "../../components/pages/BlogPost/BlogPost"
 import Contact from '../../components/pages/Contact/Contact'
 import LoginPage from '../../components/pages/LoginPage/LoginPage'
 import Admin from '../../components/pages/Admin/Admin'
@@ -28,7 +29,8 @@ const Router = (props) => {
             <Route path="/walks/:walks" component={Walk}/>
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
-            <Route path="/blog" component={() => <Blog blogPosts={blogPosts}/>} />
+            <Route exact path="/blog" component={() => <Blog blogPosts={blogPosts}/>} />
+            <Route path="/blog/:blogpost" component={BlogPost} />
             {/* the render method here ensures the inputs in the forms don't lose focus */}
             {/* https://www.xspdf.com/resolution/59715158.html */}
             <Route exact path="/boards" render={() => <LoginPage />} />

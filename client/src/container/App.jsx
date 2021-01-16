@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react"
 import { ForumContext } from "../context/ForumContext"
 import { WalksContext } from "../context/WalksContext"
 import { LoginContext } from "../context/LoginContext"
+import { BlogsContext } from "../context/BlogsContext"
 import './App.css'
 
 const App = (props) => {
@@ -12,6 +13,7 @@ const App = (props) => {
   const { setBoards, setLoadingBoards } = useContext(ForumContext)
   const { setWalks,  setIsLoading } = useContext(WalksContext)
   const { setPopupVisible, setLoggedIn, setUserId, setUserFirstName } = useContext(LoginContext)
+  const { setBlogPosts, setBlogsLoading} = useContext(BlogsContext)
 
   //   set the boards and walks data
       useEffect(() => {
@@ -19,13 +21,13 @@ const App = (props) => {
         setLoadingBoards(false)
         setWalks(walks)
         setIsLoading(false)
+        setBlogPosts(blogPosts)
+        setBlogsLoading(false)
         
         if (localStorage.getItem("popupVisible") === null) {
            localStorage.setItem("popupVisible", true)
            setPopupVisible(true)
         }
-        
-
 
         if (localStorage.getItem("loggedIn") !== null) {
           setLoggedIn(true)

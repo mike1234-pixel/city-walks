@@ -11,6 +11,7 @@ import { SearchContextProvider } from "./context/SearchContext"
 import { LoginContextProvider } from "./context/LoginContext"
 import { ForumContextProvider } from "./context/ForumContext"
 import { WalksContextProvider } from "./context/WalksContext"
+import { BlogsContextProvider } from "./context/BlogsContext"
 
 const requestOne = axios.get('http://localhost:5000/walks');
 const requestTwo = axios.get('http://localhost:5000/cities');
@@ -31,7 +32,9 @@ axios
             <LoginContextProvider>
               <SearchContextProvider>
                 <WalksContextProvider>
-                  <App walks={walksData.data} cities={citiesData.data} boards={boardsData} blogPosts={blogPosts.data}/>
+                  <BlogsContextProvider>
+                    <App walks={walksData.data} cities={citiesData.data} boards={boardsData} blogPosts={blogPosts.data}/>
+                  </BlogsContextProvider>
                 </WalksContextProvider>
               </SearchContextProvider>
             </LoginContextProvider>
