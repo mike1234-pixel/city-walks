@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blogs Page renders correctly 1`] = `
+<div
+  className="min-page-height"
+>
+  <p>
+    blog page
+  </p>
+  <div
+    className="blog-post"
+  >
+    <a
+      href="/blog/lorem-ipsum-dolor-sit-amet-consectetuer-adipiscing-elit"
+      onClick={[Function]}
+    >
+      <h1>
+        Lorem Ipsum Dolor Sit Amet Consectetuer Adipiscing Elit
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec q...
+      </p>
+      <img
+        src="https://images.pexels.com/photos/1578332/pexels-photo-1578332.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      />
+    </a>
+  </div>
+  <div
+    className="blog-post"
+  >
+    <a
+      href="/blog/blogpost2"
+      onClick={[Function]}
+    >
+      <h1>
+        Blogpost2
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec q...
+      </p>
+      <img
+        src="https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      />
+    </a>
+  </div>
+  <div
+    className="blog-post"
+  >
+    <a
+      href="/blog/blogpost2"
+      onClick={[Function]}
+    >
+      <h1>
+        Blogpost2
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec q...
+      </p>
+      <img
+        src="https://images.pexels.com/photos/1578332/pexels-photo-1578332.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      />
+    </a>
+  </div>
+  <div
+    className="blog-post"
+  >
+    <a
+      href="/blog/blogpost4"
+      onClick={[Function]}
+    >
+      <h1>
+        Blogpost4
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec q...
+      </p>
+      <img
+        src="https://images.pexels.com/photos/1578332/pexels-photo-1578332.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      />
+    </a>
+  </div>
+</div>
+`;

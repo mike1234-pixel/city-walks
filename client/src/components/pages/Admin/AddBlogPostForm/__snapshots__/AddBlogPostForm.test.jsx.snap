@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddBlogPostForm Page renders correctly 1`] = `
+<div>
+  <h2>
+    Add Blog Post
+  </h2>
+  <form
+    className="add-blog-post-form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="md-form"
+    >
+      
+      <input
+        aria-disabled={false}
+        className="form-control"
+        data-test="input"
+        disabled={false}
+        id="post-title"
+        name="post-title"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onInput={[Function]}
+        required={true}
+        type="text"
+        value=""
+      />
+      <label
+        aria-labelledby=""
+        className=""
+        data-error=""
+        data-success=""
+        htmlFor="post-title"
+        id=""
+        onClick={[Function]}
+      >
+        post title
+      </label>
+    </div>
+    <div
+      className="md-form"
+    >
+      
+      <textarea
+        aria-disabled={false}
+        className="md-textarea form-control"
+        data-test="input"
+        disabled={false}
+        id="post-content"
+        name="post-content"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onInput={[Function]}
+        required={true}
+        rows="10"
+        value=""
+      />
+      <label
+        aria-labelledby=""
+        className=""
+        data-error=""
+        data-success=""
+        htmlFor="post-content"
+        id=""
+        onClick={[Function]}
+      >
+        post content
+      </label>
+    </div>
+    <div
+      className="md-form"
+    >
+      
+      <input
+        aria-disabled={false}
+        className="form-control"
+        data-test="input"
+        disabled={false}
+        id="post-img-link"
+        name="post-img-link"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onInput={[Function]}
+        required={true}
+        type="text"
+        value=""
+      />
+      <label
+        aria-labelledby=""
+        className=""
+        data-error=""
+        data-success=""
+        htmlFor="post-img-link"
+        id=""
+        onClick={[Function]}
+      >
+        post image link
+      </label>
+    </div>
+    <button
+      className="btn-elegant btn-outline-elegant btn Ripple-parent"
+      data-test="button"
+      onMouseUp={[Function]}
+      onTouchStart={[Function]}
+      type="submit"
+    >
+      Add Blog Post 
+      <i
+        className="fa fa-plus"
+        data-test="fa"
+      />
+      <div
+        className="Ripple Ripple-outline "
+        data-test="waves"
+        style={
+          Object {
+            "height": "0px",
+            "left": "0px",
+            "top": "0px",
+            "width": "0px",
+          }
+        }
+      />
+    </button>
+  </form>
+</div>
+`;
