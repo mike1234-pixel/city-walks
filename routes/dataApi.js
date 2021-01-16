@@ -2,6 +2,7 @@
 
 const Walk = require("../models/walkModel");
 const City = require("../models/cityModel");
+const Blog = require("../models/blogPostModel")
 
 module.exports = function (app) {
   app.get("/walks", (req, res) => {
@@ -16,6 +17,16 @@ module.exports = function (app) {
 
   app.get("/cities", (req, res) => {
     City.find({}, (err, docs) => {
+      if (!err) {
+        res.send(docs);
+      } else {
+        throw err;
+      }
+    });
+  });
+
+  app.get("/blog", (req, res) => {
+    Blog.find({}, (err, docs) => {
       if (!err) {
         res.send(docs);
       } else {

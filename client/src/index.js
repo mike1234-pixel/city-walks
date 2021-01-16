@@ -15,21 +15,23 @@ import { WalksContextProvider } from "./context/WalksContext"
 const requestOne = axios.get('http://localhost:5000/walks');
 const requestTwo = axios.get('http://localhost:5000/cities');
 const requestThree = axios.get('http://localhost:5000/boards');
+const requestFour = axios.get('http://localhost:5000/blog');
 
 axios
-  .all([requestOne, requestTwo, requestThree])
+  .all([requestOne, requestTwo, requestThree, requestFour])
   .then(
     axios.spread((...responses) => {
       const walksData = responses[0];
       const citiesData = responses[1];
       const boardsData = responses[2];
+      const blogPosts = responses[3];
       ReactDOM.render(
         <ForumContextProvider>
           <RecaptchaContextProvider>
             <LoginContextProvider>
               <SearchContextProvider>
                 <WalksContextProvider>
-                  <App walks={walksData.data} cities={citiesData.data} boards={boardsData}/>
+                  <App walks={walksData.data} cities={citiesData.data} boards={boardsData} blogPosts={blogPosts.data}/>
                 </WalksContextProvider>
               </SearchContextProvider>
             </LoginContextProvider>

@@ -19,7 +19,7 @@ describe("App integration tests", () => {
     window.scrollTo = jest.fn()
 
     const { getByLabelText, getByTestId } = render(
-      <ForumContextProvider>
+    <ForumContextProvider>
       <RecaptchaContextProvider>
         <LoginContextProvider>
           <SearchContextProvider>
@@ -51,6 +51,8 @@ describe("App integration tests", () => {
     // redirect to cities page
     fireEvent.click(getByTestId("nav-link-cities"))
     getByTestId("cities-page-heading")
+
+    
   })
 
 })

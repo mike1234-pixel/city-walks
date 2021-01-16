@@ -47,10 +47,13 @@ const Nav = () => {
                 <MDBNavLink className="white-text" to="/about">About</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink className="white-text" to="/contact">Contact</MDBNavLink>
+                <MDBNavLink className="white-text" to="/blog">Blog</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
                 <MDBNavLink className="white-text" to="/boards">Forum</MDBNavLink>
+              </MDBNavItem>
+              <MDBNavItem>
+                <MDBNavLink className="white-text" to="/contact">Contact</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
             <MDBNavbarNav right>

@@ -7,7 +7,7 @@ import './App.css'
 
 const App = (props) => {
 
-  const {walks, cities, boards} = props
+  const {walks, cities, boards, blogPosts} = props
 
   const { setBoards, setLoadingBoards } = useContext(ForumContext)
   const { setWalks,  setIsLoading } = useContext(WalksContext)
@@ -40,7 +40,8 @@ const App = (props) => {
             <Router 
               // core app data
               walks={walks} 
-              cities={cities} 
+              cities={cities}
+              blogPosts={blogPosts} 
               />
             </div>
         )

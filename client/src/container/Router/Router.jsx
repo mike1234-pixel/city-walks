@@ -3,6 +3,7 @@ import Home from '../../components/pages/Home/Home'
 import Cities from '../../components/pages/Cities/Cities'
 import Walks from '../../components/pages/Walks/Walks'
 import About from '../../components/pages/About/About'
+import Blog from "../../components/pages/Blog/Blog"
 import Contact from '../../components/pages/Contact/Contact'
 import LoginPage from '../../components/pages/LoginPage/LoginPage'
 import Admin from '../../components/pages/Admin/Admin'
@@ -15,7 +16,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 const Router = (props) => {
 
-    const {walks, cities} = props
+    const {walks, cities, blogPosts} = props
 
     return (
         <BrowserRouter>
@@ -27,6 +28,7 @@ const Router = (props) => {
             <Route path="/walks/:walks" component={Walk}/>
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
+            <Route path="/blog" component={() => <Blog blogPosts={blogPosts}/>} />
             {/* the render method here ensures the inputs in the forms don't lose focus */}
             {/* https://www.xspdf.com/resolution/59715158.html */}
             <Route exact path="/boards" render={() => <LoginPage />} />

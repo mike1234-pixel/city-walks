@@ -1,5 +1,6 @@
 const Walk = require('../models/walkModel')
 const City = require('../models/cityModel')
+const Blog = require('../models/blogPostModel')
 const Admin = require('../models/adminModel')
 const bcrypt = require("bcrypt")
 const saltRounds = 10
@@ -82,6 +83,10 @@ app.delete('/delete-city', (req, res) => {
       console.log("city deleted")
     }
   })
+})
+
+app.post('/add-blog-post', (req, res) => {
+  Blog.create(req.body)
 })
 
 }
