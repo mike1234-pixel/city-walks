@@ -45,7 +45,7 @@ const BlogPost = ({match}) => {
 
       alert("Comment Submitted")
       setComment("")
-      window.scrollTo(0, 0);
+      window.location.reload()
       }
 
       let post = "loading"
@@ -63,6 +63,15 @@ const BlogPost = ({match}) => {
             <h1>{selectedBlogPost.title}</h1>
             <p>{selectedBlogPost.content}</p>
             <img src={selectedBlogPost.img}/>
+            {selectedBlogPost.comments.map((comment) => {
+              return (
+                <div key={comment._id}>
+                  <p>{comment.userFirstName} commented:</p>
+                  <p>{comment.comment}</p>
+                  <p>{comment.submittedOn.replace('T', ' ').substring(0, 19)}</p>
+                </div>
+              )
+            })}
         </div>
       }
     }
