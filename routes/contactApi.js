@@ -24,6 +24,10 @@ const oauth2Client = new OAuth2(
   OAUTH_PLAYGROUND
 );
 
+oauth2Client.setCredentials({
+  refresh_token: MAILING_SERVICE_REFRESH_TOKEN,
+});
+
 module.exports = function (app) {
   app.post("/contact-form", (req, res) => {
 
@@ -34,10 +38,6 @@ module.exports = function (app) {
     const sendEmail = () => {
     // send email start
     console.log("sending email");
-
-    oauth2Client.setCredentials({
-      refresh_token: MAILING_SERVICE_REFRESH_TOKEN,
-    });
 
     const accessToken = oauth2Client.getAccessToken();
 
