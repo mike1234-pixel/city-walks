@@ -2,7 +2,7 @@ import { useEffect, useContext, useState } from "react"
 import { BlogsContext } from "../../../context/BlogsContext"
 import { LoginContext } from "../../../context/LoginContext"
 import toTitleCase from "../../../functions/toTitleCase"
-import { MDBInput, MDBBtn, MDBIcon } from "mdbreact"
+import { MDBInput, MDBBtn, MDBIcon, MDBCard, MDBCardTitle, MDBCardText } from "mdbreact"
 import axios from "axios"
 import qs from "qs"
 import './BlogPost.css'
@@ -78,18 +78,18 @@ const BlogPost = ({match}) => {
         post = "walk not found"
       } else {
         post = 
-        <div>
-            <h1>{selectedBlogPost.title}</h1>
-            <p>{selectedBlogPost.content}</p>
-            <img src={selectedBlogPost.img}/>
+        <div className="blog-post-container">
+            <h1 className="page-heading">{selectedBlogPost.title}</h1>
+            <img className="blog-post-img" src={selectedBlogPost.img}/>
+            <p className="blog-post-content">{selectedBlogPost.content}</p>
             {selectedBlogPost.comments.map((comment) => {
               return (
-                <div key={comment._id}>
-                  <p>{comment.userFirstName} commented:</p>
-                  <p>{comment.comment}</p>
-                  <p>{comment.submittedOn.replace('T', ' ').substring(0, 19)}</p>
-                  {userId === comment.userId && <MDBBtn onClick={() => handleDeleteComment(comment._id)}>Delete Comment</MDBBtn>}
-                </div>
+                <MDBCard className="blog-post-comment-card" key={comment._id}>
+                  <MDBCardTitle>{comment.userFirstName} commented:</MDBCardTitle>
+                  <MDBCardText>{comment.comment}</MDBCardText>
+                  <MDBCardText>{comment.submittedOn.replace('T', ' ').substring(0, 19)}</MDBCardText>
+                  {userId === comment.userId && <MDBBtn className="blog-post-comment-card-btn" onClick={() => handleDeleteComment(comment._id)}>Delete Comment</MDBBtn>}
+                </MDBCard>
               )
             })}
         </div>
@@ -98,8 +98,7 @@ const BlogPost = ({match}) => {
 
     return (
         <div>
-            <p>BLOG POST (redirect successful)</p>
-            <p>{post}</p>
+            <div>{post}</div>
             {loggedIn &&
               <form onSubmit={handleSubmit} className="add-blog-comment-form">
                 <MDBInput type="textarea" rows="5" name="comment" id="comment" value={comment} label="comment" onChange={handleChange} required/>

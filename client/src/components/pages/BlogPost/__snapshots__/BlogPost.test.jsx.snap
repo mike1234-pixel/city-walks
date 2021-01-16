@@ -2,11 +2,8 @@
 
 exports[`Blog Post renders correctly 1`] = `
 <div>
-  <p>
-    BLOG POST (redirect successful)
-  </p>
-  <p>
+  <div>
     loading
-  </p>
+  </div>
 </div>
 `;

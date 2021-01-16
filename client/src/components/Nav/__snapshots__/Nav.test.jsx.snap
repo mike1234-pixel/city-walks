@@ -182,34 +182,6 @@ exports[`Nav renders correctly 1`] = `
             aria-current={null}
             className="nav-link Ripple-parent white-text"
             data-test="nav-link"
-            href="/about"
-            onClick={[Function]}
-            onMouseUp={[Function]}
-            onTouchStart={[Function]}
-          >
-            About
-            <div
-              className="Ripple "
-              data-test="waves"
-              style={
-                Object {
-                  "height": "0px",
-                  "left": "0px",
-                  "top": "0px",
-                  "width": "0px",
-                }
-              }
-            />
-          </a>
-        </li>
-        <li
-          className="nav-item"
-          data-test="nav-item"
-        >
-          <a
-            aria-current={null}
-            className="nav-link Ripple-parent white-text"
-            data-test="nav-link"
             href="/blog"
             onClick={[Function]}
             onMouseUp={[Function]}
@@ -244,6 +216,34 @@ exports[`Nav renders correctly 1`] = `
             onTouchStart={[Function]}
           >
             Forum
+            <div
+              className="Ripple "
+              data-test="waves"
+              style={
+                Object {
+                  "height": "0px",
+                  "left": "0px",
+                  "top": "0px",
+                  "width": "0px",
+                }
+              }
+            />
+          </a>
+        </li>
+        <li
+          className="nav-item"
+          data-test="nav-item"
+        >
+          <a
+            aria-current={null}
+            className="nav-link Ripple-parent white-text"
+            data-test="nav-link"
+            href="/about"
+            onClick={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+          >
+            About
             <div
               className="Ripple "
               data-test="waves"

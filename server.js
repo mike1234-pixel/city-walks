@@ -9,6 +9,7 @@ const contactApi = require('./routes/contactApi')
 const adminApi = require('./routes/adminApi');
 const userApi = require('./routes/userApi');
 const forumApi = require('./routes/forumApi')
+const blogApi = require('./routes/blogApi')
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -52,5 +53,6 @@ contactApi(app)
 userApi(app)
 adminApi(app)
 forumApi(app)
+blogApi(app)
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

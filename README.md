@@ -100,6 +100,8 @@ The admin portal on the client allows you to manage the website's contents. The 
 - **/add-city** (post)
 - **/delete-city** (delete)
 - **/set-featured-walk** (post) - sets the `featuredWalk` field on all `walks` in the database to false, then sets `featuredWalk` to true on the three walks submitted. These will be the three "featured walks" that appear on the homepage.
+- **/add-blog-post** (post)
+- **/delete-blog-post** (delete)
 
 ## userApi.js (User Registration and Login)
 
@@ -151,6 +153,10 @@ The request on this route is verified by _Google Recaptcha V3_ and If the recapt
 ## dataApi.js (Walks and Page data)
 
 The dataApi contains get routes for **/walks** and **/cities** which send the respective collections to the client.
+
+## blogApi.js (User interaction with blog)
+
+The blogApi deals with user interaction on blogs, namely adding and deleting comments on blog posts using the **/add-blog-comment** and **/delete-blog-comment** endpoints.
 
 ## Future Improvements
 

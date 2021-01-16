@@ -93,7 +93,7 @@ exports[`Blogs Page renders correctly 1`] = `
             >
               Read 
               <i
-                className="fa fa-walking"
+                className="fa fa-book-open"
                 data-test="fa"
               />
               <div
@@ -190,7 +190,7 @@ exports[`Blogs Page renders correctly 1`] = `
             >
               Read 
               <i
-                className="fa fa-walking"
+                className="fa fa-book-open"
                 data-test="fa"
               />
               <div
@@ -287,7 +287,7 @@ exports[`Blogs Page renders correctly 1`] = `
             >
               Read 
               <i
-                className="fa fa-walking"
+                className="fa fa-book-open"
                 data-test="fa"
               />
               <div
@@ -384,7 +384,7 @@ exports[`Blogs Page renders correctly 1`] = `
             >
               Read 
               <i
-                className="fa fa-walking"
+                className="fa fa-book-open"
                 data-test="fa"
               />
               <div
