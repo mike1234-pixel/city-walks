@@ -1,10 +1,12 @@
 import { useEffect, useContext, useState } from "react"
 import { BlogsContext } from "../../../context/BlogsContext"
+import PopUp from "../../PopUp/PopUp"
 import { LoginContext } from "../../../context/LoginContext"
 import toTitleCase from "../../../functions/toTitleCase"
 import { MDBInput, MDBBtn, MDBIcon, MDBCard, MDBCardTitle, MDBCardText } from "mdbreact"
 import axios from "axios"
 import qs from "qs"
+import marked from "marked";
 import './BlogPost.css'
 
 const BlogPost = ({match}) => {
@@ -16,7 +18,7 @@ const BlogPost = ({match}) => {
       const blogTitle = toTitleCase(match.url.replace("/blog/", "").replace(/-/g, " "))
 
       const { blogPosts, blogsLoading } = useContext(BlogsContext)
-      const { loggedIn, userFirstName, userId } = useContext(LoginContext)
+      const { loggedIn, userFirstName, userId, popupVisible } = useContext(LoginContext)
 
       const [comment, setComment] = useState("")
       const [currentBlogTitle, setCurrentBlogTitle] = useState("")
@@ -73,6 +75,10 @@ const BlogPost = ({match}) => {
 
       let selectedBlogPost = blogPosts.filter((post) => post.title === blogTitle)
       selectedBlogPost = selectedBlogPost[0]
+    
+      const createMarkup = (markup) => {
+        return {__html: marked(markup, {breaks: true})}
+      }
 
       if (selectedBlogPost === undefined) {
         post = "walk not found"
@@ -81,7 +87,7 @@ const BlogPost = ({match}) => {
         <div className="blog-post-container">
             <h1 className="page-heading">{selectedBlogPost.title}</h1>
             <img className="blog-post-img" src={selectedBlogPost.img}/>
-            <p className="blog-post-content">{selectedBlogPost.content}</p>
+            <div className="blog-post-content" dangerouslySetInnerHTML={createMarkup(selectedBlogPost.content)}></div>
             {selectedBlogPost.comments.map((comment) => {
               return (
                 <MDBCard className="blog-post-comment-card" key={comment._id}>
@@ -98,6 +104,7 @@ const BlogPost = ({match}) => {
 
     return (
         <div>
+            {popupVisible && <PopUp/>}
             <div>{post}</div>
             {loggedIn &&
               <form onSubmit={handleSubmit} className="add-blog-comment-form">

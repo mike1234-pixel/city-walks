@@ -1,10 +1,14 @@
-import { useEffect } from "react"
+import { useEffect, useContext } from "react"
 import { Link } from "react-router-dom"
+import PopUp from "../../PopUp/PopUp"
+import { LoginContext } from "../../../context/LoginContext"
 import { MDBBtn, MDBIcon, MDBCard, MDBCol, MDBCardBody, MDBCardImage, MDBCardText, MDBCardTitle} from  "mdbreact"
 import urlify from "../../../functions/urlify"
 import "./Blog.css"
 
 const Blog = (props) => {
+
+    const { popupVisible } = useContext(LoginContext)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -14,6 +18,7 @@ const Blog = (props) => {
 
     return (
         <div className="min-page-height">
+            {popupVisible && <PopUp/>}
             <div className="page-heading-container">
                 <h1 className="page-heading">Blog</h1>
             </div>

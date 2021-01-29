@@ -146,9 +146,9 @@ const AddWalkForm = () => {
             <MDBInput type="text" name="city" id="city" value={city} label="city" onChange={handleChange}  maxLength="70" required/>
             <MDBInput type="text" name="description" id="description" value={description} label="description" onChange={handleChange} maxLength="136" required/>
             <MDBInput type="text" name="starting-point" id="starting-point" value={startingPoint} label="starting point" onChange={handleChange} maxLength="100" required/>
-            <MDBInput type="textarea" rows="4" name="content1" id="content1" value={content1} label="paragraph 1 (569 character limit)" onChange={handleChange} maxLength="569" required/>
-            <MDBInput type="textarea" rows="4" name="content2" id="content2" value={content2} label="paragraph 2 (569 character limit)" onChange={handleChange} maxLength="569" required/>
-            <MDBInput type="textarea" rows="4" name="content3" id="content3" value={content3} label="paragraph 3 (569 character limit)" onChange={handleChange} maxLength="569" required/>
+            <MDBInput type="textarea" rows="4" name="content1" id="content1" value={content1} label="paragraph 1 (569 character limit - excl formatting). Format using Markdown." onChange={handleChange} maxLength="700" required/>
+            <MDBInput type="textarea" rows="4" name="content2" id="content2" value={content2} label="paragraph 2 (569 character limit - excl formatting). Format using Markdown." onChange={handleChange} maxLength="700" required/>
+            <MDBInput type="textarea" rows="4" name="content3" id="content3" value={content3} label="paragraph 3 (569 character limit - excl formatting). Format using Markdown." onChange={handleChange} maxLength="700" required/>
             <MDBInput type="text" name="cover-img" id="cover-img" value={coverImg} label="cover image link" onChange={handleChange} required/>
             <MDBInput type="text" name="map-img" id="map-img" value={mapImg} label="map image link" onChange={handleChange} required/>
             <MDBInput type="text" name="img1" id="img1" value={img1} label="image 1 link" onChange={handleChange} required/>
@@ -170,19 +170,3 @@ const AddWalkForm = () => {
 }
 
 export default AddWalkForm
-
-// {
-//     "id": "UNIQUE_ID",
-//     "route": "URL_ROUTE", ** used to create routes, e.g. stoke-newington. lowercase, no spaces or non-alphabetic characters**
-//     "walk": "stoke newington",
-//     "city": "london",
-//     "description": "MAX 136 CHARS",
-//     "starting_point": "old street",
-//     "content_1": "MAX 569 CHARS",
-//     "content_2": "MAX 569 CHARS",
-//     "content_3": "MAX 569 CHARS",
-//     "cover_img_link": "https://...",
-//     "img_1_link": "https://...",
-//     "img_2_link": "https://...",
-//     "img_3_link": "https://..."
-// },

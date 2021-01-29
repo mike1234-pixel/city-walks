@@ -1,5 +1,8 @@
 import React from "react"
 import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from "mdbreact"
+import carouselImage1 from "./carousel-images/carousel-illustration-1-2.jpg"
+import carouselImage2 from "./carousel-images/carousel-illustration-2-2.jpg"
+import carouselImage3 from "./carousel-images/carousel-illustration-3-2.jpg"
 import './Carousel.css'
 
 const Carousel = () => {
@@ -17,10 +20,10 @@ const Carousel = () => {
           <MDBView>
             <img
               className="d-block w-100 carousel-img"
-              src="https://images.pexels.com/photos/1121782/pexels-photo-1121782.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src={carouselImage1}
               alt="First slide"
             />
-          <MDBMask overlay="black-light" />
+          <MDBMask />
           </MDBView>
           <MDBCarouselCaption>
             <h3 className="h3-responsive">Explore</h3>
@@ -31,10 +34,10 @@ const Carousel = () => {
           <MDBView>
             <img
               className="d-block w-100 carousel-img"
-              src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              src={carouselImage2}
               alt="Second slide"
             />
-          <MDBMask overlay="black-strong" />
+          <MDBMask />
           </MDBView>
           <MDBCarouselCaption>
             <h3 className="h3-responsive">Strong mask</h3>
@@ -45,7 +48,7 @@ const Carousel = () => {
           <MDBView>
             <img
               className="d-block w-100 carousel-img"
-              src="https://images.unsplash.com/photo-1471093304841-0423d25b23e5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+              src={carouselImage3}
               alt="Third slide"
             />
           <MDBMask overlay="black-slight" />

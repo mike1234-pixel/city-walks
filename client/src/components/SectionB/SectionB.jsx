@@ -1,9 +1,14 @@
 import { MDBView } from "mdbreact"
+import marked from "marked"
 import "./SectionB.css";
 
 const SectionB = (props) => {
 
     const {content, img, alt} = props
+
+    const createMarkup = (markup) => {
+      return {__html: marked(markup)}
+    }
 
   return (
     <div className='section-b grid-container-b'>
@@ -13,7 +18,7 @@ const SectionB = (props) => {
           </MDBView>
         </div>
         <div className='grid-item-b grid-item-b-text-box'>
-            <p>{content}</p>
+            <div  dangerouslySetInnerHTML={createMarkup(content)}></div>
         </div>
     </div>
   );

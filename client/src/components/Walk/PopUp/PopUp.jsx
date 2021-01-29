@@ -8,7 +8,7 @@ const PopUp = (props) => {
         <div className="popup-container">
             <div className="popup">
                 {/* orientation will be portrait */}
-                <img className="popup-img" src={mapImg}/> 
+                <img className="popup-img" src={mapImg}/>      
             </div>
         </div>
     )

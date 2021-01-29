@@ -5,6 +5,7 @@
   "author": "Michael Tandy",
   "dependencies": {
     "axios": "^0.21.1",
+    "marked": "^1.2.8",
     "mdbreact": "5.0.1",
     "qs": "^6.9.4",
     "react": "^17.0.1",

@@ -44,6 +44,10 @@ The `userFirstName`, `userId` credentials and `loggedIn` state are stored in `lo
 
 All ajax requests are made using the **axios** and **qs** packages.
 
+## Text Formatting
+
+Text can be saved to the database with Markdown formatting. This will be parsed on the client using the **marked** package. This applies only when adding a new Walk or BlogPost.
+
 ## Recaptcha
 
 Google recaptcha is set up in **./src/components/page/Contact/Contact.jsx** withe the following code:
