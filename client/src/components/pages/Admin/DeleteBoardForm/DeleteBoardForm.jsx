@@ -21,9 +21,13 @@ const DeleteBoardForm = () => {
 
         axios
         .delete("http://localhost:5000/delete-board", {data: payload})
-        .then((err) => {
+        .then((res, err) => {
             if (err) {
               console.log(err);
+            } else if (res.data === "board deleted") {
+              console.log("board deleted")
+            } else {
+              console.log("board not deleted")
             }
           });
   

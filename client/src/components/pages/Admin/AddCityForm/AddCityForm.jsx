@@ -36,9 +36,13 @@ const AddCityForm = () => {
 
         axios
         .post("http://localhost:5000/add-city", qs.stringify(payload))
-        .then((err) => {
+        .then((res, err) => {
           if (err) {
             console.log(err);
+          } else if (res.data === "city saved") {
+            console.log("city saved")
+          } else {
+            console.log("city not saved")
           }
         });
 

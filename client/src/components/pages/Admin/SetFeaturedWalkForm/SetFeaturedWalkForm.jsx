@@ -35,10 +35,14 @@ const SetFeaturedWalkForm = () => {
 
         axios
         .patch("http://localhost:5000/set-featured-walk", qs.stringify(payload))
-        .then((err) => {
+        .then((res, err) => {
           if (err) {
             console.log(err);
-          } 
+          } else if (res.data === "featured walk set") {
+            console.log("featured walk set")
+          } else {
+            console.log("featured walk not set")
+          }
         });
         alert("Featured walks set")
         setFeaturedWalk1("")

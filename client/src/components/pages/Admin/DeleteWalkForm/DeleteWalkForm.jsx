@@ -25,9 +25,13 @@ const DeleteWalkForm = () => {
 
         axios
         .delete("http://localhost:5000/delete-walk",{ data: payload } )
-        .then((err) => {
+        .then((res, err) => {
           if (err) {
             console.log(err);
+          } else if (res.data === "walk deleted") {
+            console.log("walk deleted")
+          } else {
+            console.log("walk not deleted")
           }
         });
 

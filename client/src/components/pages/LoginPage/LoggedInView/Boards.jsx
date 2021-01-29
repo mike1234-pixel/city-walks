@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { ForumContext } from "../../../../context/ForumContext"
 import { LoginContext } from "../../../../context/LoginContext";
 import PopUp from "../../../../components/PopUp/PopUp"
-
 import './Boards.css'
 
 const Boards = () => {

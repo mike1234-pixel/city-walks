@@ -111,9 +111,13 @@ const AddWalkForm = () => {
 
         axios
         .post("http://localhost:5000/add-walk", qs.stringify(payload))
-        .then((err) => {
+        .then((res, err) => {
           if (err) {
             console.log(err);
+          } else if (res.data === "walk saved") {
+            console.log("walk saved")
+          } else {
+            console.log("walk not saved")
           }
         });
 

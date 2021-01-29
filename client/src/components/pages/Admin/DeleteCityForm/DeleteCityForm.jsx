@@ -25,9 +25,13 @@ const DeleteCityForm = () => {
 
         axios
         .delete("http://localhost:5000/delete-city",{ data: payload } )
-        .then((err) => {
+        .then((res, err) => {
           if (err) {
             console.log(err);
+          } else if (res.data === "city deleted") {
+            console.log("city deleted")
+          } else {
+            console.log("city not deleted")
           }
         });
 

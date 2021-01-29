@@ -25,9 +25,13 @@ const DeleteBlogPostForm = () => {
 
         axios
         .delete("http://localhost:5000/delete-blog-post",{ data: payload } )
-        .then((err) => {
+        .then((res, err) => {
           if (err) {
             console.log(err);
+          } else if (res.data === "blog post deleted") {
+            console.log("blog post deleted")
+          } else {
+            console.log("response not deleted")
           }
         });
 

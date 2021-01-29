@@ -16,6 +16,10 @@ const Blog = (props) => {
 
     const { blogPosts } = props;
 
+    const removeMarkdown = (markup) => {
+        return markup.replace(/\**/g, "").replace(/#/g, "")
+      }
+
     return (
         <div className="min-page-height">
             {popupVisible && <PopUp/>}
@@ -30,13 +34,13 @@ const Blog = (props) => {
                         <MDBCardImage className="cutter img-fluid" src={post.img} alt={post.title} waves/>
                         <MDBCardBody>
                         <MDBCardTitle className="display-font">{post.title}</MDBCardTitle>
-                        <MDBCardText>{post.content.slice(0,199) + "..."}</MDBCardText>
+                        <MDBCardText>{removeMarkdown(post.content.slice(0,199) + "...")}</MDBCardText>
                         <Link to={'/blog/'+urlify(post.title)}><MDBBtn outline color="elegant" className="city-card-btn">Read <MDBIcon icon="book-open" /></MDBBtn></Link>
                         </MDBCardBody>
                     </MDBCard>
                     </MDBCol>
                 )
-            })}
+            }).reverse()}
             </div>
         </div>
     )

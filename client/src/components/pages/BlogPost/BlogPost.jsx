@@ -86,8 +86,10 @@ const BlogPost = ({match}) => {
         post = 
         <div className="blog-post-container">
             <h1 className="page-heading">{selectedBlogPost.title}</h1>
+            <h2 className="blog-subtitle page-heading">{selectedBlogPost.subtitle}</h2>
             <img className="blog-post-img" src={selectedBlogPost.img}/>
             <div className="blog-post-content" dangerouslySetInnerHTML={createMarkup(selectedBlogPost.content)}></div>
+            <p>{selectedBlogPost.submittedOn.replace('T', ' ').substring(0, 19)}</p>
             {selectedBlogPost.comments.map((comment) => {
               return (
                 <MDBCard className="blog-post-comment-card" key={comment._id}>
