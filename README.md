@@ -102,6 +102,8 @@ The admin portal on the client allows you to manage the website's contents. The 
 - **/set-featured-walk** (post) - sets the `featuredWalk` field on all `walks` in the database to false, then sets `featuredWalk` to true on the three walks submitted. These will be the three "featured walks" that appear on the homepage.
 - **/add-blog-post** (post)
 - **/delete-blog-post** (delete)
+- **/add-board** (post) - add a new discussion board (when logged in as administrator)
+- **/delete-board** (delete) - delete an existing discussion board using the board name (when logged in as administrator)
 
 ## userApi.js (User Registration and Login)
 
@@ -134,11 +136,9 @@ Finally, a logged in user can delete their account with their \_id on the **/del
 
 ## forumApi.js
 
-The forum api contains all the following routes that relate to the forum on the client:
+The forum api contains all the following routes that relate to user interaction with the forum:
 
 - **/boards** (get) - sends the boards data to the client
-- **/add-board** (post) - add a new discussion board (when logged in as administrator)
-- **/delete-board** (delete) - delete an existing discussion board using the board name (when logged in as administrator)
 - **/add-thread** (post) - add a new thread to a board when logged in as a user.
 - **/delete-thread** (delete) - delete a thread that belongs to your account when logged in as a user. When threads are added a `userId` field is attached to the thread which contains the \_id of the current user. On the client this is checked against the userId of the current logged in user to determine whether to display the delete button.
 - **/add-reply** (post) - add a new reply to a thread when logged in as a user.

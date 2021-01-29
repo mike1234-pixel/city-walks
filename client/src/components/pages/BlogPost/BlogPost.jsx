@@ -39,9 +39,13 @@ const BlogPost = ({match}) => {
 
       axios
       .post("http://localhost:5000/add-blog-comment", qs.stringify(payload))
-      .then((err) => {
+      .then((res, err) => {
         if (err) {
           console.log(err);
+        } else if (res.data === "comment submitted") {
+          console.log("comment submitted")
+        } else {
+          console.log("comment not submitted")
         }
       });
 
@@ -62,7 +66,7 @@ const BlogPost = ({match}) => {
         .then((res, err) => {
           if (err) {
             console.log(err);
-          }  else {
+          } else {
             alert("comment deleted.")
             window.location.reload()
           }
