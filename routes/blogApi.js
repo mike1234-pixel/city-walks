@@ -1,4 +1,5 @@
 const Blog = require("../models/blogPostModel")
+const dotenv = require('dotenv').config();
 
 module.exports = (app) => {
     app.post('/add-blog-comment', (req, res) => {

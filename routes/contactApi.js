@@ -6,6 +6,7 @@ const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 // recaptcha
 const fetch = require('node-fetch')
+const dotenv = require('dotenv').config();
 
 const OAUTH_PLAYGROUND = "https://developers.google.com/oauthplayground";
 

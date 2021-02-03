@@ -9,6 +9,7 @@ const uuid = require("uuid").v4;
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
+const dotenv = require('dotenv').config();
 
 const OAUTH_PLAYGROUND = "https://developers.google.com/oauthplayground";
 

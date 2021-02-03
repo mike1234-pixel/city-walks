@@ -4,6 +4,7 @@ const Blog = require('../models/blogPostModel')
 const Admin = require('../models/adminModel')
 const { Board } = require( '../models/forumModels')
 const bcrypt = require("bcrypt")
+const dotenv = require('dotenv').config();
 const saltRounds = 10
 
 module.exports = function (app) {

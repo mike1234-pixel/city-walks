@@ -1,4 +1,5 @@
 const { Board } = require( '../models/forumModels')
+const dotenv = require('dotenv').config();
 
 module.exports = function (app) {
 
