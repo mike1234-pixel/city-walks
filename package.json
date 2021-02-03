@@ -5,6 +5,7 @@
   "licence": "MIT",
   "scripts": {
     "client": "cd client && start",
+    "start": "node server.js",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },

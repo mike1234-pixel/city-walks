@@ -13,7 +13,7 @@ let SearchBar = () => {
         <span style={{ marginRight: "40px"}} className="search-container">
           <MDBInput  
             data-testid="search-input" 
-            label="Search" 
+            label="Search Walks" 
             name="search-input" 
             id="search-input" 
             type="text" placeholder="Search" 

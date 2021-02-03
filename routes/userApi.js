@@ -280,7 +280,7 @@ module.exports = function (app) {
       from: SENDER_EMAIL_ADDRESS,
       to: req.body.email,
       subject: "Reset Password for City Walks",
-      html: "<p>Hi, please click on this link and enter your email and password to reset.<a href='http://localhost:5000/forgot-password/'>this link</a></p>",
+      html: "<p>Hi, please click on <a href='http://localhost:5000/forgot-password/'>this link</a></p> and enter your email and password to reset.",
     };
 
     console.log(mailOptions);
