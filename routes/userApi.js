@@ -130,7 +130,7 @@ module.exports = function (app) {
                   to: req.body.email,
                   subject: "Email Verification for City Walks",
                   html:
-                    "<p>Hi, thanks for signing up. Please verify your account by clicking <a href='http://localhost:5000/verify-user/" +
+                    "<p>Hi, thanks for signing up. Please verify your account by clicking <a href='https://city-walks.herokuapp.com/verify-user/" +
                     newUser.id +
                     "/" +
                     secretCode +
@@ -231,7 +231,7 @@ module.exports = function (app) {
                 to: req.body.email,
                 subject: "Email Verification for City Walks",
                 html:
-                  "<p>Hi, thanks for signing up. Please verify your account by clicking <a href='http://localhost:5000/verify-user/" +
+                  "<p>Hi, thanks for signing up. Please verify your account by clicking <a href='https://city-walks.herokuapp.com/verify-user/" +
                   foundUser.id +
                   "/" +
                   secretCode +
@@ -281,7 +281,7 @@ module.exports = function (app) {
       from: SENDER_EMAIL_ADDRESS,
       to: req.body.email,
       subject: "Reset Password for City Walks",
-      html: "<p>Hi, please click on <a href='http://localhost:5000/forgot-password/'>this link</a></p> and enter your email and password to reset.",
+      html: "<p>Hi, please click on <a href='https://city-walks.herokuapp.com/forgot-password/'>this link</a></p> and enter your email and password to reset.",
     };
 
     console.log(mailOptions);
