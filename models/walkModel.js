@@ -19,6 +19,8 @@ const mongoose = require('mongoose');
         instagramLink: String,
         facebookLink: String,
         twitterLink: String,
+        lat: String,
+        lng: String,
         featuredWalk: { type: Boolean, default: false },
       });
 

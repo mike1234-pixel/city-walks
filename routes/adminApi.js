@@ -32,9 +32,9 @@ app.post('/admin-login', (req, res) => {
 
 app.post('/add-walk', (req, res) => {
 
-  const { walk, city, description, startingPoint, content1, content2, content3, coverImg, mapImg, img1, img2, img3, author, aboutTheAuthor, websiteLink, instagramLink, facebookLink, twitterLink} = req.body
+  const { walk, city, description, startingPoint, content1, content2, content3, coverImg, mapImg, img1, img2, img3, author, aboutTheAuthor, websiteLink, instagramLink, facebookLink, twitterLink, lat, lng} = req.body
 
-  const newWalk = new Walk({ walk: walk, city: city, description: description, startingPoint: startingPoint, content1: content1, content2: content2, content3: content3, coverImg: coverImg, mapImg: mapImg, img1: img1, img2: img2, img3: img3, author: author, aboutTheAuthor: aboutTheAuthor, websiteLink: websiteLink, instagramLink: instagramLink, facebookLink: facebookLink, twitterLink: twitterLink });
+  const newWalk = new Walk({ walk: walk, city: city, description: description, startingPoint: startingPoint, content1: content1, content2: content2, content3: content3, coverImg: coverImg, mapImg: mapImg, img1: img1, img2: img2, img3: img3, author: author, aboutTheAuthor: aboutTheAuthor, websiteLink: websiteLink, instagramLink: instagramLink, facebookLink: facebookLink, twitterLink: twitterLink, lat: lat, lng: lng });
   newWalk.save((err, walk) => {
     if (err) {
       console.log(err)
