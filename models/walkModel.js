@@ -21,6 +21,9 @@ const mongoose = require('mongoose');
         twitterLink: String,
         lat: String,
         lng: String,
+        length: String,
+        iframeLink: String,
+        iframeTitle: String,
         featuredWalk: { type: Boolean, default: false },
       });
 
